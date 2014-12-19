@@ -1,5 +1,5 @@
 
-# Generate Mikoritk RouterOS script to add country ip blocks address lists
+# Generate Mikrotik RouterOS script to add country ip blocks address lists
 
 $ gen_mk_country_acl.rb
 

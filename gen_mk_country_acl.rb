@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 #
-# Generate Mikoritk RouterOS country ip blocks Address lists
+# Generate Mikrotik RouterOS country ip blocks Address lists
 #
 # to do: flatten adjoining CIDR blocks where possible
 #
