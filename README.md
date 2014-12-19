@@ -12,11 +12,11 @@ For every source an Mikrotik .rsc file is created.
 Transfer those .rsc files in your Mikrotik firewall and import them:
 
 ```sh
-$ /import file-name=mk_arin.rsc
-$ /import file-name=mk_afrinic.rsc
-$ /import file-name=mk_apnic.rsc
-$ /import file-name=mk_lacnic.rsc
-$ /import file-name=mk_ripencc.rsc
+mk_fw> /import file-name=mk_arin.rsc
+mk_fw> /import file-name=mk_afrinic.rsc
+mk_fw> /import file-name=mk_apnic.rsc
+mk_fw> /import file-name=mk_lacnic.rsc
+mk_fw> /import file-name=mk_ripencc.rsc
 ```
 
 From now on you can do whatever you want with it.
@@ -24,9 +24,9 @@ From now on you can do whatever you want with it.
 ### Here some examples:
 
 ```sh
-/ip firewall filter
-add action=drop chain=input src-address-list="ZZ country" log=yes
-add action=drop chain=forward src-address-list="ZZ country" log=yes
+mk_fw> /ip firewall filter
+mk_fw> add action=drop chain=input src-address-list="ZZ country" log=yes
+mk_fw> add action=drop chain=forward src-address-list="ZZ country" log=yes
 ```
 
 ## Things to keep in mind
