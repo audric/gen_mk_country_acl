@@ -12,11 +12,20 @@ require 'optparse'
 # Constants for NIC sources
 # These can be either FTP or HTTPS URLs
 SOURCES = {
-  'arin' => 'https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest',
+  'arin' => 'ftp://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest',
   'afrinic' => 'ftp://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-latest',
   'apnic' => 'ftp://ftp.apnic.net/pub/stats/apnic/delegated-apnic-latest',
   'lacnic' => 'ftp://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-latest',
   'ripencc' => 'ftp://ftp.ripe.net/ripe/stats/delegated-ripencc-latest'
+}
+
+# HTTPS alternatives (uncomment these if FTP is not available or blocked)
+# SOURCES = {
+#   'arin' => 'https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest',
+#   'afrinic' => 'https://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-latest',
+#   'apnic' => 'https://ftp.apnic.net/pub/stats/apnic/delegated-apnic-latest',
+#   'lacnic' => 'https://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-latest',
+#   'ripencc' => 'https://ftp.ripe.net/ripe/stats/delegated-ripencc-latest'
 }
 
 # Class to handle CIDR block flattening
@@ -26,110 +35,95 @@ class CIDRFlattener
     IPAddr.new(cidr)
   end
 
-  # Checks if two CIDR blocks are adjacent and can be merged
-  def self.can_merge?(cidr1, cidr2)
-    ip1 = cidr_to_ipaddr(cidr1)
-    ip2 = cidr_to_ipaddr(cidr2)
-    
-    # Get prefix length of both CIDRs
-    prefix1 = cidr1.split('/')[1].to_i
-    prefix2 = cidr2.split('/')[1].to_i
-    
-    # Can only merge if they have the same prefix length
-    return false unless prefix1 == prefix2
-    
-    # Can merge if they are adjacent and can form a larger block
-    # with prefix length one less than current
-    if prefix1 > 0
-      # Calculate network numbers
-      network1 = ip1.to_i
-      network2 = ip2.to_i
-      
-      # Calculate size of the network (number of addresses)
-      size = 2**(32 - prefix1)
-      
-      # Check if they are adjacent
-      adjacent = (network1 + size == network2) || (network2 + size == network1)
-      
-      # Check if they would form a valid larger block
-      # This means they must have the same network number when masked with the higher subnet
-      higher_subnet_mask = 0xFFFFFFFF << (32 - prefix1 + 1)
-      same_higher_subnet = (network1 & higher_subnet_mask) == (network2 & higher_subnet_mask)
-      
-      return adjacent && same_higher_subnet
-    end
-    
-    false
+  # Converts IP range to array of integers [start_ip, end_ip]
+  def self.cidr_to_range(cidr)
+    ip = cidr_to_ipaddr(cidr)
+    prefix = cidr.split('/')[1].to_i
+    mask = (1 << (32 - prefix)) - 1
+    start_ip = ip.to_i
+    end_ip = start_ip | mask
+    [start_ip, end_ip]
   end
 
-  # Merges two adjacent CIDR blocks
-  def self.merge_cidrs(cidr1, cidr2)
-    prefix = cidr1.split('/')[1].to_i
-    
-    # If they can be merged, the new prefix is one less than the current
-    if can_merge?(cidr1, cidr2)
-      ip1 = cidr_to_ipaddr(cidr1)
-      
-      # Get the network number for the combined network
-      # This is the smaller of the two network numbers
-      ip2 = cidr_to_ipaddr(cidr2)
-      network = [ip1.to_i, ip2.to_i].min
-      
-      # Create the new CIDR notation with prefix-1
-      new_cidr = IPAddr.new(network, Socket::AF_INET).to_s + "/#{prefix - 1}"
-      return new_cidr
-    end
-    
-    nil
-  end
+  # Converts IP integer back to CIDR
+  def self.range_to_cidrs(start_ip, end_ip)
+    # Special case: if range is empty
+    return [] if start_ip > end_ip
 
-  # Flattens a list of CIDR blocks by merging adjacent ones
-  def self.flatten_cidrs(cidrs)
-    return [] if cidrs.empty?
+    # Initialize result
+    result = []
     
-    # Sort the CIDR blocks by network address and prefix length
-    # This helps identify adjacent networks more easily
-    sorted_cidrs = cidrs.sort_by do |cidr|
-      ip = cidr_to_ipaddr(cidr)
-      prefix = cidr.split('/')[1].to_i
-      [prefix, ip.to_i]  # Sort by prefix first, then by network address
-    end
-    
-    flattened = []
-    i = 0
-    
-    while i < sorted_cidrs.length
-      current = sorted_cidrs[i]
-      merged = false
-      
-      # Try to merge with each previously flattened CIDR
-      flattened.each_with_index do |flat_cidr, j|
-        if can_merge?(current, flat_cidr)
-          merged_cidr = merge_cidrs(current, flat_cidr)
-          if merged_cidr
-            flattened[j] = merged_cidr
-            merged = true
-            break
-          end
-        end
+    # Process until the entire range is converted to CIDRs
+    while start_ip <= end_ip
+      # Find the largest prefix (smallest mask) that fits in the range
+      max_size = 32
+      while max_size > 0
+        mask = (1 << (32 - max_size)) - 1
+        network_start = start_ip & ~mask
+        network_end = network_start | mask
+        
+        # If the network extends beyond our range or doesn't start at our starting point, it's too big
+        break if network_end > end_ip || network_start < start_ip
+        max_size -= 1
       end
       
-      # If couldn't merge with any previous, add to flattened list
-      flattened << current unless merged
-      i += 1
+      # Create the CIDR from the calculated prefix
+      prefix = max_size
+      mask = (1 << (32 - prefix)) - 1
+      network_start = start_ip & ~mask
+      network_end = network_start | mask
+      
+      # Add the CIDR to the result
+      cidr = "#{IPAddr.new(network_start, Socket::AF_INET)}/#{prefix}"
+      result << cidr
+      
+      # Move to the next IP range
+      start_ip = network_end + 1
     end
     
-    # Keep flattening until no more changes can be made
-    if flattened.length < sorted_cidrs.length || flattened != sorted_cidrs
-      return flatten_cidrs(flattened)
+    result
+  end
+
+  # Fast method to flatten CIDRs by merging overlapping and adjacent ranges
+  def self.flatten_cidrs_fast(cidrs)
+    return [] if cidrs.empty?
+    
+    # Convert all CIDRs to [start_ip, end_ip] ranges
+    ranges = cidrs.map { |cidr| cidr_to_range(cidr) }
+    
+    # Sort ranges by start IP
+    ranges.sort!
+    
+    # Merge overlapping or adjacent ranges
+    merged_ranges = []
+    current_range = ranges.first
+    
+    ranges[1..-1].each do |range|
+      if range[0] <= current_range[1] + 1
+        # Ranges overlap or are adjacent, merge them
+        current_range[1] = [current_range[1], range[1]].max
+      else
+        # Ranges don't overlap, add the current range to results and start a new one
+        merged_ranges << current_range
+        current_range = range
+      end
     end
     
-    flattened
+    # Add the last range
+    merged_ranges << current_range
+    
+    # Convert merged ranges back to CIDRs
+    result = []
+    merged_ranges.each do |range|
+      result.concat(range_to_cidrs(range[0], range[1]))
+    end
+    
+    result
   end
 
   # Main function to process a list of IP blocks and return flattened list
   def self.flatten_ip_blocks(ip_blocks)
-    flatten_cidrs(ip_blocks)
+    flatten_cidrs_fast(ip_blocks)
   end
 end
 
@@ -211,6 +205,16 @@ class IPBlockProcessor
     "#{start_ip}/#{prefix_length}"
   end
 
+  # For parallel processing, if available
+  def parallel_map(items, &block)
+    if defined?(Parallel) && @options[:parallel]
+      require 'parallel'
+      Parallel.map(items, &block)
+    else
+      items.map(&block)
+    end
+  end
+
   # Processes all NIC sources
   def process_all_sources
     SOURCES.each do |nic, url|
@@ -242,22 +246,84 @@ class IPBlockProcessor
     total_original = 0
     total_flattened = 0
     
-    @country_blocks.each do |country, ip_blocks|
-      total_original += ip_blocks.length
+    # Process countries in batches for progress reporting
+    countries = @country_blocks.keys
+    total_countries = countries.size
+    start_time = Time.now
+    
+    # Try to use parallel processing if enabled
+    if @options[:parallel]
+      puts "Using parallel processing for CIDR flattening..."
+      # First, collect the total original count
+      @country_blocks.each do |_, ip_blocks|
+        total_original += ip_blocks.length
+      end
       
-      puts "  #{country}: #{ip_blocks.length} blocks"
-      flattened = CIDRFlattener.flatten_ip_blocks(ip_blocks)
-      @country_blocks[country] = flattened
-      total_flattened += flattened.length
+      # Process countries in parallel
+      results = parallel_map(countries) do |country|
+        ip_blocks = @country_blocks[country]
+        flattened = CIDRFlattener.flatten_ip_blocks(ip_blocks)
+        [country, flattened, ip_blocks.length, flattened.length]
+      end
       
-      reduction = ip_blocks.length - flattened.length
-      percent = ((reduction.to_f / ip_blocks.length) * 100).round(2)
-      puts "    Flattened to #{flattened.length} blocks (reduced by #{reduction} blocks, #{percent}%)"
+      # Update the country_blocks hash with results
+      results.each do |country, flattened, original_count, flattened_count|
+        @country_blocks[country] = flattened
+        total_flattened += flattened_count
+        
+        if @options[:verbose] || original_count > 100
+          reduction = original_count - flattened_count
+          percent = original_count > 0 ? ((reduction.to_f / original_count) * 100).round(2) : 0
+          puts "  #{country}: #{original_count} blocks flattened to #{flattened_count} (reduced by #{reduction} blocks, #{percent}%)"
+        end
+      end
+    else
+      # Sequential processing with progress reporting
+      countries.each_with_index do |country, index|
+        ip_blocks = @country_blocks[country]
+        total_original += ip_blocks.length
+        
+        # Only print detailed info for verbose mode or larger countries
+        should_report = @options[:verbose] || ip_blocks.length > 100
+        if should_report
+          puts "  #{country}: #{ip_blocks.length} blocks (#{index+1}/#{total_countries})"
+        elsif (index+1) % 10 == 0 || index+1 == total_countries
+          # Simple progress reporting
+          elapsed = Time.now - start_time
+          estimated_total = (elapsed / (index+1)) * total_countries
+          remaining = [estimated_total - elapsed, 0].max
+          puts "  Processed #{index+1}/#{total_countries} countries. Est. time remaining: #{format_time(remaining)}"
+        end
+        
+        # Flatten the blocks
+        flattened = CIDRFlattener.flatten_ip_blocks(ip_blocks)
+        @country_blocks[country] = flattened
+        total_flattened += flattened.length
+        
+        if should_report
+          reduction = ip_blocks.length - flattened.length
+          percent = ip_blocks.length > 0 ? ((reduction.to_f / ip_blocks.length) * 100).round(2) : 0
+          puts "    Flattened to #{flattened.length} blocks (reduced by #{reduction} blocks, #{percent}%)"
+        end
+      end
     end
     
     total_reduction = total_original - total_flattened
-    total_percent = ((total_reduction.to_f / total_original) * 100).round(2)
+    total_percent = total_original > 0 ? ((total_reduction.to_f / total_original) * 100).round(2) : 0
+    elapsed = Time.now - start_time
     puts "Total reduction: #{total_reduction} blocks (#{total_percent}%)"
+    puts "Flattening completed in #{format_time(elapsed)}"
+  end
+  
+  # Format time in a human-readable way
+  def format_time(seconds)
+    if seconds < 60
+      "#{seconds.round(1)}s"
+    elsif seconds < 3600
+      "#{(seconds / 60).floor}m #{(seconds % 60).round}s"
+    else
+      "#{(seconds / 3600).floor}h #{((seconds % 3600) / 60).floor}m #{(seconds % 60).round}s"
+    end
   end
 
   # Generates Mikrotik RouterOS script files for each NIC
@@ -310,7 +376,8 @@ if __FILE__ == $0
     output_dir: '.',
     skip_flattening: false,
     debug: false,
-    verbose: false
+    verbose: false,
+    parallel: false
   }
   
   option_parser = OptionParser.new do |opts|
@@ -339,6 +406,17 @@ if __FILE__ == $0
     
     opts.on('-v', '--verbose', 'Enable verbose output') do
       options[:verbose] = true
+    end
+    
+    opts.on('-p', '--parallel', 'Enable parallel processing if the parallel gem is installed') do
+      begin
+        require 'parallel'
+        options[:parallel] = true
+        puts "Parallel processing enabled"
+      rescue LoadError
+        puts "Warning: Parallel gem not found. Install with: gem install parallel"
+        options[:parallel] = false
+      end
     end
     
     opts.on('--custom-source NIC,URL', Array, 'Specify a custom source (can be used multiple times)') do |nic_url|
