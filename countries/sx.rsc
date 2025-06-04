@@ -1,5 +1,5 @@
 # Mikrotik RouterOS Country IP Blocks for SX
-# Generated on: 2025-06-04 15:33:50 +0200
+# Generated on: 2025-06-04 15:39:55 +0200
 
 /ip firewall address-list
 add address=131.161.80.0/21 list="SX country" comment="SX"

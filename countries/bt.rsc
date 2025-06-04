@@ -1,5 +1,5 @@
 # Mikrotik RouterOS Country IP Blocks for BT
-# Generated on: 2025-06-04 15:33:50 +0200
+# Generated on: 2025-06-04 15:39:55 +0200
 
 /ip firewall address-list
 add address=36.50.36.0/23 list="BT country" comment="BT"

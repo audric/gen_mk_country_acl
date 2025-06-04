@@ -1,5 +1,5 @@
 # Mikrotik RouterOS Country IP Blocks for SR
-# Generated on: 2025-06-04 15:33:50 +0200
+# Generated on: 2025-06-04 15:39:55 +0200
 
 /ip firewall address-list
 add address=45.68.20.0/22 list="SR country" comment="SR"

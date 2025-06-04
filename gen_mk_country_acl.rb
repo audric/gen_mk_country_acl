@@ -326,6 +326,11 @@ class IPBlockProcessor
       # Skip if not IPv4 or if it's reserved
       next unless type == 'ipv4' && status != 'reserved'
       
+      # If country code is empty or invalid, use "no-country-[NIC]"
+      if country_code.nil? || country_code.strip.empty? || country_code == '*'
+        country_code = "no-country-#{nic}"
+      end
+      
       # Convert to CIDR notation
       if type == 'ipv4'
         cidr = ip_range_to_cidr(start_ip, value.to_i)
@@ -511,8 +516,7 @@ class IPBlockProcessor
         
         # Find all countries for this NIC
         nic_countries = @country_blocks.keys.select do |country|
-          # Filter logic would go here if we knew how countries are associated with NICs
-          # For now, we'll include all countries in each NIC file
+          # Include all countries including the "no-country-[NIC]" entries
           true
         end
         
@@ -520,11 +524,19 @@ class IPBlockProcessor
           ip_blocks = @country_blocks[country]
           next if ip_blocks.nil? || ip_blocks.empty?
           
+          # Create the list name
+          list_name = if country.start_with?("no-country-")
+            # Use just "no-country" for the list name
+            "no-country"
+          else
+            "#{country} country"
+          end
+          
           file.puts "# Country: #{country}"
           file.puts "/ip firewall address-list"
           
           ip_blocks.each do |cidr|
-            file.puts "add address=#{cidr} list=\"#{country} country\" comment=\"#{nic}\""
+            file.puts "add address=#{cidr} list=\"#{list_name}\" comment=\"#{nic}\""
           end
           
           file.puts ""
@@ -567,8 +579,16 @@ class IPBlockProcessor
           file.puts ""
           file.puts "/ip firewall address-list"
           
+          # Create the list name
+          list_name = if country.start_with?("no-country-")
+            # Use just "no-country" for the list name
+            "no-country"
+          else
+            "#{country} country"
+          end
+          
           ip_blocks.each do |cidr|
-            file.puts "add address=#{cidr} list=\"#{country} country\" comment=\"#{country}\""
+            file.puts "add address=#{cidr} list=\"#{list_name}\" comment=\"#{country}\""
           end
         end
       elsif @options[:country_format] == 'plain'

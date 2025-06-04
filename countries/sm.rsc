@@ -1,5 +1,5 @@
 # Mikrotik RouterOS Country IP Blocks for SM
-# Generated on: 2025-06-04 15:33:50 +0200
+# Generated on: 2025-06-04 15:39:55 +0200
 
 /ip firewall address-list
 add address=5.183.162.0/23 list="SM country" comment="SM"

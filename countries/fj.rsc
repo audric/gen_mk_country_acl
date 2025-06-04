@@ -1,5 +1,5 @@
 # Mikrotik RouterOS Country IP Blocks for FJ
-# Generated on: 2025-06-04 15:33:50 +0200
+# Generated on: 2025-06-04 15:39:55 +0200
 
 /ip firewall address-list
 add address=27.123.128.0/17 list="FJ country" comment="FJ"

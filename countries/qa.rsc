@@ -1,5 +1,5 @@
 # Mikrotik RouterOS Country IP Blocks for QA
-# Generated on: 2025-06-04 15:33:50 +0200
+# Generated on: 2025-06-04 15:39:55 +0200
 
 /ip firewall address-list
 add address=5.180.32.0/21 list="QA country" comment="QA"

@@ -1,6 +1,6 @@
 # Mikrotik RouterOS Country IP Blocks
 # Source: https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest
-# Generated on: 2025-06-04 15:33:49 +0200
+# Generated on: 2025-06-04 15:40:11 +0200
 # IP blocks have been flattened where possible
 
 # Country: 
