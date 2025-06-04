@@ -12,7 +12,7 @@ require 'optparse'
 # Constants for NIC sources
 # These can be either FTP or HTTPS URLs
 SOURCES = {
-  'arin' => 'ftp://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest',
+  'arin' => 'https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest',
   'afrinic' => 'ftp://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-latest',
   'apnic' => 'ftp://ftp.apnic.net/pub/stats/apnic/delegated-apnic-latest',
   'lacnic' => 'ftp://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-latest',
