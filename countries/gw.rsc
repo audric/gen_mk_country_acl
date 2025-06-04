@@ -1,7 +1,13 @@
-# Mikrotik RouterOS Country IP Blocks for GW
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for GW
+# Generated at: 2025-06-04 16:20:48 +0200
+# Total CIDR blocks: 3
 
 /ip firewall address-list
-add address=102.219.172.0/22 list="GW country" comment="GW"
-add address=154.73.56.0/21 list="GW country" comment="GW"
-add address=197.214.64.0/19 list="GW country" comment="GW"
+add list="GW country" address=102.219.174.0/23 comment="GW"
+add list="GW country" address=154.73.60.0/22 comment="GW"
+add list="GW country" address=197.214.80.0/20 comment="GW"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="GW country" log=yes
+# add action=drop chain=forward src-address-list="GW country" log=yes

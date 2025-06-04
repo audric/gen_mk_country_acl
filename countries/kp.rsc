@@ -1,5 +1,11 @@
-# Mikrotik RouterOS Country IP Blocks for KP
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for KP
+# Generated at: 2025-06-04 16:20:48 +0200
+# Total CIDR blocks: 1
 
 /ip firewall address-list
-add address=175.45.176.0/21 list="KP country" comment="KP"
+add list="KP country" address=175.45.176.0/22 comment="KP"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="KP country" log=yes
+# add action=drop chain=forward src-address-list="KP country" log=yes

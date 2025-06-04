@@ -1,20 +1,26 @@
-# Mikrotik RouterOS Country IP Blocks for TG
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for TG
+# Generated at: 2025-06-04 16:20:48 +0200
+# Total CIDR blocks: 16
 
 /ip firewall address-list
-add address=41.78.136.0/21 list="TG country" comment="TG"
-add address=41.207.128.0/18 list="TG country" comment="TG"
-add address=80.248.64.0/19 list="TG country" comment="TG"
-add address=102.64.0.0/16 list="TG country" comment="TG"
-add address=102.164.224.0/19 list="TG country" comment="TG"
-add address=102.176.248.0/21 list="TG country" comment="TG"
-add address=102.212.88.0/21 list="TG country" comment="TG"
-add address=102.217.8.0/21 list="TG country" comment="TG"
-add address=102.219.232.0/21 list="TG country" comment="TG"
-add address=154.70.64.0/19 list="TG country" comment="TG"
-add address=156.38.64.0/18 list="TG country" comment="TG"
-add address=160.242.128.0/17 list="TG country" comment="TG"
-add address=196.49.44.0/23 list="TG country" comment="TG"
-add address=196.60.42.0/23 list="TG country" comment="TG"
-add address=196.168.0.0/13 list="TG country" comment="TG"
-add address=197.148.64.0/18 list="TG country" comment="TG"
+add list="TG country" address=41.78.136.0/22 comment="TG"
+add list="TG country" address=41.207.160.0/19 comment="TG"
+add list="TG country" address=80.248.64.0/20 comment="TG"
+add list="TG country" address=102.64.128.0/17 comment="TG"
+add list="TG country" address=102.164.224.0/20 comment="TG"
+add list="TG country" address=102.176.252.0/22 comment="TG"
+add list="TG country" address=102.212.92.0/22 comment="TG"
+add list="TG country" address=102.217.12.0/22 comment="TG"
+add list="TG country" address=102.219.236.0/22 comment="TG"
+add list="TG country" address=154.70.80.0/20 comment="TG"
+add list="TG country" address=156.38.64.0/19 comment="TG"
+add list="TG country" address=160.242.192.0/18 comment="TG"
+add list="TG country" address=196.49.44.0/24 comment="TG"
+add list="TG country" address=196.60.42.0/24 comment="TG"
+add list="TG country" address=196.168.0.0/14 comment="TG"
+add list="TG country" address=197.148.96.0/19 comment="TG"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="TG country" log=yes
+# add action=drop chain=forward src-address-list="TG country" log=yes

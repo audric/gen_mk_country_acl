@@ -1,25 +1,31 @@
-# Mikrotik RouterOS Country IP Blocks for MQ
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for MQ
+# Generated at: 2025-06-04 16:20:47 +0200
+# Total CIDR blocks: 21
 
 /ip firewall address-list
-add address=5.102.64.0/20 list="MQ country" comment="MQ"
-add address=80.243.224.0/19 list="MQ country" comment="MQ"
-add address=82.197.64.0/18 list="MQ country" comment="MQ"
-add address=89.16.0.0/18 list="MQ country" comment="MQ"
-add address=92.49.0.0/17 list="MQ country" comment="MQ"
-add address=93.176.0.0/17 list="MQ country" comment="MQ"
-add address=94.124.144.0/20 list="MQ country" comment="MQ"
-add address=94.124.208.0/20 list="MQ country" comment="MQ"
-add address=94.198.176.0/20 list="MQ country" comment="MQ"
-add address=104.245.112.0/20 list="MQ country" comment="MQ"
-add address=104.249.190.0/23 list="MQ country" comment="MQ"
-add address=109.62.0.0/16 list="MQ country" comment="MQ"
-add address=109.203.192.0/18 list="MQ country" comment="MQ"
-add address=185.13.216.0/21 list="MQ country" comment="MQ"
-add address=185.14.98.0/23 list="MQ country" comment="MQ"
-add address=185.21.208.0/21 list="MQ country" comment="MQ"
-add address=185.60.232.0/21 list="MQ country" comment="MQ"
-add address=185.91.232.0/21 list="MQ country" comment="MQ"
-add address=188.115.0.0/17 list="MQ country" comment="MQ"
-add address=192.163.24.0/21 list="MQ country" comment="MQ"
-add address=217.175.128.0/18 list="MQ country" comment="MQ"
+add list="MQ country" address=5.102.72.0/21 comment="MQ"
+add list="MQ country" address=80.243.240.0/20 comment="MQ"
+add list="MQ country" address=82.197.96.0/19 comment="MQ"
+add list="MQ country" address=89.16.0.0/19 comment="MQ"
+add list="MQ country" address=92.49.64.0/18 comment="MQ"
+add list="MQ country" address=93.176.0.0/18 comment="MQ"
+add list="MQ country" address=94.124.152.0/21 comment="MQ"
+add list="MQ country" address=94.124.216.0/21 comment="MQ"
+add list="MQ country" address=94.198.176.0/21 comment="MQ"
+add list="MQ country" address=104.245.112.0/21 comment="MQ"
+add list="MQ country" address=104.249.191.0/24 comment="MQ"
+add list="MQ country" address=109.62.0.0/17 comment="MQ"
+add list="MQ country" address=109.203.224.0/19 comment="MQ"
+add list="MQ country" address=185.13.216.0/22 comment="MQ"
+add list="MQ country" address=185.14.99.0/24 comment="MQ"
+add list="MQ country" address=185.21.212.0/22 comment="MQ"
+add list="MQ country" address=185.60.232.0/22 comment="MQ"
+add list="MQ country" address=185.91.232.0/22 comment="MQ"
+add list="MQ country" address=188.115.64.0/18 comment="MQ"
+add list="MQ country" address=192.163.24.0/22 comment="MQ"
+add list="MQ country" address=217.175.160.0/19 comment="MQ"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="MQ country" log=yes
+# add action=drop chain=forward src-address-list="MQ country" log=yes

@@ -1,25 +1,31 @@
-# Mikrotik RouterOS Country IP Blocks for AD
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for AD
+# Generated at: 2025-06-04 16:20:48 +0200
+# Total CIDR blocks: 21
 
 /ip firewall address-list
-add address=46.172.192.0/18 list="AD country" comment="AD"
-add address=46.175.152.0/21 list="AD country" comment="AD"
-add address=80.80.80.0/21 list="AD country" comment="AD"
-add address=80.80.88.0/21 list="AD country" comment="AD"
-add address=85.94.128.0/18 list="AD country" comment="AD"
-add address=89.150.0.0/22 list="AD country" comment="AD"
-add address=89.150.0.0/21 list="AD country" comment="AD"
-add address=89.150.0.0/20 list="AD country" comment="AD"
-add address=91.187.64.0/18 list="AD country" comment="AD"
-add address=94.125.136.0/22 list="AD country" comment="AD"
-add address=94.125.140.0/22 list="AD country" comment="AD"
-add address=109.111.64.0/18 list="AD country" comment="AD"
-add address=185.4.48.0/21 list="AD country" comment="AD"
-add address=185.33.0.0/21 list="AD country" comment="AD"
-add address=185.87.32.0/21 list="AD country" comment="AD"
-add address=185.87.32.0/20 list="AD country" comment="AD"
-add address=185.132.200.0/21 list="AD country" comment="AD"
-add address=185.194.56.0/21 list="AD country" comment="AD"
-add address=185.247.24.0/21 list="AD country" comment="AD"
-add address=188.241.24.0/22 list="AD country" comment="AD"
-add address=194.158.64.0/18 list="AD country" comment="AD"
+add list="AD country" address=46.172.224.0/19 comment="AD"
+add list="AD country" address=46.175.156.0/22 comment="AD"
+add list="AD country" address=80.80.84.0/22 comment="AD"
+add list="AD country" address=80.80.92.0/22 comment="AD"
+add list="AD country" address=85.94.160.0/19 comment="AD"
+add list="AD country" address=89.150.2.0/23 comment="AD"
+add list="AD country" address=89.150.4.0/22 comment="AD"
+add list="AD country" address=89.150.8.0/21 comment="AD"
+add list="AD country" address=91.187.64.0/19 comment="AD"
+add list="AD country" address=94.125.138.0/23 comment="AD"
+add list="AD country" address=94.125.140.0/23 comment="AD"
+add list="AD country" address=109.111.96.0/19 comment="AD"
+add list="AD country" address=185.4.52.0/22 comment="AD"
+add list="AD country" address=185.33.0.0/22 comment="AD"
+add list="AD country" address=185.87.36.0/22 comment="AD"
+add list="AD country" address=185.87.40.0/21 comment="AD"
+add list="AD country" address=185.132.200.0/22 comment="AD"
+add list="AD country" address=185.194.56.0/22 comment="AD"
+add list="AD country" address=185.247.24.0/22 comment="AD"
+add list="AD country" address=188.241.26.0/23 comment="AD"
+add list="AD country" address=194.158.64.0/19 comment="AD"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="AD country" log=yes
+# add action=drop chain=forward src-address-list="AD country" log=yes

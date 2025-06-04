@@ -1,27 +1,33 @@
-# Mikrotik RouterOS Country IP Blocks for RE
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for RE
+# Generated at: 2025-06-04 16:20:48 +0200
+# Total CIDR blocks: 23
 
 /ip firewall address-list
-add address=5.57.64.0/18 list="RE country" comment="RE"
-add address=41.213.0.0/16 list="RE country" comment="RE"
-add address=41.242.120.0/21 list="RE country" comment="RE"
-add address=62.61.128.0/17 list="RE country" comment="RE"
-add address=78.108.224.0/19 list="RE country" comment="RE"
-add address=80.69.192.0/19 list="RE country" comment="RE"
-add address=102.34.0.0/15 list="RE country" comment="RE"
-add address=102.135.224.0/19 list="RE country" comment="RE"
-add address=102.213.8.0/21 list="RE country" comment="RE"
-add address=109.122.128.0/17 list="RE country" comment="RE"
-add address=129.122.0.0/17 list="RE country" comment="RE"
-add address=139.26.0.0/15 list="RE country" comment="RE"
-add address=154.66.0.0/15 list="RE country" comment="RE"
-add address=164.160.64.0/21 list="RE country" comment="RE"
-add address=164.160.224.0/19 list="RE country" comment="RE"
-add address=165.90.128.0/17 list="RE country" comment="RE"
-add address=165.168.0.0/15 list="RE country" comment="RE"
-add address=168.253.128.0/17 list="RE country" comment="RE"
-add address=185.147.224.0/21 list="RE country" comment="RE"
-add address=185.161.8.0/21 list="RE country" comment="RE"
-add address=185.165.32.0/21 list="RE country" comment="RE"
-add address=193.56.202.0/23 list="RE country" comment="RE"
-add address=213.55.0.0/17 list="RE country" comment="RE"
+add list="RE country" address=5.57.96.0/19 comment="RE"
+add list="RE country" address=41.213.128.0/17 comment="RE"
+add list="RE country" address=41.242.124.0/22 comment="RE"
+add list="RE country" address=62.61.192.0/18 comment="RE"
+add list="RE country" address=78.108.224.0/20 comment="RE"
+add list="RE country" address=80.69.208.0/20 comment="RE"
+add list="RE country" address=102.35.0.0/16 comment="RE"
+add list="RE country" address=102.135.224.0/20 comment="RE"
+add list="RE country" address=102.213.8.0/22 comment="RE"
+add list="RE country" address=109.122.128.0/18 comment="RE"
+add list="RE country" address=129.122.64.0/18 comment="RE"
+add list="RE country" address=139.26.0.0/16 comment="RE"
+add list="RE country" address=154.67.0.0/16 comment="RE"
+add list="RE country" address=164.160.68.0/22 comment="RE"
+add list="RE country" address=164.160.224.0/20 comment="RE"
+add list="RE country" address=165.90.128.0/18 comment="RE"
+add list="RE country" address=165.169.0.0/16 comment="RE"
+add list="RE country" address=168.253.128.0/18 comment="RE"
+add list="RE country" address=185.147.224.0/22 comment="RE"
+add list="RE country" address=185.161.8.0/22 comment="RE"
+add list="RE country" address=185.165.32.0/22 comment="RE"
+add list="RE country" address=193.56.203.0/24 comment="RE"
+add list="RE country" address=213.55.0.0/18 comment="RE"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="RE country" log=yes
+# add action=drop chain=forward src-address-list="RE country" log=yes

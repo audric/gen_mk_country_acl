@@ -1,7 +1,13 @@
-# Mikrotik RouterOS Country IP Blocks for BL
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for BL
+# Generated at: 2025-06-04 16:20:47 +0200
+# Total CIDR blocks: 3
 
 /ip firewall address-list
-add address=23.135.232.0/23 list="BL country" comment="BL"
-add address=149.112.20.0/23 list="BL country" comment="BL"
-add address=206.83.44.0/23 list="BL country" comment="BL"
+add list="BL country" address=23.135.232.0/24 comment="BL"
+add list="BL country" address=149.112.20.0/24 comment="BL"
+add list="BL country" address=206.83.45.0/24 comment="BL"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="BL country" log=yes
+# add action=drop chain=forward src-address-list="BL country" log=yes

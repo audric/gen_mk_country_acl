@@ -1,15 +1,22 @@
-# Mikrotik RouterOS Country IP Blocks for AW
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for AW
+# Generated at: 2025-06-04 16:20:48 +0200
+# Total CIDR blocks: 12
 
 /ip firewall address-list
-add address=138.255.248.0/21 list="AW country" comment="AW"
-add address=170.84.254.0/23 list="AW country" comment="AW"
-add address=179.61.0.0/18 list="AW country" comment="AW"
-add address=181.41.0.0/17 list="AW country" comment="AW"
-add address=186.96.192.0/20 list="AW country" comment="AW"
-add address=186.96.224.0/19 list="AW country" comment="AW"
-add address=186.189.0.0/17 list="AW country" comment="AW"
-add address=186.189.128.0/17 list="AW country" comment="AW"
-add address=190.12.192.0/18 list="AW country" comment="AW"
-add address=190.104.96.0/19 list="AW country" comment="AW"
-add address=201.229.0.0/16 list="AW country" comment="AW"
+add list="AW country" address=138.255.252.0/22 comment="AW"
+add list="AW country" address=170.84.254.0/24 comment="AW"
+add list="AW country" address=179.61.32.0/19 comment="AW"
+add list="AW country" address=181.41.0.0/18 comment="AW"
+add list="AW country" address=186.96.200.0/21 comment="AW"
+add list="AW country" address=186.96.224.0/20 comment="AW"
+add list="AW country" address=186.96.240.0/21 comment="AW"
+add list="AW country" address=186.189.0.0/18 comment="AW"
+add list="AW country" address=186.189.128.0/18 comment="AW"
+add list="AW country" address=190.12.224.0/19 comment="AW"
+add list="AW country" address=190.104.96.0/20 comment="AW"
+add list="AW country" address=201.229.0.0/17 comment="AW"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="AW country" log=yes
+# add action=drop chain=forward src-address-list="AW country" log=yes

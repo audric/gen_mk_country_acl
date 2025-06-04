@@ -1,28 +1,35 @@
-# Mikrotik RouterOS Country IP Blocks for GA
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for GA
+# Generated at: 2025-06-04 16:20:48 +0200
+# Total CIDR blocks: 25
 
 /ip firewall address-list
-add address=41.78.240.0/21 list="GA country" comment="GA"
-add address=41.156.0.0/14 list="GA country" comment="GA"
-add address=41.211.128.0/17 list="GA country" comment="GA"
-add address=102.129.32.0/21 list="GA country" comment="GA"
-add address=102.134.24.0/21 list="GA country" comment="GA"
-add address=102.142.0.0/15 list="GA country" comment="GA"
-add address=102.164.120.0/21 list="GA country" comment="GA"
-add address=154.0.0.0/18 list="GA country" comment="GA"
-add address=154.0.160.0/19 list="GA country" comment="GA"
-add address=154.112.0.0/15 list="GA country" comment="GA"
-add address=154.116.0.0/16 list="GA country" comment="GA"
-add address=154.119.192.0/18 list="GA country" comment="GA"
-add address=160.119.128.0/18 list="GA country" comment="GA"
-add address=169.159.0.0/17 list="GA country" comment="GA"
-add address=169.239.144.0/21 list="GA country" comment="GA"
-add address=169.255.144.0/21 list="GA country" comment="GA"
-add address=192.188.160.0/21 list="GA country" comment="GA"
-add address=192.189.136.0/22 list="GA country" comment="GA"
-add address=196.49.16.0/23 list="GA country" comment="GA"
-add address=196.50.32.0/22 list="GA country" comment="GA"
-add address=196.223.38.0/23 list="GA country" comment="GA"
-add address=197.231.0.0/17 list="GA country" comment="GA"
-add address=197.242.0.0/18 list="GA country" comment="GA"
-add address=217.77.64.0/19 list="GA country" comment="GA"
+add list="GA country" address=41.78.240.0/22 comment="GA"
+add list="GA country" address=41.158.0.0/15 comment="GA"
+add list="GA country" address=41.211.128.0/18 comment="GA"
+add list="GA country" address=102.129.32.0/22 comment="GA"
+add list="GA country" address=102.134.28.0/22 comment="GA"
+add list="GA country" address=102.142.0.0/16 comment="GA"
+add list="GA country" address=102.164.124.0/22 comment="GA"
+add list="GA country" address=154.0.32.0/19 comment="GA"
+add list="GA country" address=154.0.176.0/20 comment="GA"
+add list="GA country" address=154.112.0.0/16 comment="GA"
+add list="GA country" address=154.116.0.0/17 comment="GA"
+add list="GA country" address=154.119.192.0/19 comment="GA"
+add list="GA country" address=160.119.160.0/19 comment="GA"
+add list="GA country" address=169.159.0.0/18 comment="GA"
+add list="GA country" address=169.239.148.0/22 comment="GA"
+add list="GA country" address=169.255.148.0/22 comment="GA"
+add list="GA country" address=192.188.164.0/22 comment="GA"
+add list="GA country" address=192.189.139.0/24 comment="GA"
+add list="GA country" address=192.189.140.0/24 comment="GA"
+add list="GA country" address=196.49.17.0/24 comment="GA"
+add list="GA country" address=196.50.32.0/23 comment="GA"
+add list="GA country" address=196.223.39.0/24 comment="GA"
+add list="GA country" address=197.231.64.0/18 comment="GA"
+add list="GA country" address=197.242.0.0/19 comment="GA"
+add list="GA country" address=217.77.64.0/20 comment="GA"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="GA country" log=yes
+# add action=drop chain=forward src-address-list="GA country" log=yes

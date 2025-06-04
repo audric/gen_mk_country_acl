@@ -1,5 +1,11 @@
-# Mikrotik RouterOS Country IP Blocks for YT
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for YT
+# Generated at: 2025-06-04 16:20:48 +0200
+# Total CIDR blocks: 1
 
 /ip firewall address-list
-add address=41.242.112.0/21 list="YT country" comment="YT"
+add list="YT country" address=41.242.116.0/22 comment="YT"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="YT country" log=yes
+# add action=drop chain=forward src-address-list="YT country" log=yes

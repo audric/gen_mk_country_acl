@@ -1,5 +1,11 @@
-# Mikrotik RouterOS Country IP Blocks for ER
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for ER
+# Generated at: 2025-06-04 16:20:48 +0200
+# Total CIDR blocks: 1
 
 /ip firewall address-list
-add address=196.200.96.0/19 list="ER country" comment="ER"
+add list="ER country" address=196.200.96.0/20 comment="ER"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="ER country" log=yes
+# add action=drop chain=forward src-address-list="ER country" log=yes

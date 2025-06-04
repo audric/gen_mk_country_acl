@@ -1,31 +1,37 @@
-# Mikrotik RouterOS Country IP Blocks for GU
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for GU
+# Generated at: 2025-06-04 16:20:47 +0200
+# Total CIDR blocks: 27
 
 /ip firewall address-list
-add address=43.240.88.0/21 list="GU country" comment="GU"
-add address=43.247.56.0/21 list="GU country" comment="GU"
-add address=49.128.104.0/21 list="GU country" comment="GU"
-add address=101.99.0.0/16 list="GU country" comment="GU"
-add address=103.3.240.0/21 list="GU country" comment="GU"
-add address=103.7.96.0/21 list="GU country" comment="GU"
-add address=103.17.112.0/21 list="GU country" comment="GU"
-add address=103.115.192.0/22 list="GU country" comment="GU"
-add address=103.142.152.0/22 list="GU country" comment="GU"
-add address=103.212.24.0/21 list="GU country" comment="GU"
-add address=114.142.128.0/17 list="GU country" comment="GU"
-add address=116.68.0.0/18 list="GU country" comment="GU"
-add address=117.20.112.0/20 list="GU country" comment="GU"
-add address=121.55.128.0/17 list="GU country" comment="GU"
-add address=139.5.136.0/21 list="GU country" comment="GU"
-add address=168.122.0.0/15 list="GU country" comment="GU"
-add address=182.173.128.0/17 list="GU country" comment="GU"
-add address=192.149.202.0/23 list="GU country" comment="GU"
-add address=202.22.160.0/19 list="GU country" comment="GU"
-add address=202.47.128.0/19 list="GU country" comment="GU"
-add address=202.123.128.0/18 list="GU country" comment="GU"
-add address=202.128.0.0/18 list="GU country" comment="GU"
-add address=202.128.64.0/18 list="GU country" comment="GU"
-add address=202.131.128.0/18 list="GU country" comment="GU"
-add address=202.151.64.0/18 list="GU country" comment="GU"
-add address=203.95.0.0/20 list="GU country" comment="GU"
-add address=203.215.48.0/21 list="GU country" comment="GU"
+add list="GU country" address=43.240.88.0/22 comment="GU"
+add list="GU country" address=43.247.60.0/22 comment="GU"
+add list="GU country" address=49.128.104.0/22 comment="GU"
+add list="GU country" address=101.99.128.0/17 comment="GU"
+add list="GU country" address=103.3.240.0/22 comment="GU"
+add list="GU country" address=103.7.100.0/22 comment="GU"
+add list="GU country" address=103.17.112.0/22 comment="GU"
+add list="GU country" address=103.115.192.0/23 comment="GU"
+add list="GU country" address=103.142.152.0/23 comment="GU"
+add list="GU country" address=103.212.24.0/22 comment="GU"
+add list="GU country" address=114.142.192.0/18 comment="GU"
+add list="GU country" address=116.68.0.0/19 comment="GU"
+add list="GU country" address=117.20.120.0/21 comment="GU"
+add list="GU country" address=121.55.192.0/18 comment="GU"
+add list="GU country" address=139.5.136.0/22 comment="GU"
+add list="GU country" address=168.123.0.0/16 comment="GU"
+add list="GU country" address=182.173.192.0/18 comment="GU"
+add list="GU country" address=192.149.202.0/24 comment="GU"
+add list="GU country" address=202.22.176.0/20 comment="GU"
+add list="GU country" address=202.47.144.0/20 comment="GU"
+add list="GU country" address=202.123.128.0/19 comment="GU"
+add list="GU country" address=202.128.0.0/19 comment="GU"
+add list="GU country" address=202.128.64.0/19 comment="GU"
+add list="GU country" address=202.131.160.0/19 comment="GU"
+add list="GU country" address=202.151.64.0/19 comment="GU"
+add list="GU country" address=203.95.8.0/21 comment="GU"
+add list="GU country" address=203.215.52.0/22 comment="GU"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="GU country" log=yes
+# add action=drop chain=forward src-address-list="GU country" log=yes

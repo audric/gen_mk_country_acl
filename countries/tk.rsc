@@ -1,7 +1,13 @@
-# Mikrotik RouterOS Country IP Blocks for TK
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for TK
+# Generated at: 2025-06-04 16:20:48 +0200
+# Total CIDR blocks: 3
 
 /ip firewall address-list
-add address=27.96.16.0/20 list="TK country" comment="TK"
-add address=194.0.36.0/22 list="TK country" comment="TK"
-add address=194.0.40.0/22 list="TK country" comment="TK"
+add list="TK country" address=27.96.24.0/21 comment="TK"
+add list="TK country" address=194.0.38.0/23 comment="TK"
+add list="TK country" address=194.0.40.0/23 comment="TK"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="TK country" log=yes
+# add action=drop chain=forward src-address-list="TK country" log=yes

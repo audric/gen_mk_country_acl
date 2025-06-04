@@ -1,17 +1,23 @@
-# Mikrotik RouterOS Country IP Blocks for GY
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for GY
+# Generated at: 2025-06-04 16:20:48 +0200
+# Total CIDR blocks: 13
 
 /ip firewall address-list
-add address=138.94.248.0/21 list="GY country" comment="GY"
-add address=168.232.144.0/21 list="GY country" comment="GY"
-add address=179.51.204.0/23 list="GY country" comment="GY"
-add address=181.41.0.0/17 list="GY country" comment="GY"
-add address=181.177.216.0/21 list="GY country" comment="GY"
-add address=181.199.192.0/18 list="GY country" comment="GY"
-add address=190.80.0.0/16 list="GY country" comment="GY"
-add address=190.93.32.0/21 list="GY country" comment="GY"
-add address=190.105.152.0/21 list="GY country" comment="GY"
-add address=190.108.192.0/21 list="GY country" comment="GY"
-add address=190.108.192.0/20 list="GY country" comment="GY"
-add address=190.108.208.0/20 list="GY country" comment="GY"
-add address=190.124.216.0/21 list="GY country" comment="GY"
+add list="GY country" address=138.94.248.0/22 comment="GY"
+add list="GY country" address=168.232.144.0/22 comment="GY"
+add list="GY country" address=179.51.205.0/24 comment="GY"
+add list="GY country" address=181.41.64.0/18 comment="GY"
+add list="GY country" address=181.177.216.0/22 comment="GY"
+add list="GY country" address=181.199.224.0/19 comment="GY"
+add list="GY country" address=190.80.0.0/17 comment="GY"
+add list="GY country" address=190.93.36.0/22 comment="GY"
+add list="GY country" address=190.105.156.0/22 comment="GY"
+add list="GY country" address=190.108.196.0/22 comment="GY"
+add list="GY country" address=190.108.200.0/21 comment="GY"
+add list="GY country" address=190.108.208.0/21 comment="GY"
+add list="GY country" address=190.124.220.0/22 comment="GY"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="GY country" log=yes
+# add action=drop chain=forward src-address-list="GY country" log=yes

@@ -1,14 +1,21 @@
-# Mikrotik RouterOS Country IP Blocks for SR
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for SR
+# Generated at: 2025-06-04 16:20:48 +0200
+# Total CIDR blocks: 11
 
 /ip firewall address-list
-add address=45.68.20.0/22 list="SR country" comment="SR"
-add address=138.186.208.0/21 list="SR country" comment="SR"
-add address=168.121.80.0/21 list="SR country" comment="SR"
-add address=168.195.216.0/21 list="SR country" comment="SR"
-add address=186.179.0.0/16 list="SR country" comment="SR"
-add address=190.98.0.0/16 list="SR country" comment="SR"
-add address=200.1.152.0/21 list="SR country" comment="SR"
-add address=200.1.208.0/20 list="SR country" comment="SR"
-add address=200.2.128.0/18 list="SR country" comment="SR"
-add address=200.7.144.0/21 list="SR country" comment="SR"
+add list="SR country" address=45.68.20.0/23 comment="SR"
+add list="SR country" address=45.68.22.0/24 comment="SR"
+add list="SR country" address=138.186.208.0/22 comment="SR"
+add list="SR country" address=168.121.84.0/22 comment="SR"
+add list="SR country" address=168.195.216.0/22 comment="SR"
+add list="SR country" address=186.179.128.0/17 comment="SR"
+add list="SR country" address=190.98.0.0/17 comment="SR"
+add list="SR country" address=200.1.156.0/22 comment="SR"
+add list="SR country" address=200.1.208.0/21 comment="SR"
+add list="SR country" address=200.2.160.0/19 comment="SR"
+add list="SR country" address=200.7.148.0/22 comment="SR"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="SR country" log=yes
+# add action=drop chain=forward src-address-list="SR country" log=yes

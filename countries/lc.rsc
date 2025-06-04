@@ -1,24 +1,30 @@
-# Mikrotik RouterOS Country IP Blocks for LC
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for LC
+# Generated at: 2025-06-04 16:20:47 +0200
+# Total CIDR blocks: 20
 
 /ip firewall address-list
-add address=23.185.40.0/23 list="LC country" comment="LC"
-add address=24.92.128.0/19 list="LC country" comment="LC"
-add address=66.212.60.0/22 list="LC country" comment="LC"
-add address=72.14.96.0/22 list="LC country" comment="LC"
-add address=104.218.216.0/21 list="LC country" comment="LC"
-add address=104.255.248.0/21 list="LC country" comment="LC"
-add address=162.0.154.0/23 list="LC country" comment="LC"
-add address=162.212.208.0/22 list="LC country" comment="LC"
-add address=162.245.72.0/21 list="LC country" comment="LC"
-add address=192.58.140.0/22 list="LC country" comment="LC"
-add address=192.147.230.0/23 list="LC country" comment="LC"
-add address=199.38.192.0/20 list="LC country" comment="LC"
-add address=199.192.224.0/22 list="LC country" comment="LC"
-add address=199.223.248.0/21 list="LC country" comment="LC"
-add address=204.145.146.0/23 list="LC country" comment="LC"
-add address=204.152.80.0/22 list="LC country" comment="LC"
-add address=205.166.34.0/23 list="LC country" comment="LC"
-add address=206.126.112.0/20 list="LC country" comment="LC"
-add address=207.191.240.0/20 list="LC country" comment="LC"
-add address=208.94.176.0/20 list="LC country" comment="LC"
+add list="LC country" address=23.185.40.0/24 comment="LC"
+add list="LC country" address=24.92.144.0/20 comment="LC"
+add list="LC country" address=66.212.62.0/23 comment="LC"
+add list="LC country" address=72.14.98.0/23 comment="LC"
+add list="LC country" address=104.218.216.0/22 comment="LC"
+add list="LC country" address=104.255.252.0/22 comment="LC"
+add list="LC country" address=162.0.155.0/24 comment="LC"
+add list="LC country" address=162.212.208.0/23 comment="LC"
+add list="LC country" address=162.245.76.0/22 comment="LC"
+add list="LC country" address=192.58.142.0/23 comment="LC"
+add list="LC country" address=192.147.231.0/24 comment="LC"
+add list="LC country" address=199.38.192.0/21 comment="LC"
+add list="LC country" address=199.192.226.0/23 comment="LC"
+add list="LC country" address=199.223.248.0/22 comment="LC"
+add list="LC country" address=204.145.147.0/24 comment="LC"
+add list="LC country" address=204.152.80.0/23 comment="LC"
+add list="LC country" address=205.166.35.0/24 comment="LC"
+add list="LC country" address=206.126.120.0/21 comment="LC"
+add list="LC country" address=207.191.248.0/21 comment="LC"
+add list="LC country" address=208.94.176.0/21 comment="LC"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="LC country" log=yes
+# add action=drop chain=forward src-address-list="LC country" log=yes

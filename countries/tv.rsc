@@ -1,5 +1,11 @@
-# Mikrotik RouterOS Country IP Blocks for TV
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for TV
+# Generated at: 2025-06-04 16:20:48 +0200
+# Total CIDR blocks: 1
 
 /ip firewall address-list
-add address=202.2.64.0/18 list="TV country" comment="TV"
+add list="TV country" address=202.2.96.0/19 comment="TV"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="TV country" log=yes
+# add action=drop chain=forward src-address-list="TV country" log=yes

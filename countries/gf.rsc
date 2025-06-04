@@ -1,10 +1,16 @@
-# Mikrotik RouterOS Country IP Blocks for GF
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for GF
+# Generated at: 2025-06-04 16:20:48 +0200
+# Total CIDR blocks: 6
 
 /ip firewall address-list
-add address=45.169.160.0/21 list="GF country" comment="GF"
-add address=128.201.88.0/21 list="GF country" comment="GF"
-add address=161.22.0.0/17 list="GF country" comment="GF"
-add address=170.233.72.0/21 list="GF country" comment="GF"
-add address=186.2.240.0/21 list="GF country" comment="GF"
-add address=200.13.128.0/20 list="GF country" comment="GF"
+add list="GF country" address=45.169.164.0/22 comment="GF"
+add list="GF country" address=128.201.88.0/22 comment="GF"
+add list="GF country" address=161.22.64.0/18 comment="GF"
+add list="GF country" address=170.233.72.0/22 comment="GF"
+add list="GF country" address=186.2.244.0/22 comment="GF"
+add list="GF country" address=200.13.136.0/21 comment="GF"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="GF country" log=yes
+# add action=drop chain=forward src-address-list="GF country" log=yes

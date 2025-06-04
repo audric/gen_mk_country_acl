@@ -1,16 +1,22 @@
-# Mikrotik RouterOS Country IP Blocks for NE
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for NE
+# Generated at: 2025-06-04 16:20:48 +0200
+# Total CIDR blocks: 12
 
 /ip firewall address-list
-add address=41.78.112.0/21 list="NE country" comment="NE"
-add address=41.138.0.0/18 list="NE country" comment="NE"
-add address=41.203.128.0/18 list="NE country" comment="NE"
-add address=102.213.56.0/21 list="NE country" comment="NE"
-add address=102.213.240.0/21 list="NE country" comment="NE"
-add address=102.214.0.0/21 list="NE country" comment="NE"
-add address=102.215.80.0/21 list="NE country" comment="NE"
-add address=102.217.96.0/21 list="NE country" comment="NE"
-add address=102.220.24.0/21 list="NE country" comment="NE"
-add address=154.66.216.0/21 list="NE country" comment="NE"
-add address=154.127.64.0/19 list="NE country" comment="NE"
-add address=197.214.0.0/17 list="NE country" comment="NE"
+add list="NE country" address=41.78.116.0/22 comment="NE"
+add list="NE country" address=41.138.32.0/19 comment="NE"
+add list="NE country" address=41.203.128.0/19 comment="NE"
+add list="NE country" address=102.213.60.0/22 comment="NE"
+add list="NE country" address=102.213.244.0/22 comment="NE"
+add list="NE country" address=102.214.4.0/22 comment="NE"
+add list="NE country" address=102.215.84.0/22 comment="NE"
+add list="NE country" address=102.217.96.0/22 comment="NE"
+add list="NE country" address=102.220.24.0/22 comment="NE"
+add list="NE country" address=154.66.220.0/22 comment="NE"
+add list="NE country" address=154.127.80.0/20 comment="NE"
+add list="NE country" address=197.214.0.0/18 comment="NE"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="NE country" log=yes
+# add action=drop chain=forward src-address-list="NE country" log=yes

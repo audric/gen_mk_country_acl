@@ -1,8 +1,14 @@
-# Mikrotik RouterOS Country IP Blocks for CF
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for CF
+# Generated at: 2025-06-04 16:20:48 +0200
+# Total CIDR blocks: 4
 
 /ip firewall address-list
-add address=41.78.120.0/21 list="CF country" comment="CF"
-add address=41.223.184.0/21 list="CF country" comment="CF"
-add address=169.239.96.0/21 list="CF country" comment="CF"
-add address=197.242.176.0/20 list="CF country" comment="CF"
+add list="CF country" address=41.78.120.0/22 comment="CF"
+add list="CF country" address=41.223.184.0/22 comment="CF"
+add list="CF country" address=169.239.96.0/22 comment="CF"
+add list="CF country" address=197.242.176.0/21 comment="CF"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="CF country" log=yes
+# add action=drop chain=forward src-address-list="CF country" log=yes

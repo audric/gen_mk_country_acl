@@ -1,15 +1,21 @@
-# Mikrotik RouterOS Country IP Blocks for TO
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for TO
+# Generated at: 2025-06-04 16:20:48 +0200
+# Total CIDR blocks: 11
 
 /ip firewall address-list
-add address=43.255.144.0/21 list="TO country" comment="TO"
-add address=103.54.76.0/22 list="TO country" comment="TO"
-add address=103.124.186.0/23 list="TO country" comment="TO"
-add address=103.134.116.0/22 list="TO country" comment="TO"
-add address=103.154.96.0/22 list="TO country" comment="TO"
-add address=103.239.160.0/21 list="TO country" comment="TO"
-add address=103.242.124.0/22 list="TO country" comment="TO"
-add address=103.245.160.0/21 list="TO country" comment="TO"
-add address=175.176.144.0/20 list="TO country" comment="TO"
-add address=202.43.0.0/20 list="TO country" comment="TO"
-add address=202.134.16.0/20 list="TO country" comment="TO"
+add list="TO country" address=43.255.148.0/22 comment="TO"
+add list="TO country" address=103.54.78.0/23 comment="TO"
+add list="TO country" address=103.124.187.0/24 comment="TO"
+add list="TO country" address=103.134.118.0/23 comment="TO"
+add list="TO country" address=103.154.96.0/23 comment="TO"
+add list="TO country" address=103.239.160.0/22 comment="TO"
+add list="TO country" address=103.242.126.0/23 comment="TO"
+add list="TO country" address=103.245.160.0/22 comment="TO"
+add list="TO country" address=175.176.144.0/21 comment="TO"
+add list="TO country" address=202.43.8.0/21 comment="TO"
+add list="TO country" address=202.134.24.0/21 comment="TO"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="TO country" log=yes
+# add action=drop chain=forward src-address-list="TO country" log=yes

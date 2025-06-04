@@ -1,18 +1,24 @@
-# Mikrotik RouterOS Country IP Blocks for FO
-# Generated on: 2025-06-04 15:39:55 +0200
+# MikroTik RouterOS address list for FO
+# Generated at: 2025-06-04 16:20:48 +0200
+# Total CIDR blocks: 14
 
 /ip firewall address-list
-add address=46.227.112.0/20 list="FO country" comment="FO"
-add address=80.77.128.0/19 list="FO country" comment="FO"
-add address=81.18.224.0/19 list="FO country" comment="FO"
-add address=81.25.160.0/19 list="FO country" comment="FO"
-add address=88.85.0.0/18 list="FO country" comment="FO"
-add address=178.19.192.0/19 list="FO country" comment="FO"
-add address=185.74.208.0/21 list="FO country" comment="FO"
-add address=185.88.224.0/21 list="FO country" comment="FO"
-add address=185.171.168.0/21 list="FO country" comment="FO"
-add address=193.34.104.0/21 list="FO country" comment="FO"
-add address=195.80.32.0/21 list="FO country" comment="FO"
-add address=198.137.136.0/21 list="FO country" comment="FO"
-add address=212.55.0.0/18 list="FO country" comment="FO"
-add address=217.172.64.0/19 list="FO country" comment="FO"
+add list="FO country" address=46.227.112.0/21 comment="FO"
+add list="FO country" address=80.77.128.0/20 comment="FO"
+add list="FO country" address=81.18.224.0/20 comment="FO"
+add list="FO country" address=81.25.176.0/20 comment="FO"
+add list="FO country" address=88.85.32.0/19 comment="FO"
+add list="FO country" address=178.19.192.0/20 comment="FO"
+add list="FO country" address=185.74.208.0/22 comment="FO"
+add list="FO country" address=185.88.228.0/22 comment="FO"
+add list="FO country" address=185.171.172.0/22 comment="FO"
+add list="FO country" address=193.34.104.0/22 comment="FO"
+add list="FO country" address=195.80.36.0/22 comment="FO"
+add list="FO country" address=198.137.136.0/22 comment="FO"
+add list="FO country" address=212.55.32.0/19 comment="FO"
+add list="FO country" address=217.172.80.0/20 comment="FO"
+
+# Usage examples:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="FO country" log=yes
+# add action=drop chain=forward src-address-list="FO country" log=yes
