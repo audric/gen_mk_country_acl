@@ -1,0 +1,27 @@
+# Mikrotik RouterOS Country IP Blocks for GL
+# Generated on: 2025-06-04 15:33:50 +0200
+
+/ip firewall address-list
+add address=37.18.40.0/21 list="GL country" comment="GL"
+add address=37.230.160.0/21 list="GL country" comment="GL"
+add address=37.230.212.0/22 list="GL country" comment="GL"
+add address=37.230.216.0/21 list="GL country" comment="GL"
+add address=46.16.16.0/20 list="GL country" comment="GL"
+add address=46.243.150.0/23 list="GL country" comment="GL"
+add address=88.83.0.0/18 list="GL country" comment="GL"
+add address=128.0.70.0/23 list="GL country" comment="GL"
+add address=178.170.128.0/21 list="GL country" comment="GL"
+add address=178.170.146.0/23 list="GL country" comment="GL"
+add address=178.170.160.0/21 list="GL country" comment="GL"
+add address=178.170.198.0/23 list="GL country" comment="GL"
+add address=178.170.200.0/21 list="GL country" comment="GL"
+add address=178.170.208.0/22 list="GL country" comment="GL"
+add address=178.170.208.0/21 list="GL country" comment="GL"
+add address=178.170.216.0/23 list="GL country" comment="GL"
+add address=185.18.184.0/21 list="GL country" comment="GL"
+add address=185.21.224.0/21 list="GL country" comment="GL"
+add address=185.57.160.0/21 list="GL country" comment="GL"
+add address=185.93.16.0/21 list="GL country" comment="GL"
+add address=185.157.200.0/21 list="GL country" comment="GL"
+add address=188.72.70.0/23 list="GL country" comment="GL"
+add address=194.177.192.0/18 list="GL country" comment="GL"

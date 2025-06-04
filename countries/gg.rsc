@@ -1,0 +1,27 @@
+# Mikrotik RouterOS Country IP Blocks for GG
+# Generated on: 2025-06-04 15:33:50 +0200
+
+/ip firewall address-list
+add address=45.11.144.0/21 list="GG country" comment="GG"
+add address=45.135.248.0/21 list="GG country" comment="GG"
+add address=46.31.240.0/20 list="GG country" comment="GG"
+add address=46.235.128.0/20 list="GG country" comment="GG"
+add address=78.41.0.0/20 list="GG country" comment="GG"
+add address=92.43.208.0/20 list="GG country" comment="GG"
+add address=93.187.0.0/20 list="GG country" comment="GG"
+add address=93.189.160.0/20 list="GG country" comment="GG"
+add address=94.247.84.0/22 list="GG country" comment="GG"
+add address=185.31.216.0/21 list="GG country" comment="GG"
+add address=185.37.72.0/21 list="GG country" comment="GG"
+add address=185.85.252.0/23 list="GG country" comment="GG"
+add address=185.104.200.0/21 list="GG country" comment="GG"
+add address=185.110.32.0/21 list="GG country" comment="GG"
+add address=185.143.248.0/21 list="GG country" comment="GG"
+add address=185.159.16.0/21 list="GG country" comment="GG"
+add address=185.201.0.0/21 list="GG country" comment="GG"
+add address=193.104.140.0/23 list="GG country" comment="GG"
+add address=193.169.204.0/22 list="GG country" comment="GG"
+add address=194.9.0.0/22 list="GG country" comment="GG"
+add address=194.116.244.0/22 list="GG country" comment="GG"
+add address=194.145.126.0/23 list="GG country" comment="GG"
+add address=195.226.128.0/18 list="GG country" comment="GG"

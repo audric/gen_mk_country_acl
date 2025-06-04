@@ -13,7 +13,16 @@
 - lacnic	ftp://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-latest
 - ripencc	ftp://ftp.ripe.net/ripe/stats/delegated-ripencc-latest
 
-# Enhanced gen_mk_country_acl
+## Features
+
+- Downloads IP block data from official NIC sources
+- Supports both FTP and HTTPS protocols
+- Flattens adjoining CIDR blocks to reduce the number of firewall rules (up to 80-90% reduction in some cases)
+- Uses an optimized algorithm for extremely fast CIDR flattening
+- Optional parallel processing for even faster performance
+- Caching system for rapid subsequent runs
+- Export options for individual country files in various formats
+- Generates Mikrotik RouterOS scripts (.rsc files) for easy import# Enhanced gen_mk_country_acl
 
 This is an enhanced version of the [gen_mk_country_acl](https://github.com/audric/gen_mk_country_acl) script with added CIDR block flattening capability. The script downloads IP address blocks from various Network Information Centers (NICs) and generates Mikrotik RouterOS scripts for creating address lists for each country.
 
@@ -42,6 +51,13 @@ This is an enhanced version of the [gen_mk_country_acl](https://github.com/audri
 --debug                          Enable debug output for errors
 -v, --verbose                    Enable verbose output
 -p, --parallel                   Enable parallel processing (requires 'parallel' gem)
+--batch-size SIZE                Batch size for parallel processing (default: 20)
+-c, --cache                      Enable caching to speed up subsequent runs
+--cache-dir DIR                  Directory to store cache files (default: .cache)
+--cache-ttl SECONDS              Cache time-to-live in seconds (default: 86400 = 1 day)
+-f, --force                      Force rebuild, ignoring cache
+--countries                      Generate individual files for each country in the countries/ subdirectory
+--country-format FORMAT          Format for country files: json, plain, csv, or mikrotik (default: json)
 --custom-source NIC,URL          Specify a custom source (can be used multiple times)
 ```
 
@@ -72,14 +88,24 @@ Use a custom source:
 ./gen_mk_country_acl_with_flattening.rb --custom-source arin,https://example.com/path/to/arin-data
 ```
 
-With parallel processing for faster CIDR flattening:
+To use caching for faster subsequent runs:
 ```bash
-./gen_mk_country_acl_with_flattening.rb -p
+./gen_mk_country_acl_with_flattening.rb -c
+```
+
+To generate individual country files:
+```bash
+./gen_mk_country_acl_with_flattening.rb --countries
+```
+
+To specify a different format for country files:
+```bash
+./gen_mk_country_acl_with_flattening.rb --countries --country-format=plain
 ```
 
 To combine multiple options:
 ```bash
-./gen_mk_country_acl_with_flattening.rb --https -p -v -o /path/to/output
+./gen_mk_country_acl_with_flattening.rb --https -p -v -c -o /path/to/output --countries
 ```
 
 ## Importing to Mikrotik RouterOS
@@ -136,7 +162,15 @@ The script includes several optimizations to make CIDR flattening much faster:
 
 4. **Memory Efficiency**: The new algorithm is much more memory-efficient, avoiding the repeated object creation that slowed down the original algorithm.
 
+5. **Caching System**: The `-c/--cache` option enables caching of downloaded data and processed country blocks for fast subsequent runs.
+
 The result is CIDR flattening that completes in seconds instead of hours for large datasets.
+
+## Requirements
+
+- Ruby (tested with 2.5+)
+- Standard Ruby libraries: net/ftp, ipaddr, uri, open-uri, tempfile, optparse, json, fileutils, digest
+- Optional: parallel gem for multi-threading support
 
 ## Installation
 

@@ -1,0 +1,27 @@
+# Mikrotik RouterOS Country IP Blocks for CV
+# Generated on: 2025-06-04 15:33:50 +0200
+
+/ip firewall address-list
+add address=41.74.128.0/19 list="CV country" comment="CV"
+add address=41.79.120.0/21 list="CV country" comment="CV"
+add address=41.215.192.0/19 list="CV country" comment="CV"
+add address=41.221.192.0/19 list="CV country" comment="CV"
+add address=102.69.150.0/23 list="CV country" comment="CV"
+add address=102.207.152.0/21 list="CV country" comment="CV"
+add address=102.209.48.0/21 list="CV country" comment="CV"
+add address=102.209.160.0/21 list="CV country" comment="CV"
+add address=102.211.8.0/21 list="CV country" comment="CV"
+add address=102.212.80.0/23 list="CV country" comment="CV"
+add address=102.212.174.0/23 list="CV country" comment="CV"
+add address=102.213.200.0/21 list="CV country" comment="CV"
+add address=102.214.188.0/23 list="CV country" comment="CV"
+add address=102.216.132.0/23 list="CV country" comment="CV"
+add address=102.219.84.0/22 list="CV country" comment="CV"
+add address=102.220.160.0/21 list="CV country" comment="CV"
+add address=102.222.136.0/21 list="CV country" comment="CV"
+add address=165.90.64.0/18 list="CV country" comment="CV"
+add address=169.239.8.0/21 list="CV country" comment="CV"
+add address=196.49.96.0/23 list="CV country" comment="CV"
+add address=196.60.112.0/23 list="CV country" comment="CV"
+add address=197.255.128.0/19 list="CV country" comment="CV"
+add address=213.150.192.0/20 list="CV country" comment="CV"

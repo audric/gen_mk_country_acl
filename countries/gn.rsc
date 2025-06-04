@@ -1,0 +1,27 @@
+# Mikrotik RouterOS Country IP Blocks for GN
+# Generated on: 2025-06-04 15:33:50 +0200
+
+/ip firewall address-list
+add address=41.77.176.0/20 list="GN country" comment="GN"
+add address=41.79.200.0/21 list="GN country" comment="GN"
+add address=41.79.232.0/21 list="GN country" comment="GN"
+add address=41.191.216.0/21 list="GN country" comment="GN"
+add address=41.223.48.0/21 list="GN country" comment="GN"
+add address=41.242.88.0/21 list="GN country" comment="GN"
+add address=45.220.48.0/21 list="GN country" comment="GN"
+add address=102.176.160.0/19 list="GN country" comment="GN"
+add address=102.206.72.0/21 list="GN country" comment="GN"
+add address=102.208.222.0/23 list="GN country" comment="GN"
+add address=102.208.240.0/23 list="GN country" comment="GN"
+add address=102.209.200.0/21 list="GN country" comment="GN"
+add address=102.211.198.0/23 list="GN country" comment="GN"
+add address=102.218.128.0/23 list="GN country" comment="GN"
+add address=102.218.136.0/21 list="GN country" comment="GN"
+add address=102.218.232.0/21 list="GN country" comment="GN"
+add address=160.119.128.0/20 list="GN country" comment="GN"
+add address=196.41.90.0/23 list="GN country" comment="GN"
+add address=196.49.40.0/23 list="GN country" comment="GN"
+add address=196.49.64.0/23 list="GN country" comment="GN"
+add address=196.60.38.0/23 list="GN country" comment="GN"
+add address=196.60.60.0/23 list="GN country" comment="GN"
+add address=197.149.128.0/17 list="GN country" comment="GN"

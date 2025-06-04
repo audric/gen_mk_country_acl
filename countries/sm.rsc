@@ -1,0 +1,26 @@
+# Mikrotik RouterOS Country IP Blocks for SM
+# Generated on: 2025-06-04 15:33:50 +0200
+
+/ip firewall address-list
+add address=5.183.162.0/23 list="SM country" comment="SM"
+add address=31.193.32.0/20 list="SM country" comment="SM"
+add address=45.65.80.0/21 list="SM country" comment="SM"
+add address=77.242.192.0/19 list="SM country" comment="SM"
+add address=89.186.0.0/18 list="SM country" comment="SM"
+add address=91.223.220.0/23 list="SM country" comment="SM"
+add address=91.234.214.0/23 list="SM country" comment="SM"
+add address=94.232.112.0/20 list="SM country" comment="SM"
+add address=109.233.80.0/20 list="SM country" comment="SM"
+add address=109.235.96.0/20 list="SM country" comment="SM"
+add address=185.21.112.0/21 list="SM country" comment="SM"
+add address=185.21.132.0/23 list="SM country" comment="SM"
+add address=185.45.40.0/21 list="SM country" comment="SM"
+add address=185.45.64.0/21 list="SM country" comment="SM"
+add address=185.62.32.0/21 list="SM country" comment="SM"
+add address=185.86.56.0/21 list="SM country" comment="SM"
+add address=185.125.240.0/23 list="SM country" comment="SM"
+add address=185.146.128.0/21 list="SM country" comment="SM"
+add address=185.168.168.0/21 list="SM country" comment="SM"
+add address=192.145.48.0/21 list="SM country" comment="SM"
+add address=194.0.26.0/23 list="SM country" comment="SM"
+add address=194.183.64.0/18 list="SM country" comment="SM"

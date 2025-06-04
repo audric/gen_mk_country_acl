@@ -1,0 +1,28 @@
+# Mikrotik RouterOS Country IP Blocks for GA
+# Generated on: 2025-06-04 15:33:50 +0200
+
+/ip firewall address-list
+add address=41.78.240.0/21 list="GA country" comment="GA"
+add address=41.156.0.0/14 list="GA country" comment="GA"
+add address=41.211.128.0/17 list="GA country" comment="GA"
+add address=102.129.32.0/21 list="GA country" comment="GA"
+add address=102.134.24.0/21 list="GA country" comment="GA"
+add address=102.142.0.0/15 list="GA country" comment="GA"
+add address=102.164.120.0/21 list="GA country" comment="GA"
+add address=154.0.0.0/18 list="GA country" comment="GA"
+add address=154.0.160.0/19 list="GA country" comment="GA"
+add address=154.112.0.0/15 list="GA country" comment="GA"
+add address=154.116.0.0/16 list="GA country" comment="GA"
+add address=154.119.192.0/18 list="GA country" comment="GA"
+add address=160.119.128.0/18 list="GA country" comment="GA"
+add address=169.159.0.0/17 list="GA country" comment="GA"
+add address=169.239.144.0/21 list="GA country" comment="GA"
+add address=169.255.144.0/21 list="GA country" comment="GA"
+add address=192.188.160.0/21 list="GA country" comment="GA"
+add address=192.189.136.0/22 list="GA country" comment="GA"
+add address=196.49.16.0/23 list="GA country" comment="GA"
+add address=196.50.32.0/22 list="GA country" comment="GA"
+add address=196.223.38.0/23 list="GA country" comment="GA"
+add address=197.231.0.0/17 list="GA country" comment="GA"
+add address=197.242.0.0/18 list="GA country" comment="GA"
+add address=217.77.64.0/19 list="GA country" comment="GA"

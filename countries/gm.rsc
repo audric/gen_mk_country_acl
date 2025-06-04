@@ -1,0 +1,27 @@
+# Mikrotik RouterOS Country IP Blocks for GM
+# Generated on: 2025-06-04 15:33:50 +0200
+
+/ip firewall address-list
+add address=41.76.0.0/20 list="GM country" comment="GM"
+add address=41.223.208.0/21 list="GM country" comment="GM"
+add address=102.69.160.0/21 list="GM country" comment="GM"
+add address=102.140.128.0/18 list="GM country" comment="GM"
+add address=102.206.88.0/21 list="GM country" comment="GM"
+add address=102.211.8.0/21 list="GM country" comment="GM"
+add address=102.211.240.0/21 list="GM country" comment="GM"
+add address=102.213.216.0/21 list="GM country" comment="GM"
+add address=102.216.248.0/21 list="GM country" comment="GM"
+add address=102.221.64.0/21 list="GM country" comment="GM"
+add address=146.196.0.0/16 list="GM country" comment="GM"
+add address=155.250.0.0/15 list="GM country" comment="GM"
+add address=160.180.0.0/14 list="GM country" comment="GM"
+add address=196.46.224.0/20 list="GM country" comment="GM"
+add address=196.49.0.0/23 list="GM country" comment="GM"
+add address=196.223.34.0/23 list="GM country" comment="GM"
+add address=196.223.144.0/20 list="GM country" comment="GM"
+add address=197.148.64.0/20 list="GM country" comment="GM"
+add address=197.231.128.0/20 list="GM country" comment="GM"
+add address=197.231.200.0/21 list="GM country" comment="GM"
+add address=197.242.128.0/19 list="GM country" comment="GM"
+add address=197.255.192.0/19 list="GM country" comment="GM"
+add address=212.60.64.0/18 list="GM country" comment="GM"

@@ -1,0 +1,25 @@
+# Mikrotik RouterOS Country IP Blocks for AD
+# Generated on: 2025-06-04 15:33:50 +0200
+
+/ip firewall address-list
+add address=46.172.192.0/18 list="AD country" comment="AD"
+add address=46.175.152.0/21 list="AD country" comment="AD"
+add address=80.80.80.0/21 list="AD country" comment="AD"
+add address=80.80.88.0/21 list="AD country" comment="AD"
+add address=85.94.128.0/18 list="AD country" comment="AD"
+add address=89.150.0.0/22 list="AD country" comment="AD"
+add address=89.150.0.0/21 list="AD country" comment="AD"
+add address=89.150.0.0/20 list="AD country" comment="AD"
+add address=91.187.64.0/18 list="AD country" comment="AD"
+add address=94.125.136.0/22 list="AD country" comment="AD"
+add address=94.125.140.0/22 list="AD country" comment="AD"
+add address=109.111.64.0/18 list="AD country" comment="AD"
+add address=185.4.48.0/21 list="AD country" comment="AD"
+add address=185.33.0.0/21 list="AD country" comment="AD"
+add address=185.87.32.0/21 list="AD country" comment="AD"
+add address=185.87.32.0/20 list="AD country" comment="AD"
+add address=185.132.200.0/21 list="AD country" comment="AD"
+add address=185.194.56.0/21 list="AD country" comment="AD"
+add address=185.247.24.0/21 list="AD country" comment="AD"
+add address=188.241.24.0/22 list="AD country" comment="AD"
+add address=194.158.64.0/18 list="AD country" comment="AD"

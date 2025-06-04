@@ -1,6 +1,6 @@
 # Mikrotik RouterOS Country IP Blocks
 # Source: ftp://ftp.apnic.net/pub/stats/apnic/delegated-apnic-latest
-# Generated on: 2025-06-04 15:14:05 +0200
+# Generated on: 2025-06-04 15:33:49 +0200
 # IP blocks have been flattened where possible
 
 # Country: 

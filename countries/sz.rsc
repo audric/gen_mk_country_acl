@@ -1,0 +1,28 @@
+# Mikrotik RouterOS Country IP Blocks for SZ
+# Generated on: 2025-06-04 15:33:50 +0200
+
+/ip firewall address-list
+add address=41.77.224.0/20 list="SZ country" comment="SZ"
+add address=41.84.192.0/18 list="SZ country" comment="SZ"
+add address=41.204.0.0/18 list="SZ country" comment="SZ"
+add address=41.211.0.0/18 list="SZ country" comment="SZ"
+add address=41.215.128.0/19 list="SZ country" comment="SZ"
+add address=69.63.64.0/19 list="SZ country" comment="SZ"
+add address=102.23.128.0/21 list="SZ country" comment="SZ"
+add address=102.36.180.0/23 list="SZ country" comment="SZ"
+add address=102.67.144.0/21 list="SZ country" comment="SZ"
+add address=102.68.48.0/21 list="SZ country" comment="SZ"
+add address=102.209.176.0/21 list="SZ country" comment="SZ"
+add address=102.212.200.0/21 list="SZ country" comment="SZ"
+add address=102.212.228.0/23 list="SZ country" comment="SZ"
+add address=102.214.160.0/21 list="SZ country" comment="SZ"
+add address=102.215.24.0/21 list="SZ country" comment="SZ"
+add address=102.215.98.0/23 list="SZ country" comment="SZ"
+add address=102.222.128.0/21 list="SZ country" comment="SZ"
+add address=154.119.64.0/18 list="SZ country" comment="SZ"
+add address=165.73.128.0/21 list="SZ country" comment="SZ"
+add address=196.11.124.0/23 list="SZ country" comment="SZ"
+add address=196.13.168.0/23 list="SZ country" comment="SZ"
+add address=196.28.6.0/23 list="SZ country" comment="SZ"
+add address=196.49.4.0/23 list="SZ country" comment="SZ"
+add address=196.223.36.0/23 list="SZ country" comment="SZ"

@@ -1,0 +1,27 @@
+# Mikrotik RouterOS Country IP Blocks for RE
+# Generated on: 2025-06-04 15:33:50 +0200
+
+/ip firewall address-list
+add address=5.57.64.0/18 list="RE country" comment="RE"
+add address=41.213.0.0/16 list="RE country" comment="RE"
+add address=41.242.120.0/21 list="RE country" comment="RE"
+add address=62.61.128.0/17 list="RE country" comment="RE"
+add address=78.108.224.0/19 list="RE country" comment="RE"
+add address=80.69.192.0/19 list="RE country" comment="RE"
+add address=102.34.0.0/15 list="RE country" comment="RE"
+add address=102.135.224.0/19 list="RE country" comment="RE"
+add address=102.213.8.0/21 list="RE country" comment="RE"
+add address=109.122.128.0/17 list="RE country" comment="RE"
+add address=129.122.0.0/17 list="RE country" comment="RE"
+add address=139.26.0.0/15 list="RE country" comment="RE"
+add address=154.66.0.0/15 list="RE country" comment="RE"
+add address=164.160.64.0/21 list="RE country" comment="RE"
+add address=164.160.224.0/19 list="RE country" comment="RE"
+add address=165.90.128.0/17 list="RE country" comment="RE"
+add address=165.168.0.0/15 list="RE country" comment="RE"
+add address=168.253.128.0/17 list="RE country" comment="RE"
+add address=185.147.224.0/21 list="RE country" comment="RE"
+add address=185.161.8.0/21 list="RE country" comment="RE"
+add address=185.165.32.0/21 list="RE country" comment="RE"
+add address=193.56.202.0/23 list="RE country" comment="RE"
+add address=213.55.0.0/17 list="RE country" comment="RE"

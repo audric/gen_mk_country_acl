@@ -1,0 +1,26 @@
+# Mikrotik RouterOS Country IP Blocks for MC
+# Generated on: 2025-06-04 15:33:50 +0200
+
+/ip firewall address-list
+add address=37.44.224.0/21 list="MC country" comment="MC"
+add address=80.94.96.0/19 list="MC country" comment="MC"
+add address=82.113.0.0/18 list="MC country" comment="MC"
+add address=87.238.96.0/20 list="MC country" comment="MC"
+add address=87.254.192.0/18 list="MC country" comment="MC"
+add address=88.209.0.0/17 list="MC country" comment="MC"
+add address=91.199.108.0/23 list="MC country" comment="MC"
+add address=91.213.192.0/23 list="MC country" comment="MC"
+add address=91.230.188.0/23 list="MC country" comment="MC"
+add address=176.114.96.0/19 list="MC country" comment="MC"
+add address=176.121.48.0/21 list="MC country" comment="MC"
+add address=185.47.112.0/21 list="MC country" comment="MC"
+add address=185.162.120.0/21 list="MC country" comment="MC"
+add address=185.193.104.0/21 list="MC country" comment="MC"
+add address=185.243.2.0/23 list="MC country" comment="MC"
+add address=185.250.0.0/21 list="MC country" comment="MC"
+add address=188.191.128.0/20 list="MC country" comment="MC"
+add address=193.34.228.0/22 list="MC country" comment="MC"
+add address=193.35.0.0/22 list="MC country" comment="MC"
+add address=195.20.192.0/22 list="MC country" comment="MC"
+add address=195.78.0.0/18 list="MC country" comment="MC"
+add address=213.133.64.0/20 list="MC country" comment="MC"

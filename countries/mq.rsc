@@ -1,0 +1,25 @@
+# Mikrotik RouterOS Country IP Blocks for MQ
+# Generated on: 2025-06-04 15:33:50 +0200
+
+/ip firewall address-list
+add address=5.102.64.0/20 list="MQ country" comment="MQ"
+add address=80.243.224.0/19 list="MQ country" comment="MQ"
+add address=82.197.64.0/18 list="MQ country" comment="MQ"
+add address=89.16.0.0/18 list="MQ country" comment="MQ"
+add address=92.49.0.0/17 list="MQ country" comment="MQ"
+add address=93.176.0.0/17 list="MQ country" comment="MQ"
+add address=94.124.144.0/20 list="MQ country" comment="MQ"
+add address=94.124.208.0/20 list="MQ country" comment="MQ"
+add address=94.198.176.0/20 list="MQ country" comment="MQ"
+add address=104.245.112.0/20 list="MQ country" comment="MQ"
+add address=104.249.190.0/23 list="MQ country" comment="MQ"
+add address=109.62.0.0/16 list="MQ country" comment="MQ"
+add address=109.203.192.0/18 list="MQ country" comment="MQ"
+add address=185.13.216.0/21 list="MQ country" comment="MQ"
+add address=185.14.98.0/23 list="MQ country" comment="MQ"
+add address=185.21.208.0/21 list="MQ country" comment="MQ"
+add address=185.60.232.0/21 list="MQ country" comment="MQ"
+add address=185.91.232.0/21 list="MQ country" comment="MQ"
+add address=188.115.0.0/17 list="MQ country" comment="MQ"
+add address=192.163.24.0/21 list="MQ country" comment="MQ"
+add address=217.175.128.0/18 list="MQ country" comment="MQ"

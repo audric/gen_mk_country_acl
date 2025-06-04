@@ -1,0 +1,28 @@
+# Mikrotik RouterOS Country IP Blocks for VI
+# Generated on: 2025-06-04 15:33:50 +0200
+
+/ip firewall address-list
+add address=23.143.120.0/23 list="VI country" comment="VI"
+add address=23.177.184.0/22 list="VI country" comment="VI"
+add address=66.59.216.0/23 list="VI country" comment="VI"
+add address=66.185.32.0/19 list="VI country" comment="VI"
+add address=66.248.128.0/18 list="VI country" comment="VI"
+add address=67.211.224.0/19 list="VI country" comment="VI"
+add address=98.142.160.0/19 list="VI country" comment="VI"
+add address=104.192.176.0/20 list="VI country" comment="VI"
+add address=132.147.224.0/19 list="VI country" comment="VI"
+add address=136.143.194.0/23 list="VI country" comment="VI"
+add address=142.147.100.0/22 list="VI country" comment="VI"
+add address=146.226.0.0/15 list="VI country" comment="VI"
+add address=162.247.16.0/20 list="VI country" comment="VI"
+add address=162.253.168.0/21 list="VI country" comment="VI"
+add address=172.84.128.0/17 list="VI country" comment="VI"
+add address=172.102.224.0/21 list="VI country" comment="VI"
+add address=192.65.170.0/23 list="VI country" comment="VI"
+add address=192.81.72.0/22 list="VI country" comment="VI"
+add address=192.102.82.0/23 list="VI country" comment="VI"
+add address=198.36.24.0/21 list="VI country" comment="VI"
+add address=204.8.64.0/21 list="VI country" comment="VI"
+add address=204.11.144.0/20 list="VI country" comment="VI"
+add address=208.84.192.0/20 list="VI country" comment="VI"
+add address=209.221.192.0/18 list="VI country" comment="VI"
