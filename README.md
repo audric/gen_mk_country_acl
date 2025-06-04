@@ -41,5 +41,4 @@ mk_fw> add action=drop chain=forward src-address-list="ZZ country" log=yes
 - ripencc	ftp://ftp.ripe.net/ripe/stats/delegated-ripencc-latest
 
 ## To do
-- flatten adjoining CIDR blocks where possible
 - maybe think some sort of postprocessor for (iptables, cisco...)
