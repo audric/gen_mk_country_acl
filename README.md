@@ -13,7 +13,7 @@
 
 ## Usage:
 ```
-bashruby gen_mk_country_acl.rb
+ruby gen_mk_country_acl.rb
 ```
 
 ```
