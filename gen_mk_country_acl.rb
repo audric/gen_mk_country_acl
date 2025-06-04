@@ -5,12 +5,14 @@
 require 'net/ftp'
 require 'ipaddr'
 require 'uri'
-require 'open-uri'
 require 'tempfile'
+require 'open-uri'
+require 'optparse'
 
 # Constants for NIC sources
+# These can be either FTP or HTTPS URLs
 SOURCES = {
-  'arin' => 'ftp://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest',
+  'arin' => 'https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest',
   'afrinic' => 'ftp://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-latest',
   'apnic' => 'ftp://ftp.apnic.net/pub/stats/apnic/delegated-apnic-latest',
   'lacnic' => 'ftp://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-latest',
@@ -135,31 +137,42 @@ end
 class IPBlockProcessor
   attr_reader :country_blocks
 
-  def initialize
+  def initialize(options = {})
     @country_blocks = {}  # Hash to store country => [ip_blocks]
+    @options = {
+      output_dir: '.',
+      skip_flattening: false
+    }.merge(options)
   end
 
-  # Downloads data from a URL (FTP or HTTP)
+  # Downloads data from a URL (FTP or HTTP/HTTPS)
   def download_data(url)
     uri = URI.parse(url)
     data = nil
 
-    case uri.scheme
-    when 'ftp'
-      temp_file = Tempfile.new('ip_data')
-      
-      Net::FTP.open(uri.host) do |ftp|
-        ftp.login
-        ftp.getbinaryfile(uri.path, temp_file.path)
+    begin
+      case uri.scheme.downcase
+      when 'ftp'
+        puts "  Using FTP protocol for #{url}"
+        temp_file = Tempfile.new('ip_data')
+        
+        Net::FTP.open(uri.host) do |ftp|
+          ftp.login
+          ftp.getbinaryfile(uri.path, temp_file.path)
+        end
+        
+        data = File.read(temp_file.path)
+        temp_file.close
+        temp_file.unlink
+      when 'http', 'https'
+        puts "  Using HTTP/HTTPS protocol for #{url}"
+        require 'open-uri'
+        data = URI.open(url).read
+      else
+        raise "Unsupported protocol: #{uri.scheme} for URL: #{url}"
       end
-      
-      data = File.read(temp_file.path)
-      temp_file.close
-      temp_file.unlink
-    when 'http', 'https'
-      data = URI.open(url).read
-    else
-      raise "Unsupported protocol: #{uri.scheme}"
+    rescue => e
+      raise "Error downloading from #{url}: #{e.message}"
     end
 
     data
@@ -205,9 +218,16 @@ class IPBlockProcessor
       begin
         data = download_data(url)
         parse_delegated_data(data, nic)
+        puts "  Successfully processed #{nic} data" if @options[:verbose]
       rescue => e
         puts "Error processing #{nic}: #{e.message}"
+        puts "  #{e.backtrace.join("\n  ")}" if @options[:debug]
       end
+    end
+    
+    if @country_blocks.empty?
+      puts "Warning: No IP blocks were found. Check your sources and network connection."
+      exit 1
     end
     
     # Flatten the IP blocks for each country
@@ -216,6 +236,8 @@ class IPBlockProcessor
 
   # Flattens IP blocks for all countries
   def flatten_country_blocks
+    return if @options[:skip_flattening]
+    
     puts "Flattening IP blocks for all countries..."
     total_original = 0
     total_flattened = 0
@@ -241,14 +263,16 @@ class IPBlockProcessor
   # Generates Mikrotik RouterOS script files for each NIC
   def generate_mikrotik_scripts
     SOURCES.keys.each do |nic|
-      filename = "mk_#{nic}.rsc"
+      filename = File.join(@options[:output_dir], "mk_#{nic}.rsc")
       puts "Generating #{filename}..."
       
       File.open(filename, 'w') do |file|
         file.puts "# Mikrotik RouterOS Country IP Blocks"
         file.puts "# Source: #{SOURCES[nic]}"
         file.puts "# Generated on: #{Time.now}"
-        file.puts "# IP blocks have been flattened where possible"
+        if !@options[:skip_flattening]
+          file.puts "# IP blocks have been flattened where possible"
+        end
         file.puts ""
         
         # Find all countries for this NIC
@@ -280,9 +304,82 @@ end
 
 # Main execution
 if __FILE__ == $0
-  processor = IPBlockProcessor.new
+  # Parse command-line options
+  options = {
+    use_https: false,
+    output_dir: '.',
+    skip_flattening: false,
+    debug: false,
+    verbose: false
+  }
+  
+  option_parser = OptionParser.new do |opts|
+    opts.banner = "Usage: #{$0} [options]"
+    
+    opts.on('-h', '--help', 'Show this help message') do
+      puts opts
+      exit
+    end
+    
+    opts.on('--https', 'Use HTTPS instead of FTP for downloading data') do
+      options[:use_https] = true
+    end
+    
+    opts.on('-o', '--output-dir DIRECTORY', 'Directory to store output files') do |dir|
+      options[:output_dir] = dir
+    end
+    
+    opts.on('--skip-flattening', 'Skip the CIDR block flattening step') do
+      options[:skip_flattening] = true
+    end
+    
+    opts.on('--debug', 'Enable debug output for errors') do
+      options[:debug] = true
+    end
+    
+    opts.on('-v', '--verbose', 'Enable verbose output') do
+      options[:verbose] = true
+    end
+    
+    opts.on('--custom-source NIC,URL', Array, 'Specify a custom source (can be used multiple times)') do |nic_url|
+      if nic_url.length == 2
+        nic, url = nic_url
+        SOURCES[nic] = url
+      else
+        puts "Error: --custom-source requires NIC,URL format"
+        puts opts
+        exit 1
+      end
+    end
+  end
+  
+  option_parser.parse!
+  
+  # Convert FTP URLs to HTTPS if requested
+  if options[:use_https]
+    puts "Converting FTP URLs to HTTPS..."
+    SOURCES.keys.each do |nic|
+      if SOURCES[nic].start_with?('ftp://')
+        SOURCES[nic] = SOURCES[nic].gsub('ftp://', 'https://')
+        puts "  Converted #{nic} source to #{SOURCES[nic]}"
+      end
+    end
+  end
+  
+  # Print all sources if verbose
+  if options[:verbose]
+    puts "Using the following sources:"
+    SOURCES.each do |nic, url|
+      puts "  #{nic}: #{url}"
+    end
+  end
+  
+  # Create output directory if it doesn't exist
+  Dir.mkdir(options[:output_dir]) unless Dir.exist?(options[:output_dir])
+  
+  processor = IPBlockProcessor.new(options)
   processor.process_all_sources
   processor.generate_mikrotik_scripts
   
-  puts "All done! Mikrotik RouterOS scripts have been generated."
+  puts "All done! Mikrotik RouterOS scripts have been generated in #{options[:output_dir]}."
 end
