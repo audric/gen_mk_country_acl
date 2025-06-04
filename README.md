@@ -25,6 +25,32 @@
 - Export options for individual country files in various formats
 - Generates Mikrotik RouterOS scripts (.rsc files) for easy import
 
+## Usage:
+```
+bashruby gen_mk_country_acl.rb
+```
+
+```
+Directory Structure After Running:
+├── gen_mk_country_acl.rb
+├── nic_downloads/                    # Original NIC files (preserved)
+│   ├── arin_delegated.txt
+│   ├── afrinic_delegated.txt
+│   ├── apnic_delegated.txt
+│   ├── lacnic_delegated.txt
+│   └── ripencc_delegated.txt
+├── combined_delegations.txt          # All data combined
+├── combined_delegations_optimized.txt # Optimized CIDR blocks
+└── countries/                        # Country-specific .rsc files
+    ├── us.rsc
+    ├── cn.rsc
+    ├── de.rsc
+    ├── _summary.txt
+    └── ... (one file per country)
+```
+
+The script now provides significant CIDR optimization, reducing the number of blocks substantially while maintaining complete coverage. The optimization typically achieves 20-50% reduction in block count depending on the country's IP allocation patterns.
+
 ## Importing to Mikrotik RouterOS
 
 After generating the .rsc files, transfer them to your Mikrotik router and import them:
@@ -61,58 +87,6 @@ Can be merged into:
 This reduction can be substantial for countries with many IP blocks.
 
 
-1. Preserves Original NIC Files
-
-Downloads all NIC files to a nic_downloads/ directory
-Keeps these files permanently (with smart caching to avoid re-downloading within 24 hours)
-Files are clearly named (e.g., arin_delegated.txt, apnic_delegated.txt)
-
-2. Combines All Files
-
-Creates a combined_delegations.txt file that merges all NIC data
-Includes headers showing sources and generation time
-Preserves the original data format for reference
-
-3. Flattens/Optimizes CIDR Blocks
-
-Advanced CIDR optimization: Converts IP count allocations to proper CIDR blocks
-Merges overlapping and adjacent ranges: Significantly reduces the number of blocks
-Creates optimized file: combined_delegations_optimized.txt with consolidated data
-Shows optimization statistics: Reports reduction percentages per country
-
-4. Generates Country-Specific .rsc Files
-
-Only processes the optimized data for final extraction
-Creates individual .rsc files for each country in the countries/ directory
-Files are properly formatted for MikroTik RouterOS with usage examples
-
-## Usage:
-```
-bashruby gen_mk_country_acl.rb
-```
-
-```
-Directory Structure After Running:
-├── gen_mk_country_acl.rb
-├── nic_downloads/                    # Original NIC files (preserved)
-│   ├── arin_delegated.txt
-│   ├── afrinic_delegated.txt
-│   ├── apnic_delegated.txt
-│   ├── lacnic_delegated.txt
-│   └── ripencc_delegated.txt
-├── combined_delegations.txt          # All data combined
-├── combined_delegations_optimized.txt # Optimized CIDR blocks
-└── countries/                        # Country-specific .rsc files
-    ├── us.rsc
-    ├── cn.rsc
-    ├── de.rsc
-    ├── _summary.txt
-    └── ... (one file per country)
-```
-
-The script now provides significant CIDR optimization, reducing the number of blocks substantially while maintaining complete coverage. The optimization typically achieves 20-50% reduction in block count depending on the country's IP allocation patterns.
-
 ## Notes
-
 - NIC data can contain IP blocks from countries that do not belong to the NIC anymore
 - Use caution when blocking countries in production environments
