@@ -2,10 +2,9 @@
 # Generate Mikrotik RouterOS script to add country ip blocks address lists
 
 ## Things to keep in mind
-- acting on ip supposely from a country maybe stupid
-- NIC data can contain IP blocks from countries that do not belong to the NIC anymore
+- Acting on ip supposely from a country maybe stupid/useless
 - Use caution when blocking countries in production environments
-  
+
 ## Sources:
 - arin	https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest
 - afrinic	ftp://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-latest
@@ -85,8 +84,3 @@ Can be merged into:
 ```
 
 This reduction can be substantial for countries with many IP blocks.
-
-
-## Notes
-- NIC data can contain IP blocks from countries that do not belong to the NIC anymore
-- Use caution when blocking countries in production environments
