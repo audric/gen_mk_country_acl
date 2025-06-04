@@ -1,17 +1,6 @@
 
 # Generate Mikrotik RouterOS script to add country ip blocks address lists
 
-## Things to keep in mind
-- Acting on ip supposely from a country maybe stupid/useless
-- Use caution when blocking countries in production environments
-
-## Sources:
-- arin	https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest
-- afrinic	ftp://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-latest
-- apnic	ftp://ftp.apnic.net/pub/stats/apnic/delegated-apnic-latest
-- lacnic	ftp://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-latest
-- ripencc	ftp://ftp.ripe.net/ripe/stats/delegated-ripencc-latest
-
 ## Features
 
 - Downloads IP block data from official NIC sources
@@ -82,3 +71,15 @@ Can be merged into:
 ```
 
 This reduction can be substantial for countries with many IP blocks.
+
+## Things to keep in mind
+- Acting on ip supposely from a country maybe stupid/useless
+- Use caution when blocking countries in production environments
+
+## Sources:
+- arin	https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest
+- afrinic	ftp://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-latest
+- apnic	ftp://ftp.apnic.net/pub/stats/apnic/delegated-apnic-latest
+- lacnic	ftp://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-latest
+- ripencc	ftp://ftp.ripe.net/ripe/stats/delegated-ripencc-latest
+
