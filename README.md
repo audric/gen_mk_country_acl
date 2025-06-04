@@ -30,19 +30,15 @@
 After generating the .rsc files, transfer them to your Mikrotik router and import them:
 
 ```
-mk_fw> /import file-name=mk_arin.rsc
-mk_fw> /import file-name=mk_afrinic.rsc
-mk_fw> /import file-name=mk_apnic.rsc
-mk_fw> /import file-name=mk_lacnic.rsc
-mk_fw> /import file-name=mk_ripencc.rsc
+mk_fw> /import file-name=ZZ.rsc
 ```
 
 Then you can use the created address lists in your firewall rules:
 
 ```
 mk_fw> /ip firewall filter
-mk_fw> add action=drop chain=input src-address-list="ZZ country" log=yes
-mk_fw> add action=drop chain=forward src-address-list="ZZ country" log=yes
+mk_fw> add action=drop chain=input src-address-list="ZZ country"
+mk_fw> add action=drop chain=forward src-address-list="ZZ country"
 ```
 
 Replace "ZZ" with the two-letter country code you want to block.
@@ -90,7 +86,7 @@ Only processes the optimized data for final extraction
 Creates individual .rsc files for each country in the countries/ directory
 Files are properly formatted for MikroTik RouterOS with usage examples
 
-#Usage:
+## Usage:
 ```
 bashruby gen_mk_country_acl.rb
 ```
