@@ -1,5 +1,5 @@
 
-# Generate Mikrotik RouterOS script to add country ip blocks address lists
+# Mikrotik country Access List generator
 
 ## Features
 
@@ -7,9 +7,9 @@
 - Supports both FTP and HTTPS protocols
 - Combine all IP block data
 - Flattens adjoining CIDR blocks to reduce the number of firewall rules (up to 80-90% reduction in some cases)
-- Optional parallel processing for even faster performance
 - Caching system for rapid subsequent runs (24 hour cache)
-- Generates Mikrotik RouterOS scripts (.rsc files) for easy import
+- Optimized processing for faster performance
+- Generates Mikrotik RouterOS scripts per country (.rsc files) for easy import
 
 ## Usage:
 ```
