@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for RU
-# Generated at: 2025-06-04 16:20:48 +0200
+# Generated at: 2025-06-04 16:35:01 +0200
 # Total CIDR blocks: 8418
 
 /ip firewall address-list

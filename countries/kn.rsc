@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for KN
-# Generated at: 2025-06-04 16:20:47 +0200
+# Generated at: 2025-06-04 16:35:01 +0200
 # Total CIDR blocks: 16
 
 /ip firewall address-list

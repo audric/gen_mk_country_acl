@@ -18,10 +18,8 @@
 - Supports both FTP and HTTPS protocols
 - Combine all IP block data
 - Flattens adjoining CIDR blocks to reduce the number of firewall rules (up to 80-90% reduction in some cases)
-- Uses an optimized algorithm for extremely fast CIDR flattening
 - Optional parallel processing for even faster performance
-- Caching system for rapid subsequent runs
-- Export options for individual country files in various formats
+- Caching system for rapid subsequent runs (24 hour cache)
 - Generates Mikrotik RouterOS scripts (.rsc files) for easy import
 
 ## Usage:
