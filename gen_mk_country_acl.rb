@@ -19,15 +19,6 @@ SOURCES = {
   'ripencc' => 'ftp://ftp.ripe.net/ripe/stats/delegated-ripencc-latest'
 }
 
-# HTTPS alternatives (uncomment these if FTP is not available or blocked)
-# SOURCES = {
-#   'arin' => 'https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest',
-#   'afrinic' => 'https://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-latest',
-#   'apnic' => 'https://ftp.apnic.net/pub/stats/apnic/delegated-apnic-latest',
-#   'lacnic' => 'https://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-latest',
-#   'ripencc' => 'https://ftp.ripe.net/ripe/stats/delegated-ripencc-latest'
-}
-
 # Class to handle CIDR block flattening
 class CIDRFlattener
   # Converts a CIDR string to an IPAddr object
