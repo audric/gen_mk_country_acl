@@ -49,7 +49,9 @@ How to transfer them depends on many factor:
 ```
 # Examples of Mikrotik script that pull a country list off this github repo (replace zz with your country code of your choice)
 
-/tool fetch url="https://raw.githubusercontent.com/audric/gen_mk_country_acl/refs/heads/master/countries/zz.rsc" dst-path="ZZ.rsc"
+/tool fetch \
+  url="https://raw.githubusercontent.com/audric/gen_mk_country_acl/refs/heads/master/countries/zz.rsc" \
+  dst-path="ZZ.rsc"
 ```
 
 ## Importing to Mikrotik RouterOS
@@ -61,8 +63,14 @@ mk_fw> /import file-name=ZZ.rsc
 # Then you can use the created address lists in your firewall rules:
 
 mk_fw> /ip firewall filter
-mk_fw> add action=accept chain=input src-address-list="KK country" comment="Allow and count packet from KK country"
-mk_fw> add action=drop chain=input src-address-list="ZZ country" comment="Block and count packet from ZZ country"
+
+mk_fw> add action=accept chain=input \
+  src-address-list="KK country" \
+  comment="Allow and count packet from KK country"
+
+mk_fw> add action=drop chain=input \
+  src-address-list="ZZ country" \
+  comment="Block and count packet from ZZ country"
 
 ```
 
