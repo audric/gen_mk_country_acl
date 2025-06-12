@@ -320,9 +320,14 @@ class MikrotikCountryACLGenerator
         
         f.puts ""
         f.puts "# Usage examples:"
+        f.puts "#"
+        f.puts "# Allow and count:"
         f.puts "# /ip firewall filter"
-        f.puts "# add action=drop chain=input src-address-list=\"#{country} country\" log=yes"
-        f.puts "# add action=drop chain=forward src-address-list=\"#{country} country\" log=yes"
+        f.puts "# add action=accept chain=input src-address-list=\"#{country} country\" comment=\"Allow #{country} traffic\""
+        f.puts "# "
+        f.puts "# Block and count:"
+        f.puts "# /ip firewall filter"
+        f.puts "# add action=drop chain=input src-address-list=\"#{country} country\" comment=\"Block #{country} traffic\""
       end
       
       puts "    #{country}: #{cidrs.length} blocks -> #{rsc_file}"
