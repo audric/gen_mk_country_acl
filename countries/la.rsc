@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for LA
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 58
 
 /ip firewall address-list
@@ -63,6 +63,11 @@ add list="LA country" address=203.76.252.0/22 comment="LA"
 add list="LA country" address=203.110.64.0/20 comment="LA"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="LA country" log=yes
-# add action=drop chain=forward src-address-list="LA country" log=yes
+# add action=accept chain=input src-address-list="LA country" comment="Allow LA traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="LA country" comment="Block LA traffic"

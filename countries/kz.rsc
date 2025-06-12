@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for KZ
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 541
+# Generated at: 2025-06-12 09:46:56 +0200
+# Total CIDR blocks: 542
 
 /ip firewall address-list
 add list="KZ country" address=2.57.96.0/22 comment="KZ"
@@ -459,6 +459,7 @@ add list="KZ country" address=194.0.188.0/23 comment="KZ"
 add list="KZ country" address=194.0.244.0/23 comment="KZ"
 add list="KZ country" address=194.4.56.0/22 comment="KZ"
 add list="KZ country" address=194.9.30.0/23 comment="KZ"
+add list="KZ country" address=194.26.98.0/24 comment="KZ"
 add list="KZ country" address=194.26.239.0/24 comment="KZ"
 add list="KZ country" address=194.31.132.0/22 comment="KZ"
 add list="KZ country" address=194.31.156.0/22 comment="KZ"
@@ -546,6 +547,11 @@ add list="KZ country" address=217.171.144.0/24 comment="KZ"
 add list="KZ country" address=217.196.16.0/20 comment="KZ"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="KZ country" log=yes
-# add action=drop chain=forward src-address-list="KZ country" log=yes
+# add action=accept chain=input src-address-list="KZ country" comment="Allow KZ traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="KZ country" comment="Block KZ traffic"

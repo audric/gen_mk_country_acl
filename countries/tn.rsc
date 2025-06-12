@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for TN
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 46
 
 /ip firewall address-list
@@ -51,6 +51,11 @@ add list="TN country" address=197.244.0.0/16 comment="TN"
 add list="TN country" address=213.150.160.0/19 comment="TN"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="TN country" log=yes
-# add action=drop chain=forward src-address-list="TN country" log=yes
+# add action=accept chain=input src-address-list="TN country" comment="Allow TN traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="TN country" comment="Block TN traffic"

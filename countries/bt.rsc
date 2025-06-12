@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for BT
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 42
 
 /ip firewall address-list
@@ -47,6 +47,11 @@ add list="BT country" address=202.144.128.0/19 comment="BT"
 add list="BT country" address=220.158.236.0/22 comment="BT"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="BT country" log=yes
-# add action=drop chain=forward src-address-list="BT country" log=yes
+# add action=accept chain=input src-address-list="BT country" comment="Allow BT traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="BT country" comment="Block BT traffic"

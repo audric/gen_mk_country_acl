@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for BB
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:54 +0200
 # Total CIDR blocks: 30
 
 /ip firewall address-list
@@ -35,6 +35,11 @@ add list="BB country" address=205.214.192.0/19 comment="BB"
 add list="BB country" address=216.110.96.0/19 comment="BB"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="BB country" log=yes
-# add action=drop chain=forward src-address-list="BB country" log=yes
+# add action=accept chain=input src-address-list="BB country" comment="Allow BB traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="BB country" comment="Block BB traffic"

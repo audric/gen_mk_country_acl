@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for PK
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 658
+# Generated at: 2025-06-12 09:46:55 +0200
+# Total CIDR blocks: 661
 
 /ip firewall address-list
 add list="PK country" address=14.1.104.0/22 comment="PK"
@@ -561,6 +561,8 @@ add list="PK country" address=165.99.44.0/23 comment="PK"
 add list="PK country" address=165.99.50.0/23 comment="PK"
 add list="PK country" address=165.99.88.0/23 comment="PK"
 add list="PK country" address=165.99.181.0/24 comment="PK"
+add list="PK country" address=165.99.191.0/24 comment="PK"
+add list="PK country" address=165.99.206.0/23 comment="PK"
 add list="PK country" address=175.107.0.0/18 comment="PK"
 add list="PK country" address=175.107.192.0/18 comment="PK"
 add list="PK country" address=175.110.64.0/19 comment="PK"
@@ -626,7 +628,8 @@ add list="PK country" address=203.16.34.0/24 comment="PK"
 add list="PK country" address=203.26.77.0/24 comment="PK"
 add list="PK country" address=203.80.128.0/24 comment="PK"
 add list="PK country" address=203.80.130.0/24 comment="PK"
-add list="PK country" address=203.81.208.0/20 comment="PK"
+add list="PK country" address=203.81.212.0/22 comment="PK"
+add list="PK country" address=203.81.216.0/21 comment="PK"
 add list="PK country" address=203.81.224.0/20 comment="PK"
 add list="PK country" address=203.82.48.0/20 comment="PK"
 add list="PK country" address=203.92.4.0/23 comment="PK"
@@ -663,6 +666,11 @@ add list="PK country" address=223.29.224.0/20 comment="PK"
 add list="PK country" address=223.123.0.0/17 comment="PK"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="PK country" log=yes
-# add action=drop chain=forward src-address-list="PK country" log=yes
+# add action=accept chain=input src-address-list="PK country" comment="Allow PK traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="PK country" comment="Block PK traffic"

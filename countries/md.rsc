@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for MD
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 435
+# Generated at: 2025-06-12 09:46:56 +0200
+# Total CIDR blocks: 433
 
 /ip firewall address-list
 add list="MD country" address=2.57.152.0/22 comment="MD"
@@ -36,7 +36,6 @@ add list="MD country" address=45.88.124.0/22 comment="MD"
 add list="MD country" address=45.91.84.0/22 comment="MD"
 add list="MD country" address=45.95.11.0/24 comment="MD"
 add list="MD country" address=45.120.176.0/22 comment="MD"
-add list="MD country" address=45.128.20.0/22 comment="MD"
 add list="MD country" address=45.137.228.0/22 comment="MD"
 add list="MD country" address=45.144.32.0/22 comment="MD"
 add list="MD country" address=45.145.176.0/22 comment="MD"
@@ -366,7 +365,6 @@ add list="MD country" address=193.30.30.0/24 comment="MD"
 add list="MD country" address=193.31.104.0/22 comment="MD"
 add list="MD country" address=193.33.92.0/23 comment="MD"
 add list="MD country" address=193.36.38.0/24 comment="MD"
-add list="MD country" address=193.37.200.0/22 comment="MD"
 add list="MD country" address=193.57.52.0/22 comment="MD"
 add list="MD country" address=193.84.26.0/24 comment="MD"
 add list="MD country" address=193.107.96.0/22 comment="MD"
@@ -440,6 +438,11 @@ add list="MD country" address=217.26.160.0/20 comment="MD"
 add list="MD country" address=217.197.103.0/24 comment="MD"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="MD country" log=yes
-# add action=drop chain=forward src-address-list="MD country" log=yes
+# add action=accept chain=input src-address-list="MD country" comment="Allow MD traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="MD country" comment="Block MD traffic"

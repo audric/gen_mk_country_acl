@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for KE
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 295
 
 /ip firewall address-list
@@ -300,6 +300,11 @@ add list="KE country" address=212.49.64.0/19 comment="KE"
 add list="KE country" address=217.199.144.0/20 comment="KE"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="KE country" log=yes
-# add action=drop chain=forward src-address-list="KE country" log=yes
+# add action=accept chain=input src-address-list="KE country" comment="Allow KE traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="KE country" comment="Block KE traffic"

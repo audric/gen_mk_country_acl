@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for VN
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 1198
+# Generated at: 2025-06-12 09:46:55 +0200
+# Total CIDR blocks: 1200
 
 /ip firewall address-list
 add list="VN country" address=1.52.0.0/14 comment="VN"
@@ -1084,6 +1084,8 @@ add list="VN country" address=165.99.58.0/23 comment="VN"
 add list="VN country" address=165.99.96.0/23 comment="VN"
 add list="VN country" address=165.99.130.0/23 comment="VN"
 add list="VN country" address=165.99.182.0/23 comment="VN"
+add list="VN country" address=165.99.200.0/23 comment="VN"
+add list="VN country" address=165.99.232.0/22 comment="VN"
 add list="VN country" address=171.224.0.0/11 comment="VN"
 add list="VN country" address=175.103.64.0/18 comment="VN"
 add list="VN country" address=175.106.0.0/22 comment="VN"
@@ -1203,6 +1205,11 @@ add list="VN country" address=223.27.104.0/21 comment="VN"
 add list="VN country" address=223.130.10.0/23 comment="VN"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="VN country" log=yes
-# add action=drop chain=forward src-address-list="VN country" log=yes
+# add action=accept chain=input src-address-list="VN country" comment="Allow VN traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="VN country" comment="Block VN traffic"

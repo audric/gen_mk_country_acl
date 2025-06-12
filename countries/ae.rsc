@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for AE
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 985
+# Generated at: 2025-06-12 09:46:54 +0200
+# Total CIDR blocks: 984
 
 /ip firewall address-list
 add list="AE country" address=2.48.0.0/14 comment="AE"
@@ -490,6 +490,7 @@ add list="AE country" address=94.199.7.0/24 comment="AE"
 add list="AE country" address=94.200.0.0/13 comment="AE"
 add list="AE country" address=94.231.200.0/24 comment="AE"
 add list="AE country" address=94.232.248.0/22 comment="AE"
+add list="AE country" address=95.81.112.0/21 comment="AE"
 add list="AE country" address=95.130.226.0/23 comment="AE"
 add list="AE country" address=95.156.216.0/22 comment="AE"
 add list="AE country" address=103.21.58.0/23 comment="AE"
@@ -537,10 +538,7 @@ add list="AE country" address=147.78.132.0/22 comment="AE"
 add list="AE country" address=148.222.120.0/22 comment="AE"
 add list="AE country" address=149.62.40.0/22 comment="AE"
 add list="AE country" address=149.255.192.0/18 comment="AE"
-add list="AE country" address=151.240.0.0/14 comment="AE"
-add list="AE country" address=151.244.0.0/15 comment="AE"
-add list="AE country" address=151.247.64.0/18 comment="AE"
-add list="AE country" address=151.247.128.0/17 comment="AE"
+add list="AE country" address=151.240.0.0/13 comment="AE"
 add list="AE country" address=151.248.96.0/20 comment="AE"
 add list="AE country" address=151.253.0.0/16 comment="AE"
 add list="AE country" address=158.255.77.0/24 comment="AE"
@@ -617,6 +615,8 @@ add list="AE country" address=185.93.244.0/22 comment="AE"
 add list="AE country" address=185.95.140.0/22 comment="AE"
 add list="AE country" address=185.96.68.0/22 comment="AE"
 add list="AE country" address=185.101.144.0/22 comment="AE"
+add list="AE country" address=185.103.252.0/22 comment="AE"
+add list="AE country" address=185.105.88.0/22 comment="AE"
 add list="AE country" address=185.106.120.0/24 comment="AE"
 add list="AE country" address=185.106.122.0/23 comment="AE"
 add list="AE country" address=185.112.249.0/24 comment="AE"
@@ -983,13 +983,17 @@ add list="AE country" address=213.226.112.0/22 comment="AE"
 add list="AE country" address=213.226.120.0/21 comment="AE"
 add list="AE country" address=217.19.4.0/24 comment="AE"
 add list="AE country" address=217.60.0.0/16 comment="AE"
-add list="AE country" address=217.78.233.0/24 comment="AE"
 add list="AE country" address=217.78.234.0/23 comment="AE"
 add list="AE country" address=217.78.237.0/24 comment="AE"
 add list="AE country" address=217.78.238.0/23 comment="AE"
 add list="AE country" address=217.164.0.0/15 comment="AE"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="AE country" log=yes
-# add action=drop chain=forward src-address-list="AE country" log=yes
+# add action=accept chain=input src-address-list="AE country" comment="Allow AE traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="AE country" comment="Block AE traffic"

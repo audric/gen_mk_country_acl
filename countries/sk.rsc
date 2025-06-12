@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for SK
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 408
 
 /ip firewall address-list
@@ -413,6 +413,11 @@ add list="SK country" address=217.145.192.0/20 comment="SK"
 add list="SK country" address=217.172.144.0/20 comment="SK"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="SK country" log=yes
-# add action=drop chain=forward src-address-list="SK country" log=yes
+# add action=accept chain=input src-address-list="SK country" comment="Allow SK traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="SK country" comment="Block SK traffic"

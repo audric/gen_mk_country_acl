@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for IN
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 6818
+# Generated at: 2025-06-12 09:46:55 +0200
+# Total CIDR blocks: 6829
 
 /ip firewall address-list
 add list="IN country" address=1.6.0.0/15 comment="IN"
@@ -746,6 +746,7 @@ add list="IN country" address=70.34.60.0/23 comment="IN"
 add list="IN country" address=70.34.62.0/24 comment="IN"
 add list="IN country" address=77.83.212.0/22 comment="IN"
 add list="IN country" address=77.246.152.0/22 comment="IN"
+add list="IN country" address=78.108.56.0/21 comment="IN"
 add list="IN country" address=78.142.252.0/22 comment="IN"
 add list="IN country" address=79.174.4.0/22 comment="IN"
 add list="IN country" address=80.65.216.0/22 comment="IN"
@@ -2323,7 +2324,8 @@ add list="IN country" address=103.110.0.0/22 comment="IN"
 add list="IN country" address=103.110.6.0/23 comment="IN"
 add list="IN country" address=103.110.12.0/22 comment="IN"
 add list="IN country" address=103.110.16.0/21 comment="IN"
-add list="IN country" address=103.110.36.0/22 comment="IN"
+add list="IN country" address=103.110.36.0/23 comment="IN"
+add list="IN country" address=103.110.38.0/24 comment="IN"
 add list="IN country" address=103.110.42.0/24 comment="IN"
 add list="IN country" address=103.110.48.0/23 comment="IN"
 add list="IN country" address=103.110.72.0/23 comment="IN"
@@ -4075,7 +4077,6 @@ add list="IN country" address=103.181.230.0/23 comment="IN"
 add list="IN country" address=103.181.232.0/23 comment="IN"
 add list="IN country" address=103.181.236.0/22 comment="IN"
 add list="IN country" address=103.182.10.0/23 comment="IN"
-add list="IN country" address=103.182.42.0/23 comment="IN"
 add list="IN country" address=103.182.44.0/23 comment="IN"
 add list="IN country" address=103.182.54.0/23 comment="IN"
 add list="IN country" address=103.182.58.0/23 comment="IN"
@@ -6117,6 +6118,16 @@ add list="IN country" address=165.99.166.0/23 comment="IN"
 add list="IN country" address=165.99.172.0/22 comment="IN"
 add list="IN country" address=165.99.178.0/23 comment="IN"
 add list="IN country" address=165.99.190.0/24 comment="IN"
+add list="IN country" address=165.99.205.0/24 comment="IN"
+add list="IN country" address=165.99.210.0/23 comment="IN"
+add list="IN country" address=165.99.212.0/22 comment="IN"
+add list="IN country" address=165.99.222.0/23 comment="IN"
+add list="IN country" address=165.99.224.0/24 comment="IN"
+add list="IN country" address=165.99.226.0/23 comment="IN"
+add list="IN country" address=165.99.228.0/22 comment="IN"
+add list="IN country" address=165.99.236.0/23 comment="IN"
+add list="IN country" address=165.99.242.0/23 comment="IN"
+add list="IN country" address=165.99.244.0/23 comment="IN"
 add list="IN country" address=167.160.14.0/24 comment="IN"
 add list="IN country" address=167.179.3.0/24 comment="IN"
 add list="IN country" address=167.179.23.0/24 comment="IN"
@@ -6823,6 +6834,11 @@ add list="IN country" address=223.232.0.0/13 comment="IN"
 add list="IN country" address=223.255.244.0/22 comment="IN"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="IN country" log=yes
-# add action=drop chain=forward src-address-list="IN country" log=yes
+# add action=accept chain=input src-address-list="IN country" comment="Allow IN traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="IN country" comment="Block IN traffic"

@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for AU
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 5655
+# Generated at: 2025-06-12 09:46:54 +0200
+# Total CIDR blocks: 5656
 
 /ip firewall address-list
 add list="AU country" address=1.0.0.0/24 comment="AU"
@@ -1200,7 +1200,6 @@ add list="AU country" address=103.113.244.0/23 comment="AU"
 add list="AU country" address=103.113.250.0/23 comment="AU"
 add list="AU country" address=103.114.9.0/24 comment="AU"
 add list="AU country" address=103.114.12.0/22 comment="AU"
-add list="AU country" address=103.114.17.0/24 comment="AU"
 add list="AU country" address=103.114.34.0/24 comment="AU"
 add list="AU country" address=103.114.55.0/24 comment="AU"
 add list="AU country" address=103.114.130.0/23 comment="AU"
@@ -2872,6 +2871,8 @@ add list="AU country" address=165.99.18.0/24 comment="AU"
 add list="AU country" address=165.99.24.0/24 comment="AU"
 add list="AU country" address=165.99.26.0/23 comment="AU"
 add list="AU country" address=165.99.122.0/23 comment="AU"
+add list="AU country" address=165.99.220.0/23 comment="AU"
+add list="AU country" address=165.99.240.0/23 comment="AU"
 add list="AU country" address=165.118.0.0/16 comment="AU"
 add list="AU country" address=165.142.0.0/16 comment="AU"
 add list="AU country" address=165.173.160.0/22 comment="AU"
@@ -5660,6 +5661,11 @@ add list="AU country" address=223.255.232.0/22 comment="AU"
 add list="AU country" address=223.255.255.0/24 comment="AU"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="AU country" log=yes
-# add action=drop chain=forward src-address-list="AU country" log=yes
+# add action=accept chain=input src-address-list="AU country" comment="Allow AU traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="AU country" comment="Block AU traffic"

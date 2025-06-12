@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for SE
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 1962
+# Generated at: 2025-06-12 09:46:55 +0200
+# Total CIDR blocks: 1963
 
 /ip firewall address-list
 add list="SE country" address=2.0.0.0/15 comment="SE"
@@ -239,7 +239,7 @@ add list="SE country" address=78.41.240.0/21 comment="SE"
 add list="SE country" address=78.64.0.0/12 comment="SE"
 add list="SE country" address=78.82.0.0/16 comment="SE"
 add list="SE country" address=78.108.0.0/20 comment="SE"
-add list="SE country" address=78.108.48.0/20 comment="SE"
+add list="SE country" address=78.108.48.0/21 comment="SE"
 add list="SE country" address=78.110.80.0/20 comment="SE"
 add list="SE country" address=78.156.192.0/19 comment="SE"
 add list="SE country" address=79.64.0.0/15 comment="SE"
@@ -1594,6 +1594,7 @@ add list="SE country" address=194.18.0.0/16 comment="SE"
 add list="SE country" address=194.19.128.0/18 comment="SE"
 add list="SE country" address=194.19.192.0/19 comment="SE"
 add list="SE country" address=194.22.0.0/15 comment="SE"
+add list="SE country" address=194.26.96.0/24 comment="SE"
 add list="SE country" address=194.26.208.0/24 comment="SE"
 add list="SE country" address=194.26.217.0/24 comment="SE"
 add list="SE country" address=194.28.120.0/22 comment="SE"
@@ -1967,6 +1968,11 @@ add list="SE country" address=217.198.144.0/20 comment="SE"
 add list="SE country" address=217.208.0.0/13 comment="SE"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="SE country" log=yes
-# add action=drop chain=forward src-address-list="SE country" log=yes
+# add action=accept chain=input src-address-list="SE country" comment="Allow SE traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="SE country" comment="Block SE traffic"

@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for FK
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 7
 
 /ip firewall address-list
@@ -12,6 +12,11 @@ add list="FK country" address=185.87.144.0/22 comment="FK"
 add list="FK country" address=185.244.12.0/22 comment="FK"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="FK country" log=yes
-# add action=drop chain=forward src-address-list="FK country" log=yes
+# add action=accept chain=input src-address-list="FK country" comment="Allow FK traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="FK country" comment="Block FK traffic"

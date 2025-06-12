@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for RS
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 378
 
 /ip firewall address-list
@@ -383,6 +383,11 @@ add list="RS country" address=217.119.240.0/20 comment="RS"
 add list="RS country" address=217.169.208.0/20 comment="RS"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="RS country" log=yes
-# add action=drop chain=forward src-address-list="RS country" log=yes
+# add action=accept chain=input src-address-list="RS country" comment="Allow RS traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="RS country" comment="Block RS traffic"

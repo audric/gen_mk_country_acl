@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for KW
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 130
+# Generated at: 2025-06-12 09:46:56 +0200
+# Total CIDR blocks: 131
 
 /ip firewall address-list
 add list="KW country" address=5.182.132.0/22 comment="KW"
@@ -50,6 +50,7 @@ add list="KW country" address=94.128.0.0/15 comment="KW"
 add list="KW country" address=94.187.160.0/19 comment="KW"
 add list="KW country" address=94.187.192.0/18 comment="KW"
 add list="KW country" address=95.66.0.0/17 comment="KW"
+add list="KW country" address=109.71.188.0/23 comment="KW"
 add list="KW country" address=139.141.0.0/16 comment="KW"
 add list="KW country" address=149.147.0.0/16 comment="KW"
 add list="KW country" address=161.252.0.0/16 comment="KW"
@@ -135,6 +136,11 @@ add list="KW country" address=213.189.64.0/19 comment="KW"
 add list="KW country" address=217.69.176.0/20 comment="KW"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="KW country" log=yes
-# add action=drop chain=forward src-address-list="KW country" log=yes
+# add action=accept chain=input src-address-list="KW country" comment="Allow KW traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="KW country" comment="Block KW traffic"

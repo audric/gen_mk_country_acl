@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for CU
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 17
 
 /ip firewall address-list
@@ -22,6 +22,11 @@ add list="CU country" address=200.55.128.0/18 comment="CU"
 add list="CU country" address=201.220.192.0/19 comment="CU"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="CU country" log=yes
-# add action=drop chain=forward src-address-list="CU country" log=yes
+# add action=accept chain=input src-address-list="CU country" comment="Allow CU traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="CU country" comment="Block CU traffic"

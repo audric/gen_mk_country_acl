@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for GU
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 27
 
 /ip firewall address-list
@@ -32,6 +32,11 @@ add list="GU country" address=203.95.8.0/21 comment="GU"
 add list="GU country" address=203.215.52.0/22 comment="GU"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="GU country" log=yes
-# add action=drop chain=forward src-address-list="GU country" log=yes
+# add action=accept chain=input src-address-list="GU country" comment="Allow GU traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="GU country" comment="Block GU traffic"

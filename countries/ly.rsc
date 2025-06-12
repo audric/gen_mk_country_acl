@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for LY
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 63
 
 /ip firewall address-list
@@ -68,6 +68,11 @@ add list="LY country" address=197.215.128.0/19 comment="LY"
 add list="LY country" address=197.231.228.0/22 comment="LY"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="LY country" log=yes
-# add action=drop chain=forward src-address-list="LY country" log=yes
+# add action=accept chain=input src-address-list="LY country" comment="Allow LY traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="LY country" comment="Block LY traffic"

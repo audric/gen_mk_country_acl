@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for PH
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 771
+# Generated at: 2025-06-12 09:46:55 +0200
+# Total CIDR blocks: 772
 
 /ip firewall address-list
 add list="PH country" address=1.37.0.0/16 comment="PH"
@@ -172,7 +172,6 @@ add list="PH country" address=103.84.176.0/23 comment="PH"
 add list="PH country" address=103.85.134.0/24 comment="PH"
 add list="PH country" address=103.86.120.0/22 comment="PH"
 add list="PH country" address=103.86.184.0/22 comment="PH"
-add list="PH country" address=103.88.42.0/24 comment="PH"
 add list="PH country" address=103.88.68.0/22 comment="PH"
 add list="PH country" address=103.89.236.0/22 comment="PH"
 add list="PH country" address=103.90.202.0/24 comment="PH"
@@ -534,6 +533,7 @@ add list="PH country" address=160.30.92.0/23 comment="PH"
 add list="PH country" address=160.30.110.0/24 comment="PH"
 add list="PH country" address=160.30.141.0/24 comment="PH"
 add list="PH country" address=160.30.166.0/23 comment="PH"
+add list="PH country" address=160.84.128.0/18 comment="PH"
 add list="PH country" address=160.187.14.0/23 comment="PH"
 add list="PH country" address=160.187.30.0/24 comment="PH"
 add list="PH country" address=160.187.113.0/24 comment="PH"
@@ -724,6 +724,7 @@ add list="PH country" address=203.161.176.0/23 comment="PH"
 add list="PH country" address=203.161.188.0/24 comment="PH"
 add list="PH country" address=203.167.0.0/21 comment="PH"
 add list="PH country" address=203.167.64.0/18 comment="PH"
+add list="PH country" address=203.168.208.0/21 comment="PH"
 add list="PH country" address=203.170.20.0/22 comment="PH"
 add list="PH country" address=203.171.6.0/23 comment="PH"
 add list="PH country" address=203.172.0.0/19 comment="PH"
@@ -776,6 +777,11 @@ add list="PH country" address=223.25.0.0/18 comment="PH"
 add list="PH country" address=223.130.16.0/22 comment="PH"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="PH country" log=yes
-# add action=drop chain=forward src-address-list="PH country" log=yes
+# add action=accept chain=input src-address-list="PH country" comment="Allow PH traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="PH country" comment="Block PH traffic"

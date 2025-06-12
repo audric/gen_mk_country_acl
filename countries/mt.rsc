@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for MT
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 128
 
 /ip firewall address-list
@@ -133,6 +133,11 @@ add list="MT country" address=217.168.160.0/20 comment="MT"
 add list="MT country" address=217.198.186.0/24 comment="MT"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="MT country" log=yes
-# add action=drop chain=forward src-address-list="MT country" log=yes
+# add action=accept chain=input src-address-list="MT country" comment="Allow MT traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="MT country" comment="Block MT traffic"

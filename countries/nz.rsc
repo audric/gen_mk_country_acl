@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for NZ
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 1282
+# Generated at: 2025-06-12 09:46:55 +0200
+# Total CIDR blocks: 1279
 
 /ip firewall address-list
 add list="NZ country" address=14.1.32.0/19 comment="NZ"
@@ -160,7 +160,6 @@ add list="NZ country" address=103.26.202.0/23 comment="NZ"
 add list="NZ country" address=103.27.37.0/24 comment="NZ"
 add list="NZ country" address=103.27.52.0/22 comment="NZ"
 add list="NZ country" address=103.27.88.0/22 comment="NZ"
-add list="NZ country" address=103.27.121.0/24 comment="NZ"
 add list="NZ country" address=103.27.216.0/22 comment="NZ"
 add list="NZ country" address=103.29.30.0/23 comment="NZ"
 add list="NZ country" address=103.29.244.0/22 comment="NZ"
@@ -428,7 +427,6 @@ add list="NZ country" address=103.208.140.0/22 comment="NZ"
 add list="NZ country" address=103.209.192.0/22 comment="NZ"
 add list="NZ country" address=103.209.224.0/22 comment="NZ"
 add list="NZ country" address=103.210.208.0/24 comment="NZ"
-add list="NZ country" address=103.210.211.0/24 comment="NZ"
 add list="NZ country" address=103.211.24.0/23 comment="NZ"
 add list="NZ country" address=103.211.120.0/22 comment="NZ"
 add list="NZ country" address=103.212.52.0/22 comment="NZ"
@@ -810,7 +808,6 @@ add list="NZ country" address=202.7.48.0/22 comment="NZ"
 add list="NZ country" address=202.7.60.0/22 comment="NZ"
 add list="NZ country" address=202.8.13.0/24 comment="NZ"
 add list="NZ country" address=202.8.44.0/22 comment="NZ"
-add list="NZ country" address=202.9.88.0/24 comment="NZ"
 add list="NZ country" address=202.9.116.0/22 comment="NZ"
 add list="NZ country" address=202.9.224.0/19 comment="NZ"
 add list="NZ country" address=202.12.0.0/24 comment="NZ"
@@ -1287,6 +1284,11 @@ add list="NZ country" address=223.165.16.0/22 comment="NZ"
 add list="NZ country" address=223.165.64.0/20 comment="NZ"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="NZ country" log=yes
-# add action=drop chain=forward src-address-list="NZ country" log=yes
+# add action=accept chain=input src-address-list="NZ country" comment="Allow NZ traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="NZ country" comment="Block NZ traffic"

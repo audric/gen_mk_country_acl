@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for MG
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 25
 
 /ip firewall address-list
@@ -30,6 +30,11 @@ add list="MG country" address=197.159.144.0/20 comment="MG"
 add list="MG country" address=197.215.192.0/20 comment="MG"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="MG country" log=yes
-# add action=drop chain=forward src-address-list="MG country" log=yes
+# add action=accept chain=input src-address-list="MG country" comment="Allow MG traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="MG country" comment="Block MG traffic"

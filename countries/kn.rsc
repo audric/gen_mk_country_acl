@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for KN
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:54 +0200
 # Total CIDR blocks: 16
 
 /ip firewall address-list
@@ -21,6 +21,11 @@ add list="KN country" address=208.87.144.0/22 comment="KN"
 add list="KN country" address=216.211.197.0/24 comment="KN"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="KN country" log=yes
-# add action=drop chain=forward src-address-list="KN country" log=yes
+# add action=accept chain=input src-address-list="KN country" comment="Allow KN traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="KN country" comment="Block KN traffic"

@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for LI
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 62
 
 /ip firewall address-list
@@ -67,6 +67,11 @@ add list="LI country" address=212.77.32.0/19 comment="LI"
 add list="LI country" address=217.173.224.0/20 comment="LI"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="LI country" log=yes
-# add action=drop chain=forward src-address-list="LI country" log=yes
+# add action=accept chain=input src-address-list="LI country" comment="Allow LI traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="LI country" comment="Block LI traffic"

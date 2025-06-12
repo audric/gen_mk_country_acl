@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for IE
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 712
+# Generated at: 2025-06-12 09:46:54 +0200
+# Total CIDR blocks: 715
 
 /ip firewall address-list
 add list="IE country" address=2.57.24.0/22 comment="IE"
@@ -34,6 +34,7 @@ add list="IE country" address=37.0.0.0/21 comment="IE"
 add list="IE country" address=37.18.144.0/21 comment="IE"
 add list="IE country" address=37.19.96.0/21 comment="IE"
 add list="IE country" address=37.26.72.0/23 comment="IE"
+add list="IE country" address=37.99.208.0/21 comment="IE"
 add list="IE country" address=37.110.216.0/21 comment="IE"
 add list="IE country" address=37.203.48.0/21 comment="IE"
 add list="IE country" address=37.203.192.0/21 comment="IE"
@@ -315,6 +316,7 @@ add list="IE country" address=130.248.72.0/21 comment="IE"
 add list="IE country" address=130.248.80.0/20 comment="IE"
 add list="IE country" address=130.248.96.0/21 comment="IE"
 add list="IE country" address=130.248.104.0/22 comment="IE"
+add list="IE country" address=130.255.24.0/22 comment="IE"
 add list="IE country" address=134.226.0.0/16 comment="IE"
 add list="IE country" address=136.201.0.0/16 comment="IE"
 add list="IE country" address=136.206.0.0/16 comment="IE"
@@ -485,6 +487,7 @@ add list="IE country" address=185.152.4.0/22 comment="IE"
 add list="IE country" address=185.152.72.0/22 comment="IE"
 add list="IE country" address=185.153.235.0/24 comment="IE"
 add list="IE country" address=185.154.76.0/22 comment="IE"
+add list="IE country" address=185.155.196.0/22 comment="IE"
 add list="IE country" address=185.156.196.0/22 comment="IE"
 add list="IE country" address=185.159.36.0/22 comment="IE"
 add list="IE country" address=185.159.48.0/22 comment="IE"
@@ -717,6 +720,11 @@ add list="IE country" address=217.183.0.0/16 comment="IE"
 add list="IE country" address=218.254.0.0/16 comment="IE"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="IE country" log=yes
-# add action=drop chain=forward src-address-list="IE country" log=yes
+# add action=accept chain=input src-address-list="IE country" comment="Allow IE traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="IE country" comment="Block IE traffic"

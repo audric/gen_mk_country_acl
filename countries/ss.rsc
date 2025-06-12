@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for SS
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 28
 
 /ip firewall address-list
@@ -33,6 +33,11 @@ add list="SS country" address=196.201.8.0/22 comment="SS"
 add list="SS country" address=197.231.236.0/22 comment="SS"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="SS country" log=yes
-# add action=drop chain=forward src-address-list="SS country" log=yes
+# add action=accept chain=input src-address-list="SS country" comment="Allow SS traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="SS country" comment="Block SS traffic"

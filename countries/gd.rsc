@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for GD
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:54 +0200
 # Total CIDR blocks: 14
 
 /ip firewall address-list
@@ -19,6 +19,11 @@ add list="GD country" address=199.85.236.0/22 comment="GD"
 add list="GD country" address=206.126.244.0/24 comment="GD"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="GD country" log=yes
-# add action=drop chain=forward src-address-list="GD country" log=yes
+# add action=accept chain=input src-address-list="GD country" comment="Allow GD traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="GD country" comment="Block GD traffic"

@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for TH
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 626
 
 /ip firewall address-list
@@ -631,6 +631,11 @@ add list="TH country" address=223.27.192.0/18 comment="TH"
 add list="TH country" address=223.204.0.0/14 comment="TH"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="TH country" log=yes
-# add action=drop chain=forward src-address-list="TH country" log=yes
+# add action=accept chain=input src-address-list="TH country" comment="Allow TH traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="TH country" comment="Block TH traffic"

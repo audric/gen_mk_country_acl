@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for MR
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 14
 
 /ip firewall address-list
@@ -19,6 +19,11 @@ add list="MR country" address=196.223.45.0/24 comment="MR"
 add list="MR country" address=197.231.0.0/19 comment="MR"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="MR country" log=yes
-# add action=drop chain=forward src-address-list="MR country" log=yes
+# add action=accept chain=input src-address-list="MR country" comment="Allow MR traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="MR country" comment="Block MR traffic"

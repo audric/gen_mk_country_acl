@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for JP
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:54 +0200
 # Total CIDR blocks: 3142
 
 /ip firewall address-list
@@ -349,6 +349,7 @@ add list="JP country" address=81.23.208.0/20 comment="JP"
 add list="JP country" address=85.131.192.0/18 comment="JP"
 add list="JP country" address=87.101.96.0/20 comment="JP"
 add list="JP country" address=90.149.0.0/16 comment="JP"
+add list="JP country" address=91.243.68.0/24 comment="JP"
 add list="JP country" address=92.202.0.0/15 comment="JP"
 add list="JP country" address=101.0.8.0/21 comment="JP"
 add list="JP country" address=101.0.16.0/20 comment="JP"
@@ -634,7 +635,6 @@ add list="JP country" address=103.60.224.0/22 comment="JP"
 add list="JP country" address=103.61.151.0/24 comment="JP"
 add list="JP country" address=103.61.244.0/22 comment="JP"
 add list="JP country" address=103.62.244.0/22 comment="JP"
-add list="JP country" address=103.63.224.0/22 comment="JP"
 add list="JP country" address=103.64.132.0/22 comment="JP"
 add list="JP country" address=103.65.44.0/22 comment="JP"
 add list="JP country" address=103.65.130.0/23 comment="JP"
@@ -3147,6 +3147,11 @@ add list="JP country" address=223.252.64.0/19 comment="JP"
 add list="JP country" address=223.252.112.0/20 comment="JP"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="JP country" log=yes
-# add action=drop chain=forward src-address-list="JP country" log=yes
+# add action=accept chain=input src-address-list="JP country" comment="Allow JP traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="JP country" comment="Block JP traffic"

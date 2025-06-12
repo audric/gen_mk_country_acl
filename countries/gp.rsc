@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for GP
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:54 +0200
 # Total CIDR blocks: 15
 
 /ip firewall address-list
@@ -20,6 +20,11 @@ add list="GP country" address=213.16.0.0/19 comment="GP"
 add list="GP country" address=213.188.160.0/19 comment="GP"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="GP country" log=yes
-# add action=drop chain=forward src-address-list="GP country" log=yes
+# add action=accept chain=input src-address-list="GP country" comment="Allow GP traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="GP country" comment="Block GP traffic"

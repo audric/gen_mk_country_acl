@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for GR
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 435
+# Generated at: 2025-06-12 09:46:56 +0200
+# Total CIDR blocks: 436
 
 /ip firewall address-list
 add list="GR country" address=2.84.0.0/14 comment="GR"
@@ -273,6 +273,7 @@ add list="GR country" address=185.226.64.0/22 comment="GR"
 add list="GR country" address=185.229.132.0/24 comment="GR"
 add list="GR country" address=185.232.240.0/22 comment="GR"
 add list="GR country" address=185.236.140.0/24 comment="GR"
+add list="GR country" address=185.237.216.0/23 comment="GR"
 add list="GR country" address=185.243.2.0/24 comment="GR"
 add list="GR country" address=185.246.164.0/22 comment="GR"
 add list="GR country" address=185.247.160.0/22 comment="GR"
@@ -440,6 +441,11 @@ add list="GR country" address=217.65.66.0/24 comment="GR"
 add list="GR country" address=217.195.128.0/20 comment="GR"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="GR country" log=yes
-# add action=drop chain=forward src-address-list="GR country" log=yes
+# add action=accept chain=input src-address-list="GR country" comment="Allow GR traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="GR country" comment="Block GR traffic"

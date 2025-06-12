@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for GA
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 25
 
 /ip firewall address-list
@@ -30,6 +30,11 @@ add list="GA country" address=197.242.0.0/19 comment="GA"
 add list="GA country" address=217.77.64.0/20 comment="GA"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="GA country" log=yes
-# add action=drop chain=forward src-address-list="GA country" log=yes
+# add action=accept chain=input src-address-list="GA country" comment="Allow GA traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="GA country" comment="Block GA traffic"

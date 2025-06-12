@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for CR
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 165
+# Generated at: 2025-06-12 09:46:56 +0200
+# Total CIDR blocks: 164
 
 /ip firewall address-list
 add list="CR country" address=45.5.60.0/22 comment="CR"
@@ -18,7 +18,6 @@ add list="CR country" address=45.224.202.0/24 comment="CR"
 add list="CR country" address=45.226.64.0/22 comment="CR"
 add list="CR country" address=45.227.200.0/22 comment="CR"
 add list="CR country" address=45.229.246.0/24 comment="CR"
-add list="CR country" address=45.229.252.0/22 comment="CR"
 add list="CR country" address=45.231.52.0/22 comment="CR"
 add list="CR country" address=45.232.116.0/22 comment="CR"
 add list="CR country" address=45.239.64.0/22 comment="CR"
@@ -170,6 +169,11 @@ add list="CR country" address=201.220.29.0/24 comment="CR"
 add list="CR country" address=201.237.0.0/16 comment="CR"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="CR country" log=yes
-# add action=drop chain=forward src-address-list="CR country" log=yes
+# add action=accept chain=input src-address-list="CR country" comment="Allow CR traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="CR country" comment="Block CR traffic"

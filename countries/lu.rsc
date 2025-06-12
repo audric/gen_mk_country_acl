@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for LU
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 532
 
 /ip firewall address-list
@@ -537,6 +537,11 @@ add list="LU country" address=217.195.200.0/23 comment="LU"
 add list="LU country" address=217.195.205.0/24 comment="LU"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="LU country" log=yes
-# add action=drop chain=forward src-address-list="LU country" log=yes
+# add action=accept chain=input src-address-list="LU country" comment="Allow LU traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="LU country" comment="Block LU traffic"

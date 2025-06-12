@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for RW
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 29
 
 /ip firewall address-list
@@ -34,6 +34,11 @@ add list="RW country" address=197.234.244.0/22 comment="RW"
 add list="RW country" address=197.243.0.0/17 comment="RW"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="RW country" log=yes
-# add action=drop chain=forward src-address-list="RW country" log=yes
+# add action=accept chain=input src-address-list="RW country" comment="Allow RW traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="RW country" comment="Block RW traffic"

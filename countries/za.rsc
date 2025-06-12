@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for ZA
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 1507
+# Generated at: 2025-06-12 09:46:55 +0200
+# Total CIDR blocks: 1509
 
 /ip firewall address-list
 add list="ZA country" address=2.59.96.0/22 comment="ZA"
@@ -318,6 +318,8 @@ add list="ZA country" address=102.177.64.0/21 comment="ZA"
 add list="ZA country" address=102.177.112.0/20 comment="ZA"
 add list="ZA country" address=102.177.128.0/18 comment="ZA"
 add list="ZA country" address=102.182.0.0/16 comment="ZA"
+add list="ZA country" address=102.206.32.0/22 comment="ZA"
+add list="ZA country" address=102.206.82.0/23 comment="ZA"
 add list="ZA country" address=102.206.84.0/22 comment="ZA"
 add list="ZA country" address=102.206.92.0/22 comment="ZA"
 add list="ZA country" address=102.206.124.0/22 comment="ZA"
@@ -1512,6 +1514,11 @@ add list="ZA country" address=216.236.176.0/20 comment="ZA"
 add list="ZA country" address=217.29.208.0/20 comment="ZA"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="ZA country" log=yes
-# add action=drop chain=forward src-address-list="ZA country" log=yes
+# add action=accept chain=input src-address-list="ZA country" comment="Allow ZA traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="ZA country" comment="Block ZA traffic"

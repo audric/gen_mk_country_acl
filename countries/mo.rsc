@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for MO
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:54 +0200
 # Total CIDR blocks: 30
 
 /ip firewall address-list
@@ -35,6 +35,11 @@ add list="MO country" address=202.175.0.0/17 comment="MO"
 add list="MO country" address=202.175.160.0/19 comment="MO"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="MO country" log=yes
-# add action=drop chain=forward src-address-list="MO country" log=yes
+# add action=accept chain=input src-address-list="MO country" comment="Allow MO traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="MO country" comment="Block MO traffic"

@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for BA
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 153
 
 /ip firewall address-list
@@ -158,6 +158,11 @@ add list="BA country" address=217.75.192.0/20 comment="BA"
 add list="BA country" address=217.197.136.0/21 comment="BA"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="BA country" log=yes
-# add action=drop chain=forward src-address-list="BA country" log=yes
+# add action=accept chain=input src-address-list="BA country" comment="Allow BA traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="BA country" comment="Block BA traffic"

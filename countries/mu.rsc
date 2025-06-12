@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for MU
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 115
 
 /ip firewall address-list
@@ -120,6 +120,11 @@ add list="MU country" address=202.123.0.0/19 comment="MU"
 add list="MU country" address=217.21.112.0/20 comment="MU"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="MU country" log=yes
-# add action=drop chain=forward src-address-list="MU country" log=yes
+# add action=accept chain=input src-address-list="MU country" comment="Allow MU traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="MU country" comment="Block MU traffic"

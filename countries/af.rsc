@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for AF
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 129
 
 /ip firewall address-list
@@ -134,6 +134,11 @@ add list="AF country" address=203.215.32.0/20 comment="AF"
 add list="AF country" address=223.26.20.0/22 comment="AF"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="AF country" log=yes
-# add action=drop chain=forward src-address-list="AF country" log=yes
+# add action=accept chain=input src-address-list="AF country" comment="Allow AF traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="AF country" comment="Block AF traffic"

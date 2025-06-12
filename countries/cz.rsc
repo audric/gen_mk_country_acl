@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for CZ
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:54 +0200
 # Total CIDR blocks: 1536
 
 /ip firewall address-list
@@ -1541,6 +1541,11 @@ add list="CZ country" address=217.197.144.0/20 comment="CZ"
 add list="CZ country" address=217.198.112.0/20 comment="CZ"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="CZ country" log=yes
-# add action=drop chain=forward src-address-list="CZ country" log=yes
+# add action=accept chain=input src-address-list="CZ country" comment="Allow CZ traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="CZ country" comment="Block CZ traffic"

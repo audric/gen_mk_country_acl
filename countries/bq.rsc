@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for BQ
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 12
 
 /ip firewall address-list
@@ -17,6 +17,11 @@ add list="BQ country" address=200.71.248.0/21 comment="BQ"
 add list="BQ country" address=200.107.84.0/22 comment="BQ"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="BQ country" log=yes
-# add action=drop chain=forward src-address-list="BQ country" log=yes
+# add action=accept chain=input src-address-list="BQ country" comment="Allow BQ traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="BQ country" comment="Block BQ traffic"

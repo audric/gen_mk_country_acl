@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for IQ
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 283
 
 /ip firewall address-list
@@ -288,6 +288,11 @@ add list="IQ country" address=217.145.228.0/22 comment="IQ"
 add list="IQ country" address=223.25.120.0/21 comment="IQ"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="IQ country" log=yes
-# add action=drop chain=forward src-address-list="IQ country" log=yes
+# add action=accept chain=input src-address-list="IQ country" comment="Allow IQ traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="IQ country" comment="Block IQ traffic"

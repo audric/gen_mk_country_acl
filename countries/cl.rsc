@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for CL
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 631
 
 /ip firewall address-list
@@ -636,6 +636,11 @@ add list="CL country" address=207.248.192.0/19 comment="CL"
 add list="CL country" address=216.155.64.0/19 comment="CL"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="CL country" log=yes
-# add action=drop chain=forward src-address-list="CL country" log=yes
+# add action=accept chain=input src-address-list="CL country" comment="Allow CL traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="CL country" comment="Block CL traffic"

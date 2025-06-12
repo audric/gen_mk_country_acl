@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for HT
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 21
 
 /ip firewall address-list
@@ -26,6 +26,11 @@ add list="HT country" address=201.131.77.0/24 comment="HT"
 add list="HT country" address=201.150.104.0/22 comment="HT"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="HT country" log=yes
-# add action=drop chain=forward src-address-list="HT country" log=yes
+# add action=accept chain=input src-address-list="HT country" comment="Allow HT traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="HT country" comment="Block HT traffic"

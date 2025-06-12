@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for AW
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 12
 
 /ip firewall address-list
@@ -17,6 +17,11 @@ add list="AW country" address=190.104.96.0/20 comment="AW"
 add list="AW country" address=201.229.0.0/17 comment="AW"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="AW country" log=yes
-# add action=drop chain=forward src-address-list="AW country" log=yes
+# add action=accept chain=input src-address-list="AW country" comment="Allow AW traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="AW country" comment="Block AW traffic"

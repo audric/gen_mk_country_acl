@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for VC
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:54 +0200
 # Total CIDR blocks: 11
 
 /ip firewall address-list
@@ -16,6 +16,11 @@ add list="VC country" address=207.191.240.0/21 comment="VC"
 add list="VC country" address=208.84.200.0/21 comment="VC"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="VC country" log=yes
-# add action=drop chain=forward src-address-list="VC country" log=yes
+# add action=accept chain=input src-address-list="VC country" comment="Allow VC traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="VC country" comment="Block VC traffic"

@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for VG
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:54 +0200
 # Total CIDR blocks: 120
 
 /ip firewall address-list
@@ -125,6 +125,11 @@ add list="VG country" address=213.40.0.0/16 comment="VG"
 add list="VG country" address=216.180.224.0/20 comment="VG"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="VG country" log=yes
-# add action=drop chain=forward src-address-list="VG country" log=yes
+# add action=accept chain=input src-address-list="VG country" comment="Allow VG traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="VG country" comment="Block VG traffic"

@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for GY
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 13
 
 /ip firewall address-list
@@ -18,6 +18,11 @@ add list="GY country" address=190.108.208.0/21 comment="GY"
 add list="GY country" address=190.124.220.0/22 comment="GY"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="GY country" log=yes
-# add action=drop chain=forward src-address-list="GY country" log=yes
+# add action=accept chain=input src-address-list="GY country" comment="Allow GY traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="GY country" comment="Block GY traffic"

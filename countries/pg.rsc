@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for PG
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 68
 
 /ip firewall address-list
@@ -73,6 +73,11 @@ add list="PG country" address=202.171.240.0/21 comment="PG"
 add list="PG country" address=203.83.16.0/21 comment="PG"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="PG country" log=yes
-# add action=drop chain=forward src-address-list="PG country" log=yes
+# add action=accept chain=input src-address-list="PG country" comment="Allow PG traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="PG country" comment="Block PG traffic"

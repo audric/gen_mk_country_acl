@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for NL
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:54 +0200
 # Total CIDR blocks: 5565
 
 /ip firewall address-list
@@ -716,7 +716,6 @@ add list="NL country" address=45.157.112.0/22 comment="NL"
 add list="NL country" address=45.157.128.0/21 comment="NL"
 add list="NL country" address=45.157.138.0/23 comment="NL"
 add list="NL country" address=45.157.156.0/22 comment="NL"
-add list="NL country" address=45.157.172.0/23 comment="NL"
 add list="NL country" address=45.157.174.0/24 comment="NL"
 add list="NL country" address=45.157.200.0/22 comment="NL"
 add list="NL country" address=45.158.204.0/22 comment="NL"
@@ -2070,7 +2069,6 @@ add list="NL country" address=103.248.249.0/24 comment="NL"
 add list="NL country" address=103.251.164.0/22 comment="NL"
 add list="NL country" address=103.255.76.0/23 comment="NL"
 add list="NL country" address=104.153.84.0/22 comment="NL"
-add list="NL country" address=104.167.19.0/24 comment="NL"
 add list="NL country" address=104.243.216.0/22 comment="NL"
 add list="NL country" address=107.150.166.0/23 comment="NL"
 add list="NL country" address=107.150.168.0/23 comment="NL"
@@ -2084,9 +2082,7 @@ add list="NL country" address=109.71.0.0/21 comment="NL"
 add list="NL country" address=109.71.48.0/21 comment="NL"
 add list="NL country" address=109.71.104.0/21 comment="NL"
 add list="NL country" address=109.71.156.0/22 comment="NL"
-add list="NL country" address=109.71.185.0/24 comment="NL"
 add list="NL country" address=109.71.186.0/23 comment="NL"
-add list="NL country" address=109.71.188.0/23 comment="NL"
 add list="NL country" address=109.72.32.0/20 comment="NL"
 add list="NL country" address=109.72.80.0/20 comment="NL"
 add list="NL country" address=109.72.176.0/20 comment="NL"
@@ -4433,6 +4429,8 @@ add list="NL country" address=193.242.167.0/24 comment="NL"
 add list="NL country" address=193.242.183.0/24 comment="NL"
 add list="NL country" address=193.243.146.0/24 comment="NL"
 add list="NL country" address=193.243.186.0/24 comment="NL"
+add list="NL country" address=193.247.81.0/24 comment="NL"
+add list="NL country" address=193.247.82.0/24 comment="NL"
 add list="NL country" address=193.247.196.0/22 comment="NL"
 add list="NL country" address=193.254.214.0/23 comment="NL"
 add list="NL country" address=193.254.254.0/23 comment="NL"
@@ -4919,6 +4917,7 @@ add list="NL country" address=194.145.227.0/24 comment="NL"
 add list="NL country" address=194.145.244.0/22 comment="NL"
 add list="NL country" address=194.146.44.0/23 comment="NL"
 add list="NL country" address=194.146.48.0/23 comment="NL"
+add list="NL country" address=194.147.214.0/24 comment="NL"
 add list="NL country" address=194.147.221.0/24 comment="NL"
 add list="NL country" address=194.149.80.0/21 comment="NL"
 add list="NL country" address=194.150.76.0/24 comment="NL"
@@ -4958,6 +4957,7 @@ add list="NL country" address=194.178.0.0/16 comment="NL"
 add list="NL country" address=194.180.104.0/22 comment="NL"
 add list="NL country" address=194.180.188.0/23 comment="NL"
 add list="NL country" address=194.180.197.0/24 comment="NL"
+add list="NL country" address=194.180.206.0/23 comment="NL"
 add list="NL country" address=194.180.216.0/24 comment="NL"
 add list="NL country" address=194.180.219.0/24 comment="NL"
 add list="NL country" address=194.180.227.0/24 comment="NL"
@@ -5026,7 +5026,6 @@ add list="NL country" address=195.35.97.0/24 comment="NL"
 add list="NL country" address=195.35.114.0/23 comment="NL"
 add list="NL country" address=195.35.128.0/17 comment="NL"
 add list="NL country" address=195.38.4.0/22 comment="NL"
-add list="NL country" address=195.38.8.0/22 comment="NL"
 add list="NL country" address=195.38.192.0/18 comment="NL"
 add list="NL country" address=195.39.204.0/23 comment="NL"
 add list="NL country" address=195.39.214.0/23 comment="NL"
@@ -5115,6 +5114,7 @@ add list="NL country" address=195.137.169.0/24 comment="NL"
 add list="NL country" address=195.137.179.0/24 comment="NL"
 add list="NL country" address=195.137.214.0/23 comment="NL"
 add list="NL country" address=195.137.242.0/24 comment="NL"
+add list="NL country" address=195.138.39.0/24 comment="NL"
 add list="NL country" address=195.138.194.0/24 comment="NL"
 add list="NL country" address=195.138.212.0/24 comment="NL"
 add list="NL country" address=195.140.176.0/22 comment="NL"
@@ -5570,6 +5570,11 @@ add list="NL country" address=223.27.112.0/23 comment="NL"
 add list="NL country" address=223.27.114.0/24 comment="NL"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="NL country" log=yes
-# add action=drop chain=forward src-address-list="NL country" log=yes
+# add action=accept chain=input src-address-list="NL country" comment="Allow NL traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="NL country" comment="Block NL traffic"

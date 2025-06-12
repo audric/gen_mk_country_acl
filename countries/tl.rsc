@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for TL
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 30
 
 /ip firewall address-list
@@ -35,6 +35,11 @@ add list="TL country" address=185.126.46.0/23 comment="TL"
 add list="TL country" address=185.242.38.0/23 comment="TL"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="TL country" log=yes
-# add action=drop chain=forward src-address-list="TL country" log=yes
+# add action=accept chain=input src-address-list="TL country" comment="Allow TL traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="TL country" comment="Block TL traffic"

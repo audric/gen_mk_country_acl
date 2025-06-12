@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for BD
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 2015
+# Generated at: 2025-06-12 09:46:55 +0200
+# Total CIDR blocks: 2020
 
 /ip firewall address-list
 add list="BD country" address=14.1.100.0/22 comment="BD"
@@ -325,6 +325,7 @@ add list="BD country" address=103.65.118.0/23 comment="BD"
 add list="BD country" address=103.65.132.0/22 comment="BD"
 add list="BD country" address=103.65.138.0/23 comment="BD"
 add list="BD country" address=103.65.226.0/23 comment="BD"
+add list="BD country" address=103.65.240.0/23 comment="BD"
 add list="BD country" address=103.66.24.0/23 comment="BD"
 add list="BD country" address=103.66.64.0/22 comment="BD"
 add list="BD country" address=103.66.140.0/23 comment="BD"
@@ -386,7 +387,7 @@ add list="BD country" address=103.77.218.0/23 comment="BD"
 add list="BD country" address=103.77.252.0/23 comment="BD"
 add list="BD country" address=103.78.52.0/22 comment="BD"
 add list="BD country" address=103.78.224.0/22 comment="BD"
-add list="BD country" address=103.78.248.0/22 comment="BD"
+add list="BD country" address=103.78.248.0/21 comment="BD"
 add list="BD country" address=103.79.117.0/24 comment="BD"
 add list="BD country" address=103.79.178.0/23 comment="BD"
 add list="BD country" address=103.79.182.0/23 comment="BD"
@@ -735,6 +736,7 @@ add list="BD country" address=103.132.187.0/24 comment="BD"
 add list="BD country" address=103.132.216.0/21 comment="BD"
 add list="BD country" address=103.132.224.0/22 comment="BD"
 add list="BD country" address=103.132.248.0/22 comment="BD"
+add list="BD country" address=103.133.4.0/22 comment="BD"
 add list="BD country" address=103.133.32.0/22 comment="BD"
 add list="BD country" address=103.133.76.0/22 comment="BD"
 add list="BD country" address=103.133.134.0/23 comment="BD"
@@ -956,7 +958,6 @@ add list="BD country" address=103.149.56.0/23 comment="BD"
 add list="BD country" address=103.149.60.0/23 comment="BD"
 add list="BD country" address=103.149.72.0/22 comment="BD"
 add list="BD country" address=103.149.104.0/22 comment="BD"
-add list="BD country" address=103.149.130.0/23 comment="BD"
 add list="BD country" address=103.149.142.0/23 comment="BD"
 add list="BD country" address=103.149.146.0/23 comment="BD"
 add list="BD country" address=103.149.186.0/23 comment="BD"
@@ -1314,6 +1315,7 @@ add list="BD country" address=103.180.244.0/23 comment="BD"
 add list="BD country" address=103.181.24.0/23 comment="BD"
 add list="BD country" address=103.181.28.0/22 comment="BD"
 add list="BD country" address=103.181.42.0/23 comment="BD"
+add list="BD country" address=103.181.46.0/23 comment="BD"
 add list="BD country" address=103.181.68.0/22 comment="BD"
 add list="BD country" address=103.181.72.0/22 comment="BD"
 add list="BD country" address=103.181.96.0/23 comment="BD"
@@ -1871,6 +1873,9 @@ add list="BD country" address=165.99.90.0/23 comment="BD"
 add list="BD country" address=165.99.92.0/23 comment="BD"
 add list="BD country" address=165.99.164.0/23 comment="BD"
 add list="BD country" address=165.99.184.0/23 comment="BD"
+add list="BD country" address=165.99.196.0/23 comment="BD"
+add list="BD country" address=165.99.208.0/23 comment="BD"
+add list="BD country" address=165.99.216.0/22 comment="BD"
 add list="BD country" address=175.29.0.0/16 comment="BD"
 add list="BD country" address=175.41.44.0/22 comment="BD"
 add list="BD country" address=180.92.224.0/20 comment="BD"
@@ -2020,6 +2025,11 @@ add list="BD country" address=223.29.212.0/22 comment="BD"
 add list="BD country" address=223.130.8.0/23 comment="BD"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="BD country" log=yes
-# add action=drop chain=forward src-address-list="BD country" log=yes
+# add action=accept chain=input src-address-list="BD country" comment="Allow BD traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="BD country" comment="Block BD traffic"

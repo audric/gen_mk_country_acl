@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for GE
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 309
 
 /ip firewall address-list
@@ -314,6 +314,11 @@ add list="GE country" address=217.26.222.0/24 comment="GE"
 add list="GE country" address=217.147.224.0/20 comment="GE"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="GE country" log=yes
-# add action=drop chain=forward src-address-list="GE country" log=yes
+# add action=accept chain=input src-address-list="GE country" comment="Allow GE traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="GE country" comment="Block GE traffic"

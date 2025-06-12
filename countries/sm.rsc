@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for SM
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 22
 
 /ip firewall address-list
@@ -27,6 +27,11 @@ add list="SM country" address=194.0.27.0/24 comment="SM"
 add list="SM country" address=194.183.64.0/19 comment="SM"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="SM country" log=yes
-# add action=drop chain=forward src-address-list="SM country" log=yes
+# add action=accept chain=input src-address-list="SM country" comment="Allow SM traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="SM country" comment="Block SM traffic"

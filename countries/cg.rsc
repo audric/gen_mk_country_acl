@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for CG
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 21
 
 /ip firewall address-list
@@ -26,6 +26,11 @@ add list="CG country" address=197.214.128.0/17 comment="CG"
 add list="CG country" address=197.255.176.0/20 comment="CG"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="CG country" log=yes
-# add action=drop chain=forward src-address-list="CG country" log=yes
+# add action=accept chain=input src-address-list="CG country" comment="Allow CG traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="CG country" comment="Block CG traffic"

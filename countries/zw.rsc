@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for ZW
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 37
 
 /ip firewall address-list
@@ -42,6 +42,11 @@ add list="ZW country" address=197.157.204.0/22 comment="ZW"
 add list="ZW country" address=197.221.224.0/19 comment="ZW"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="ZW country" log=yes
-# add action=drop chain=forward src-address-list="ZW country" log=yes
+# add action=accept chain=input src-address-list="ZW country" comment="Allow ZW traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="ZW country" comment="Block ZW traffic"

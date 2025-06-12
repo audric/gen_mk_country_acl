@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for IR
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 1644
+# Generated at: 2025-06-12 09:46:56 +0200
+# Total CIDR blocks: 1645
 
 /ip firewall address-list
 add list="IR country" address=2.57.3.0/24 comment="IR"
@@ -662,7 +662,9 @@ add list="IR country" address=94.232.168.0/21 comment="IR"
 add list="IR country" address=95.38.0.0/16 comment="IR"
 add list="IR country" address=95.64.0.0/17 comment="IR"
 add list="IR country" address=95.80.128.0/18 comment="IR"
-add list="IR country" address=95.81.64.0/18 comment="IR"
+add list="IR country" address=95.81.64.0/19 comment="IR"
+add list="IR country" address=95.81.96.0/20 comment="IR"
+add list="IR country" address=95.81.120.0/21 comment="IR"
 add list="IR country" address=95.128.155.0/24 comment="IR"
 add list="IR country" address=95.128.159.0/24 comment="IR"
 add list="IR country" address=95.128.194.0/24 comment="IR"
@@ -740,8 +742,6 @@ add list="IR country" address=146.19.217.0/24 comment="IR"
 add list="IR country" address=146.66.128.0/21 comment="IR"
 add list="IR country" address=151.232.0.0/14 comment="IR"
 add list="IR country" address=151.238.0.0/15 comment="IR"
-add list="IR country" address=151.246.0.0/16 comment="IR"
-add list="IR country" address=151.247.0.0/18 comment="IR"
 add list="IR country" address=152.89.12.0/22 comment="IR"
 add list="IR country" address=152.89.44.0/22 comment="IR"
 add list="IR country" address=157.119.188.0/22 comment="IR"
@@ -1498,6 +1498,7 @@ add list="IR country" address=194.5.195.0/24 comment="IR"
 add list="IR country" address=194.5.205.0/24 comment="IR"
 add list="IR country" address=194.9.56.0/23 comment="IR"
 add list="IR country" address=194.9.80.0/23 comment="IR"
+add list="IR country" address=194.26.99.0/24 comment="IR"
 add list="IR country" address=194.26.117.0/24 comment="IR"
 add list="IR country" address=194.26.195.0/24 comment="IR"
 add list="IR country" address=194.29.79.0/24 comment="IR"
@@ -1649,6 +1650,11 @@ add list="IR country" address=217.198.190.0/24 comment="IR"
 add list="IR country" address=217.218.0.0/15 comment="IR"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="IR country" log=yes
-# add action=drop chain=forward src-address-list="IR country" log=yes
+# add action=accept chain=input src-address-list="IR country" comment="Allow IR traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="IR country" comment="Block IR traffic"

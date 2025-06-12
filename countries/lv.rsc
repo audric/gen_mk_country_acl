@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for LV
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 423
 
 /ip firewall address-list
@@ -428,6 +428,11 @@ add list="LV country" address=217.198.224.0/20 comment="LV"
 add list="LV country" address=217.199.96.0/19 comment="LV"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="LV country" log=yes
-# add action=drop chain=forward src-address-list="LV country" log=yes
+# add action=accept chain=input src-address-list="LV country" comment="Allow LV traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="LV country" comment="Block LV traffic"

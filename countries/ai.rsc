@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for AI
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:54 +0200
 # Total CIDR blocks: 9
 
 /ip firewall address-list
@@ -14,6 +14,11 @@ add list="AI country" address=204.14.248.0/21 comment="AI"
 add list="AI country" address=208.66.48.0/21 comment="AI"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="AI country" log=yes
-# add action=drop chain=forward src-address-list="AI country" log=yes
+# add action=accept chain=input src-address-list="AI country" comment="Allow AI traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="AI country" comment="Block AI traffic"

@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for PF
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 19
 
 /ip firewall address-list
@@ -24,6 +24,11 @@ add list="PF country" address=203.185.176.0/21 comment="PF"
 add list="PF country" address=218.100.77.0/24 comment="PF"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="PF country" log=yes
-# add action=drop chain=forward src-address-list="PF country" log=yes
+# add action=accept chain=input src-address-list="PF country" comment="Allow PF traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="PF country" comment="Block PF traffic"

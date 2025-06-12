@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for SI
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 522
+# Generated at: 2025-06-12 09:46:55 +0200
+# Total CIDR blocks: 521
 
 /ip firewall address-list
 add list="SI country" address=2.58.48.0/22 comment="SI"
@@ -87,7 +87,6 @@ add list="SI country" address=91.198.190.0/24 comment="SI"
 add list="SI country" address=91.198.214.0/24 comment="SI"
 add list="SI country" address=91.199.23.0/24 comment="SI"
 add list="SI country" address=91.199.61.0/24 comment="SI"
-add list="SI country" address=91.199.124.0/24 comment="SI"
 add list="SI country" address=91.199.131.0/24 comment="SI"
 add list="SI country" address=91.199.142.0/24 comment="SI"
 add list="SI country" address=91.199.161.0/24 comment="SI"
@@ -527,6 +526,11 @@ add list="SI country" address=217.72.64.0/19 comment="SI"
 add list="SI country" address=217.199.128.0/20 comment="SI"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="SI country" log=yes
-# add action=drop chain=forward src-address-list="SI country" log=yes
+# add action=accept chain=input src-address-list="SI country" comment="Allow SI traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="SI country" comment="Block SI traffic"

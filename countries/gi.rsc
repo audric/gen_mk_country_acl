@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for GI
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 80
 
 /ip firewall address-list
@@ -85,6 +85,11 @@ add list="GI country" address=217.65.48.0/20 comment="GI"
 add list="GI country" address=217.147.112.0/20 comment="GI"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="GI country" log=yes
-# add action=drop chain=forward src-address-list="GI country" log=yes
+# add action=accept chain=input src-address-list="GI country" comment="Allow GI traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="GI country" comment="Block GI traffic"

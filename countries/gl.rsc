@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for GL
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 25
 
 /ip firewall address-list
@@ -30,6 +30,11 @@ add list="GL country" address=188.72.71.0/24 comment="GL"
 add list="GL country" address=194.177.224.0/19 comment="GL"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="GL country" log=yes
-# add action=drop chain=forward src-address-list="GL country" log=yes
+# add action=accept chain=input src-address-list="GL country" comment="Allow GL traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="GL country" comment="Block GL traffic"

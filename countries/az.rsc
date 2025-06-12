@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for AZ
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 171
 
 /ip firewall address-list
@@ -176,6 +176,11 @@ add list="AZ country" address=217.64.16.0/20 comment="AZ"
 add list="AZ country" address=217.168.176.0/20 comment="AZ"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="AZ country" log=yes
-# add action=drop chain=forward src-address-list="AZ country" log=yes
+# add action=accept chain=input src-address-list="AZ country" comment="Allow AZ traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="AZ country" comment="Block AZ traffic"

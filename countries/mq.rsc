@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for MQ
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:54 +0200
 # Total CIDR blocks: 21
 
 /ip firewall address-list
@@ -26,6 +26,11 @@ add list="MQ country" address=192.163.24.0/22 comment="MQ"
 add list="MQ country" address=217.175.160.0/19 comment="MQ"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="MQ country" log=yes
-# add action=drop chain=forward src-address-list="MQ country" log=yes
+# add action=accept chain=input src-address-list="MQ country" comment="Allow MQ traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="MQ country" comment="Block MQ traffic"

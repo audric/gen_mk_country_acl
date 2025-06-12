@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for PA
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:54 +0200
 # Total CIDR blocks: 132
 
 /ip firewall address-list
@@ -137,6 +137,11 @@ add list="PA country" address=206.224.32.0/19 comment="PA"
 add list="PA country" address=208.89.86.0/23 comment="PA"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="PA country" log=yes
-# add action=drop chain=forward src-address-list="PA country" log=yes
+# add action=accept chain=input src-address-list="PA country" comment="Allow PA traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="PA country" comment="Block PA traffic"

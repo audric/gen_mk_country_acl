@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for ES
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 3349
 
 /ip firewall address-list
@@ -3109,6 +3109,7 @@ add list="ES country" address=195.133.160.0/19 comment="ES"
 add list="ES country" address=195.133.204.0/22 comment="ES"
 add list="ES country" address=195.133.212.0/22 comment="ES"
 add list="ES country" address=195.135.248.0/22 comment="ES"
+add list="ES country" address=195.138.40.0/24 comment="ES"
 add list="ES country" address=195.138.209.0/24 comment="ES"
 add list="ES country" address=195.140.156.0/22 comment="ES"
 add list="ES country" address=195.149.113.0/24 comment="ES"
@@ -3297,7 +3298,6 @@ add list="ES country" address=213.232.248.0/24 comment="ES"
 add list="ES country" address=213.236.0.0/22 comment="ES"
 add list="ES country" address=213.236.4.0/24 comment="ES"
 add list="ES country" address=213.236.7.0/24 comment="ES"
-add list="ES country" address=213.236.8.0/21 comment="ES"
 add list="ES country" address=213.236.16.0/20 comment="ES"
 add list="ES country" address=213.254.64.0/18 comment="ES"
 add list="ES country" address=216.147.96.0/20 comment="ES"
@@ -3354,6 +3354,11 @@ add list="ES country" address=217.198.192.0/20 comment="ES"
 add list="ES country" address=217.216.0.0/15 comment="ES"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="ES country" log=yes
-# add action=drop chain=forward src-address-list="ES country" log=yes
+# add action=accept chain=input src-address-list="ES country" comment="Allow ES traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="ES country" comment="Block ES traffic"

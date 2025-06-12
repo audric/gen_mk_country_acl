@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for CN
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 5495
+# Generated at: 2025-06-12 09:46:55 +0200
+# Total CIDR blocks: 5494
 
 /ip firewall address-list
 add list="CN country" address=1.0.1.0/24 comment="CN"
@@ -1753,7 +1753,6 @@ add list="CN country" address=103.97.40.0/22 comment="CN"
 add list="CN country" address=103.97.56.0/21 comment="CN"
 add list="CN country" address=103.97.64.0/21 comment="CN"
 add list="CN country" address=103.97.72.0/22 comment="CN"
-add list="CN country" address=103.97.80.0/22 comment="CN"
 add list="CN country" address=103.97.112.0/21 comment="CN"
 add list="CN country" address=103.97.128.0/22 comment="CN"
 add list="CN country" address=103.97.144.0/21 comment="CN"
@@ -2872,6 +2871,7 @@ add list="CN country" address=103.255.200.0/22 comment="CN"
 add list="CN country" address=103.255.208.0/23 comment="CN"
 add list="CN country" address=103.255.212.0/22 comment="CN"
 add list="CN country" address=103.255.228.0/22 comment="CN"
+add list="CN country" address=104.167.19.0/24 comment="CN"
 add list="CN country" address=104.167.25.0/24 comment="CN"
 add list="CN country" address=104.167.26.0/23 comment="CN"
 add list="CN country" address=104.207.32.0/19 comment="CN"
@@ -3472,7 +3472,6 @@ add list="CN country" address=123.242.0.0/17 comment="CN"
 add list="CN country" address=123.242.192.0/21 comment="CN"
 add list="CN country" address=123.244.0.0/14 comment="CN"
 add list="CN country" address=123.249.0.0/16 comment="CN"
-add list="CN country" address=123.253.240.0/22 comment="CN"
 add list="CN country" address=123.254.96.0/21 comment="CN"
 add list="CN country" address=124.6.64.0/18 comment="CN"
 add list="CN country" address=124.14.0.0/15 comment="CN"
@@ -5500,6 +5499,11 @@ add list="CN country" address=223.255.236.0/22 comment="CN"
 add list="CN country" address=223.255.252.0/23 comment="CN"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="CN country" log=yes
-# add action=drop chain=forward src-address-list="CN country" log=yes
+# add action=accept chain=input src-address-list="CN country" comment="Allow CN traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="CN country" comment="Block CN traffic"

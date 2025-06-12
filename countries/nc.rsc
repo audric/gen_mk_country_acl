@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for NC
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 42
 
 /ip firewall address-list
@@ -47,6 +47,11 @@ add list="NC country" address=223.29.128.0/19 comment="NC"
 add list="NC country" address=223.29.160.0/20 comment="NC"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="NC country" log=yes
-# add action=drop chain=forward src-address-list="NC country" log=yes
+# add action=accept chain=input src-address-list="NC country" comment="Allow NC traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="NC country" comment="Block NC traffic"

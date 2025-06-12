@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for MX
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 777
 
 /ip firewall address-list
@@ -160,7 +160,6 @@ add list="MX country" address=148.222.56.0/21 comment="MX"
 add list="MX country" address=148.222.124.0/22 comment="MX"
 add list="MX country" address=148.222.140.0/22 comment="MX"
 add list="MX country" address=148.222.152.0/22 comment="MX"
-add list="MX country" address=148.222.160.0/20 comment="MX"
 add list="MX country" address=148.222.188.0/22 comment="MX"
 add list="MX country" address=148.222.252.0/22 comment="MX"
 add list="MX country" address=148.223.0.0/16 comment="MX"
@@ -597,6 +596,7 @@ add list="MX country" address=200.79.160.0/20 comment="MX"
 add list="MX country" address=200.79.176.0/21 comment="MX"
 add list="MX country" address=200.79.192.0/18 comment="MX"
 add list="MX country" address=200.80.80.0/20 comment="MX"
+add list="MX country" address=200.90.156.0/22 comment="MX"
 add list="MX country" address=200.92.0.0/16 comment="MX"
 add list="MX country" address=200.94.0.0/17 comment="MX"
 add list="MX country" address=200.94.128.0/18 comment="MX"
@@ -782,6 +782,11 @@ add list="MX country" address=208.78.16.0/22 comment="MX"
 add list="MX country" address=209.35.184.0/22 comment="MX"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="MX country" log=yes
-# add action=drop chain=forward src-address-list="MX country" log=yes
+# add action=accept chain=input src-address-list="MX country" comment="Allow MX traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="MX country" comment="Block MX traffic"

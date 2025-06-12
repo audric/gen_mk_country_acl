@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for HR
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 254
 
 /ip firewall address-list
@@ -259,6 +259,11 @@ add list="HR country" address=217.14.208.0/20 comment="HR"
 add list="HR country" address=217.68.80.0/20 comment="HR"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="HR country" log=yes
-# add action=drop chain=forward src-address-list="HR country" log=yes
+# add action=accept chain=input src-address-list="HR country" comment="Allow HR traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="HR country" comment="Block HR traffic"

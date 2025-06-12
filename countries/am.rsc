@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for AM
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 178
 
 /ip firewall address-list
@@ -183,6 +183,11 @@ add list="AM country" address=217.113.0.0/19 comment="AM"
 add list="AM country" address=217.144.176.0/20 comment="AM"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="AM country" log=yes
-# add action=drop chain=forward src-address-list="AM country" log=yes
+# add action=accept chain=input src-address-list="AM country" comment="Allow AM traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="AM country" comment="Block AM traffic"

@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for RO
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 2383
+# Generated at: 2025-06-12 09:46:56 +0200
+# Total CIDR blocks: 2382
 
 /ip firewall address-list
 add list="RO country" address=2.56.48.0/22 comment="RO"
@@ -614,10 +614,9 @@ add list="RO country" address=89.39.64.0/22 comment="RO"
 add list="RO country" address=89.39.68.0/24 comment="RO"
 add list="RO country" address=89.39.71.0/24 comment="RO"
 add list="RO country" address=89.39.72.0/22 comment="RO"
-add list="RO country" address=89.39.80.0/23 comment="RO"
+add list="RO country" address=89.39.81.0/24 comment="RO"
 add list="RO country" address=89.39.83.0/24 comment="RO"
 add list="RO country" address=89.39.89.0/24 comment="RO"
-add list="RO country" address=89.39.90.0/24 comment="RO"
 add list="RO country" address=89.39.93.0/24 comment="RO"
 add list="RO country" address=89.39.109.0/24 comment="RO"
 add list="RO country" address=89.39.110.0/23 comment="RO"
@@ -2388,6 +2387,11 @@ add list="RO country" address=217.156.0.0/17 comment="RO"
 add list="RO country" address=217.197.98.0/23 comment="RO"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="RO country" log=yes
-# add action=drop chain=forward src-address-list="RO country" log=yes
+# add action=accept chain=input src-address-list="RO country" comment="Allow RO traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="RO country" comment="Block RO traffic"

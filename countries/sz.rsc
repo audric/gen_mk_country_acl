@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for SZ
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 24
 
 /ip firewall address-list
@@ -29,6 +29,11 @@ add list="SZ country" address=196.49.4.0/24 comment="SZ"
 add list="SZ country" address=196.223.37.0/24 comment="SZ"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="SZ country" log=yes
-# add action=drop chain=forward src-address-list="SZ country" log=yes
+# add action=accept chain=input src-address-list="SZ country" comment="Allow SZ traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="SZ country" comment="Block SZ traffic"

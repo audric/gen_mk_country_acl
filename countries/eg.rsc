@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for EG
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 173
 
 /ip firewall address-list
@@ -178,6 +178,11 @@ add list="EG country" address=217.52.0.0/14 comment="EG"
 add list="EG country" address=217.139.0.0/16 comment="EG"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="EG country" log=yes
-# add action=drop chain=forward src-address-list="EG country" log=yes
+# add action=accept chain=input src-address-list="EG country" comment="Allow EG traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="EG country" comment="Block EG traffic"

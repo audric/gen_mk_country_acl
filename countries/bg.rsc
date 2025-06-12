@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for BG
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 1289
+# Generated at: 2025-06-12 09:46:56 +0200
+# Total CIDR blocks: 1291
 
 /ip firewall address-list
 add list="BG country" address=2.56.12.0/22 comment="BG"
@@ -552,7 +552,9 @@ add list="BG country" address=93.123.28.0/22 comment="BG"
 add list="BG country" address=93.123.32.0/22 comment="BG"
 add list="BG country" address=93.123.36.0/23 comment="BG"
 add list="BG country" address=93.123.39.0/24 comment="BG"
-add list="BG country" address=93.123.40.0/21 comment="BG"
+add list="BG country" address=93.123.40.0/22 comment="BG"
+add list="BG country" address=93.123.44.0/24 comment="BG"
+add list="BG country" address=93.123.46.0/23 comment="BG"
 add list="BG country" address=93.123.48.0/20 comment="BG"
 add list="BG country" address=93.123.64.0/22 comment="BG"
 add list="BG country" address=93.123.73.0/24 comment="BG"
@@ -1294,6 +1296,11 @@ add list="BG country" address=217.174.48.0/20 comment="BG"
 add list="BG country" address=217.174.144.0/20 comment="BG"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="BG country" log=yes
-# add action=drop chain=forward src-address-list="BG country" log=yes
+# add action=accept chain=input src-address-list="BG country" comment="Allow BG traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="BG country" comment="Block BG traffic"

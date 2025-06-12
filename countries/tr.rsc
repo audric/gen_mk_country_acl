@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for TR
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 1436
+# Generated at: 2025-06-12 09:46:56 +0200
+# Total CIDR blocks: 1439
 
 /ip firewall address-list
 add list="TR country" address=2.56.60.0/22 comment="TR"
@@ -323,6 +323,8 @@ add list="TR country" address=89.35.52.0/24 comment="TR"
 add list="TR country" address=89.35.152.0/24 comment="TR"
 add list="TR country" address=89.38.56.0/24 comment="TR"
 add list="TR country" address=89.38.71.0/24 comment="TR"
+add list="TR country" address=89.39.80.0/24 comment="TR"
+add list="TR country" address=89.39.90.0/24 comment="TR"
 add list="TR country" address=89.39.151.0/24 comment="TR"
 add list="TR country" address=89.40.68.0/24 comment="TR"
 add list="TR country" address=89.40.131.0/24 comment="TR"
@@ -965,6 +967,7 @@ add list="TR country" address=185.203.67.0/24 comment="TR"
 add list="TR country" address=185.203.89.0/24 comment="TR"
 add list="TR country" address=185.203.168.0/22 comment="TR"
 add list="TR country" address=185.204.72.0/22 comment="TR"
+add list="TR country" address=185.204.155.0/24 comment="TR"
 add list="TR country" address=185.204.187.0/24 comment="TR"
 add list="TR country" address=185.204.196.0/24 comment="TR"
 add list="TR country" address=185.204.228.0/22 comment="TR"
@@ -1441,6 +1444,11 @@ add list="TR country" address=217.195.204.0/24 comment="TR"
 add list="TR country" address=217.195.206.0/23 comment="TR"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="TR country" log=yes
-# add action=drop chain=forward src-address-list="TR country" log=yes
+# add action=accept chain=input src-address-list="TR country" comment="Allow TR traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="TR country" comment="Block TR traffic"

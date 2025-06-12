@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for TZ
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 170
 
 /ip firewall address-list
@@ -175,6 +175,11 @@ add list="TZ country" address=197.250.0.0/16 comment="TZ"
 add list="TZ country" address=217.29.128.0/20 comment="TZ"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="TZ country" log=yes
-# add action=drop chain=forward src-address-list="TZ country" log=yes
+# add action=accept chain=input src-address-list="TZ country" comment="Allow TZ traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="TZ country" comment="Block TZ traffic"

@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for NG
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 360
+# Generated at: 2025-06-12 09:46:55 +0200
+# Total CIDR blocks: 359
 
 /ip firewall address-list
 add list="NG country" address=41.57.120.0/22 comment="NG"
@@ -188,7 +188,6 @@ add list="NG country" address=102.217.0.0/22 comment="NG"
 add list="NG country" address=102.217.8.0/22 comment="NG"
 add list="NG country" address=102.217.180.0/22 comment="NG"
 add list="NG country" address=102.217.204.0/22 comment="NG"
-add list="NG country" address=102.217.208.0/24 comment="NG"
 add list="NG country" address=102.217.212.0/22 comment="NG"
 add list="NG country" address=102.217.236.0/22 comment="NG"
 add list="NG country" address=102.217.255.0/24 comment="NG"
@@ -365,6 +364,11 @@ add list="NG country" address=217.14.80.0/20 comment="NG"
 add list="NG country" address=217.117.0.0/20 comment="NG"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="NG country" log=yes
-# add action=drop chain=forward src-address-list="NG country" log=yes
+# add action=accept chain=input src-address-list="NG country" comment="Allow NG traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="NG country" comment="Block NG traffic"

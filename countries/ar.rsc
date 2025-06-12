@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for AR
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 1592
 
 /ip firewall address-list
@@ -1136,7 +1136,8 @@ add list="AR country" address=190.110.176.0/20 comment="AR"
 add list="AR country" address=190.110.224.0/23 comment="AR"
 add list="AR country" address=190.110.229.0/24 comment="AR"
 add list="AR country" address=190.110.232.0/21 comment="AR"
-add list="AR country" address=190.110.240.0/22 comment="AR"
+add list="AR country" address=190.110.240.0/24 comment="AR"
+add list="AR country" address=190.110.242.0/23 comment="AR"
 add list="AR country" address=190.110.244.0/24 comment="AR"
 add list="AR country" address=190.110.248.0/21 comment="AR"
 add list="AR country" address=190.111.32.0/19 comment="AR"
@@ -1272,7 +1273,6 @@ add list="AR country" address=200.0.17.0/24 comment="AR"
 add list="AR country" address=200.0.19.0/24 comment="AR"
 add list="AR country" address=200.0.79.0/24 comment="AR"
 add list="AR country" address=200.0.80.0/24 comment="AR"
-add list="AR country" address=200.0.96.0/22 comment="AR"
 add list="AR country" address=200.0.175.0/24 comment="AR"
 add list="AR country" address=200.0.181.0/24 comment="AR"
 add list="AR country" address=200.0.182.0/23 comment="AR"
@@ -1597,6 +1597,11 @@ add list="AR country" address=209.99.224.0/20 comment="AR"
 add list="AR country" address=216.244.192.0/18 comment="AR"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="AR country" log=yes
-# add action=drop chain=forward src-address-list="AR country" log=yes
+# add action=accept chain=input src-address-list="AR country" comment="Allow AR traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="AR country" comment="Block AR traffic"

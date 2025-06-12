@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for UA
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 2657
+# Generated at: 2025-06-12 09:46:56 +0200
+# Total CIDR blocks: 2656
 
 /ip firewall address-list
 add list="UA country" address=2.56.108.0/22 comment="UA"
@@ -1562,7 +1562,6 @@ add list="UA country" address=185.236.76.0/22 comment="UA"
 add list="UA country" address=185.237.72.0/22 comment="UA"
 add list="UA country" address=185.237.166.0/24 comment="UA"
 add list="UA country" address=185.237.204.0/22 comment="UA"
-add list="UA country" address=185.237.216.0/23 comment="UA"
 add list="UA country" address=185.237.226.0/23 comment="UA"
 add list="UA country" address=185.238.114.0/24 comment="UA"
 add list="UA country" address=185.238.136.0/24 comment="UA"
@@ -2202,7 +2201,6 @@ add list="UA country" address=194.177.0.0/22 comment="UA"
 add list="UA country" address=194.177.15.0/24 comment="UA"
 add list="UA country" address=194.177.24.0/22 comment="UA"
 add list="UA country" address=194.180.10.0/24 comment="UA"
-add list="UA country" address=194.180.226.192/26 comment="UA"
 add list="UA country" address=194.180.244.0/24 comment="UA"
 add list="UA country" address=194.183.160.0/19 comment="UA"
 add list="UA country" address=194.187.28.0/24 comment="UA"
@@ -2283,6 +2281,7 @@ add list="UA country" address=195.34.94.0/23 comment="UA"
 add list="UA country" address=195.34.196.0/22 comment="UA"
 add list="UA country" address=195.34.204.0/22 comment="UA"
 add list="UA country" address=195.35.65.0/24 comment="UA"
+add list="UA country" address=195.38.8.0/22 comment="UA"
 add list="UA country" address=195.38.16.0/23 comment="UA"
 add list="UA country" address=195.38.18.0/24 comment="UA"
 add list="UA country" address=195.39.210.0/23 comment="UA"
@@ -2662,6 +2661,11 @@ add list="UA country" address=217.173.208.0/20 comment="UA"
 add list="UA country" address=217.196.160.0/20 comment="UA"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="UA country" log=yes
-# add action=drop chain=forward src-address-list="UA country" log=yes
+# add action=accept chain=input src-address-list="UA country" comment="Allow UA traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="UA country" comment="Block UA traffic"

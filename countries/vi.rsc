@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for VI
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:54 +0200
 # Total CIDR blocks: 24
 
 /ip firewall address-list
@@ -29,6 +29,11 @@ add list="VI country" address=208.84.192.0/21 comment="VI"
 add list="VI country" address=209.221.192.0/19 comment="VI"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="VI country" log=yes
-# add action=drop chain=forward src-address-list="VI country" log=yes
+# add action=accept chain=input src-address-list="VI country" comment="Allow VI traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="VI country" comment="Block VI traffic"

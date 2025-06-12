@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for AO
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 130
 
 /ip firewall address-list
@@ -135,6 +135,11 @@ add list="AO country" address=197.241.128.0/17 comment="AO"
 add list="AO country" address=204.8.204.0/24 comment="AO"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="AO country" log=yes
-# add action=drop chain=forward src-address-list="AO country" log=yes
+# add action=accept chain=input src-address-list="AO country" comment="Allow AO traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="AO country" comment="Block AO traffic"

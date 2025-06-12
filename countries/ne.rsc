@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for NE
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 12
 
 /ip firewall address-list
@@ -17,6 +17,11 @@ add list="NE country" address=154.127.80.0/20 comment="NE"
 add list="NE country" address=197.214.0.0/18 comment="NE"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="NE country" log=yes
-# add action=drop chain=forward src-address-list="NE country" log=yes
+# add action=accept chain=input src-address-list="NE country" comment="Allow NE traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="NE country" comment="Block NE traffic"

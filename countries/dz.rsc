@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for DZ
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 32
 
 /ip firewall address-list
@@ -37,6 +37,11 @@ add list="DZ country" address=197.200.0.0/13 comment="DZ"
 add list="DZ country" address=213.179.160.0/19 comment="DZ"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="DZ country" log=yes
-# add action=drop chain=forward src-address-list="DZ country" log=yes
+# add action=accept chain=input src-address-list="DZ country" comment="Allow DZ traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="DZ country" comment="Block DZ traffic"

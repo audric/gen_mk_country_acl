@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for ME
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 49
 
 /ip firewall address-list
@@ -54,6 +54,11 @@ add list="ME country" address=213.149.96.0/19 comment="ME"
 add list="ME country" address=213.196.64.0/19 comment="ME"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="ME country" log=yes
-# add action=drop chain=forward src-address-list="ME country" log=yes
+# add action=accept chain=input src-address-list="ME country" comment="Allow ME traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="ME country" comment="Block ME traffic"

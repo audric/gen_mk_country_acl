@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for YE
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 29
 
 /ip firewall address-list
@@ -34,6 +34,11 @@ add list="YE country" address=195.94.0.0/19 comment="YE"
 add list="YE country" address=213.246.0.0/19 comment="YE"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="YE country" log=yes
-# add action=drop chain=forward src-address-list="YE country" log=yes
+# add action=accept chain=input src-address-list="YE country" comment="Allow YE traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="YE country" comment="Block YE traffic"

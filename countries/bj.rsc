@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for BJ
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 34
 
 /ip firewall address-list
@@ -39,6 +39,11 @@ add list="BJ country" address=196.251.152.0/22 comment="BJ"
 add list="BJ country" address=197.234.216.0/21 comment="BJ"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="BJ country" log=yes
-# add action=drop chain=forward src-address-list="BJ country" log=yes
+# add action=accept chain=input src-address-list="BJ country" comment="Allow BJ traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="BJ country" comment="Block BJ traffic"

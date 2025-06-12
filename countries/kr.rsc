@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for KR
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 996
 
 /ip firewall address-list
@@ -1001,6 +1001,11 @@ add list="KR country" address=223.253.0.0/16 comment="KR"
 add list="KR country" address=223.255.192.0/19 comment="KR"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="KR country" log=yes
-# add action=drop chain=forward src-address-list="KR country" log=yes
+# add action=accept chain=input src-address-list="KR country" comment="Allow KR traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="KR country" comment="Block KR traffic"

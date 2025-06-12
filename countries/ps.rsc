@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for PS
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 243
 
 /ip firewall address-list
@@ -248,6 +248,11 @@ add list="PS country" address=217.78.48.0/20 comment="PS"
 add list="PS country" address=217.147.0.0/22 comment="PS"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="PS country" log=yes
-# add action=drop chain=forward src-address-list="PS country" log=yes
+# add action=accept chain=input src-address-list="PS country" comment="Allow PS traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="PS country" comment="Block PS traffic"

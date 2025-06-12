@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for CH
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 2600
+# Generated at: 2025-06-12 09:46:54 +0200
+# Total CIDR blocks: 2601
 
 /ip firewall address-list
 add list="CH country" address=2.56.40.0/22 comment="CH"
@@ -621,6 +621,7 @@ add list="CH country" address=93.113.184.0/21 comment="CH"
 add list="CH country" address=93.115.211.0/24 comment="CH"
 add list="CH country" address=93.115.253.0/24 comment="CH"
 add list="CH country" address=93.123.14.0/23 comment="CH"
+add list="CH country" address=93.123.45.0/24 comment="CH"
 add list="CH country" address=93.123.82.0/23 comment="CH"
 add list="CH country" address=93.157.32.0/21 comment="CH"
 add list="CH country" address=93.159.224.0/21 comment="CH"
@@ -1513,7 +1514,6 @@ add list="CH country" address=192.42.180.0/22 comment="CH"
 add list="CH country" address=192.42.184.0/21 comment="CH"
 add list="CH country" address=192.42.192.0/21 comment="CH"
 add list="CH country" address=192.42.200.0/23 comment="CH"
-add list="CH country" address=192.42.253.0/24 comment="CH"
 add list="CH country" address=192.43.192.0/22 comment="CH"
 add list="CH country" address=192.43.196.0/24 comment="CH"
 add list="CH country" address=192.47.244.0/22 comment="CH"
@@ -1570,6 +1570,7 @@ add list="CH country" address=192.135.148.0/22 comment="CH"
 add list="CH country" address=192.135.152.0/21 comment="CH"
 add list="CH country" address=192.135.160.0/22 comment="CH"
 add list="CH country" address=192.135.164.0/24 comment="CH"
+add list="CH country" address=192.135.217.0/24 comment="CH"
 add list="CH country" address=192.136.41.0/24 comment="CH"
 add list="CH country" address=192.136.156.0/24 comment="CH"
 add list="CH country" address=192.138.230.0/23 comment="CH"
@@ -2605,6 +2606,11 @@ add list="CH country" address=217.197.128.0/21 comment="CH"
 add list="CH country" address=217.197.208.0/20 comment="CH"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="CH country" log=yes
-# add action=drop chain=forward src-address-list="CH country" log=yes
+# add action=accept chain=input src-address-list="CH country" comment="Allow CH traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="CH country" comment="Block CH traffic"

@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for FR
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 4043
+# Generated at: 2025-06-12 09:46:54 +0200
+# Total CIDR blocks: 4045
 
 /ip firewall address-list
 add list="FR country" address=1.179.112.0/20 comment="FR"
@@ -676,6 +676,8 @@ add list="FR country" address=83.172.184.0/23 comment="FR"
 add list="FR country" address=83.172.187.0/24 comment="FR"
 add list="FR country" address=83.172.190.0/23 comment="FR"
 add list="FR country" address=83.173.64.0/18 comment="FR"
+add list="FR country" address=83.175.167.0/24 comment="FR"
+add list="FR country" address=83.175.173.0/24 comment="FR"
 add list="FR country" address=83.192.0.0/12 comment="FR"
 add list="FR country" address=83.214.0.0/16 comment="FR"
 add list="FR country" address=83.229.19.0/24 comment="FR"
@@ -4048,6 +4050,11 @@ add list="FR country" address=217.197.110.0/24 comment="FR"
 add list="FR country" address=217.198.184.0/24 comment="FR"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="FR country" log=yes
-# add action=drop chain=forward src-address-list="FR country" log=yes
+# add action=accept chain=input src-address-list="FR country" comment="Allow FR traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="FR country" comment="Block FR traffic"

@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for SX
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 10
 
 /ip firewall address-list
@@ -15,6 +15,11 @@ add list="SX country" address=200.7.32.0/19 comment="SX"
 add list="SX country" address=201.220.0.0/20 comment="SX"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="SX country" log=yes
-# add action=drop chain=forward src-address-list="SX country" log=yes
+# add action=accept chain=input src-address-list="SX country" comment="Allow SX traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="SX country" comment="Block SX traffic"

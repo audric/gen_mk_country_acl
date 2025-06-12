@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for AD
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 21
+# Generated at: 2025-06-12 09:46:56 +0200
+# Total CIDR blocks: 22
 
 /ip firewall address-list
 add list="AD country" address=46.172.224.0/19 comment="AD"
@@ -24,8 +24,14 @@ add list="AD country" address=185.194.56.0/22 comment="AD"
 add list="AD country" address=185.247.24.0/22 comment="AD"
 add list="AD country" address=188.241.26.0/23 comment="AD"
 add list="AD country" address=194.158.64.0/19 comment="AD"
+add list="AD country" address=213.236.8.0/21 comment="AD"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="AD country" log=yes
-# add action=drop chain=forward src-address-list="AD country" log=yes
+# add action=accept chain=input src-address-list="AD country" comment="Allow AD traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="AD country" comment="Block AD traffic"

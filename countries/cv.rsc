@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for CV
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 23
 
 /ip firewall address-list
@@ -28,6 +28,11 @@ add list="CV country" address=197.255.128.0/20 comment="CV"
 add list="CV country" address=213.150.192.0/21 comment="CV"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="CV country" log=yes
-# add action=drop chain=forward src-address-list="CV country" log=yes
+# add action=accept chain=input src-address-list="CV country" comment="Allow CV traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="CV country" comment="Block CV traffic"

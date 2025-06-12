@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for BH
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 54
 
 /ip firewall address-list
@@ -59,6 +59,11 @@ add list="BH country" address=193.188.96.0/19 comment="BH"
 add list="BH country" address=217.17.224.0/19 comment="BH"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="BH country" log=yes
-# add action=drop chain=forward src-address-list="BH country" log=yes
+# add action=accept chain=input src-address-list="BH country" comment="Allow BH traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="BH country" comment="Block BH traffic"

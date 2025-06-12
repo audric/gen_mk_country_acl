@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for PL
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 3886
+# Generated at: 2025-06-12 09:46:56 +0200
+# Total CIDR blocks: 3894
 
 /ip firewall address-list
 add list="PL country" address=2.56.68.0/22 comment="PL"
@@ -462,7 +462,14 @@ add list="PL country" address=83.145.128.0/18 comment="PL"
 add list="PL country" address=83.150.196.0/22 comment="PL"
 add list="PL country" address=83.151.32.0/20 comment="PL"
 add list="PL country" address=83.168.64.0/18 comment="PL"
-add list="PL country" address=83.175.128.0/18 comment="PL"
+add list="PL country" address=83.175.128.0/19 comment="PL"
+add list="PL country" address=83.175.160.0/22 comment="PL"
+add list="PL country" address=83.175.164.0/23 comment="PL"
+add list="PL country" address=83.175.166.0/24 comment="PL"
+add list="PL country" address=83.175.168.0/22 comment="PL"
+add list="PL country" address=83.175.172.0/24 comment="PL"
+add list="PL country" address=83.175.174.0/23 comment="PL"
+add list="PL country" address=83.175.176.0/20 comment="PL"
 add list="PL country" address=83.218.96.0/19 comment="PL"
 add list="PL country" address=83.220.96.0/19 comment="PL"
 add list="PL country" address=83.230.0.0/17 comment="PL"
@@ -3431,6 +3438,7 @@ add list="PL country" address=195.28.0.0/23 comment="PL"
 add list="PL country" address=195.28.16.0/23 comment="PL"
 add list="PL country" address=195.28.170.0/23 comment="PL"
 add list="PL country" address=195.28.189.0/24 comment="PL"
+add list="PL country" address=195.34.92.0/23 comment="PL"
 add list="PL country" address=195.34.208.0/22 comment="PL"
 add list="PL country" address=195.34.216.0/22 comment="PL"
 add list="PL country" address=195.35.80.0/24 comment="PL"
@@ -3891,6 +3899,11 @@ add list="PL country" address=217.197.64.0/20 comment="PL"
 add list="PL country" address=217.197.102.0/24 comment="PL"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="PL country" log=yes
-# add action=drop chain=forward src-address-list="PL country" log=yes
+# add action=accept chain=input src-address-list="PL country" comment="Allow PL traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="PL country" comment="Block PL traffic"

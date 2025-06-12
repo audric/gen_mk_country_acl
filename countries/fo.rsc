@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for FO
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 14
 
 /ip firewall address-list
@@ -19,6 +19,11 @@ add list="FO country" address=212.55.32.0/19 comment="FO"
 add list="FO country" address=217.172.80.0/20 comment="FO"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="FO country" log=yes
-# add action=drop chain=forward src-address-list="FO country" log=yes
+# add action=accept chain=input src-address-list="FO country" comment="Allow FO traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="FO country" comment="Block FO traffic"

@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for SN
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 31
 
 /ip firewall address-list
@@ -36,6 +36,11 @@ add list="SN country" address=196.250.200.0/22 comment="SN"
 add list="SN country" address=213.154.64.0/19 comment="SN"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="SN country" log=yes
-# add action=drop chain=forward src-address-list="SN country" log=yes
+# add action=accept chain=input src-address-list="SN country" comment="Allow SN traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="SN country" comment="Block SN traffic"

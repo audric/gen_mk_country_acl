@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for KI
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 5
 
 /ip firewall address-list
@@ -10,6 +10,11 @@ add list="KI country" address=202.6.120.0/22 comment="KI"
 add list="KI country" address=202.58.248.0/22 comment="KI"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="KI country" log=yes
-# add action=drop chain=forward src-address-list="KI country" log=yes
+# add action=accept chain=input src-address-list="KI country" comment="Allow KI traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="KI country" comment="Block KI traffic"

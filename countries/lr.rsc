@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for LR
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 19
 
 /ip firewall address-list
@@ -24,6 +24,11 @@ add list="LR country" address=197.231.152.0/21 comment="LR"
 add list="LR country" address=197.231.220.0/22 comment="LR"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="LR country" log=yes
-# add action=drop chain=forward src-address-list="LR country" log=yes
+# add action=accept chain=input src-address-list="LR country" comment="Allow LR traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="LR country" comment="Block LR traffic"

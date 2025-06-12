@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for HN
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 186
 
 /ip firewall address-list
@@ -191,6 +191,11 @@ add list="HN country" address=201.220.128.0/20 comment="HN"
 add list="HN country" address=207.248.66.0/23 comment="HN"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="HN country" log=yes
-# add action=drop chain=forward src-address-list="HN country" log=yes
+# add action=accept chain=input src-address-list="HN country" comment="Allow HN traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="HN country" comment="Block HN traffic"

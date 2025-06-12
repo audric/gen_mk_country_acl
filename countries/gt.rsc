@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for GT
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 131
 
 /ip firewall address-list
@@ -136,6 +136,11 @@ add list="GT country" address=213.173.52.0/22 comment="GT"
 add list="GT country" address=216.230.128.0/19 comment="GT"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="GT country" log=yes
-# add action=drop chain=forward src-address-list="GT country" log=yes
+# add action=accept chain=input src-address-list="GT country" comment="Allow GT traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="GT country" comment="Block GT traffic"

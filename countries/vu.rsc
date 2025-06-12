@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for VU
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 20
 
 /ip firewall address-list
@@ -25,6 +25,11 @@ add list="VU country" address=202.80.32.0/20 comment="VU"
 add list="VU country" address=203.191.128.0/22 comment="VU"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="VU country" log=yes
-# add action=drop chain=forward src-address-list="VU country" log=yes
+# add action=accept chain=input src-address-list="VU country" comment="Allow VU traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="VU country" comment="Block VU traffic"

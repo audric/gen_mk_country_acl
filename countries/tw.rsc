@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for TW
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:54 +0200
 # Total CIDR blocks: 705
 
 /ip firewall address-list
@@ -674,7 +674,7 @@ add list="TW country" address=210.203.0.0/17 comment="TW"
 add list="TW country" address=210.208.0.0/16 comment="TW"
 add list="TW country" address=210.209.0.0/18 comment="TW"
 add list="TW country" address=210.209.128.0/17 comment="TW"
-add list="TW country" address=210.211.24.0/21 comment="TW"
+add list="TW country" address=210.211.30.0/23 comment="TW"
 add list="TW country" address=210.240.0.0/14 comment="TW"
 add list="TW country" address=210.244.0.0/16 comment="TW"
 add list="TW country" address=211.20.0.0/14 comment="TW"
@@ -710,6 +710,11 @@ add list="TW country" address=223.165.8.0/21 comment="TW"
 add list="TW country" address=223.200.0.0/16 comment="TW"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="TW country" log=yes
-# add action=drop chain=forward src-address-list="TW country" log=yes
+# add action=accept chain=input src-address-list="TW country" comment="Allow TW traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="TW country" comment="Block TW traffic"

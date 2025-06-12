@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for GN
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 23
 
 /ip firewall address-list
@@ -28,6 +28,11 @@ add list="GN country" address=196.60.61.0/24 comment="GN"
 add list="GN country" address=197.149.192.0/18 comment="GN"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="GN country" log=yes
-# add action=drop chain=forward src-address-list="GN country" log=yes
+# add action=accept chain=input src-address-list="GN country" comment="Allow GN traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="GN country" comment="Block GN traffic"

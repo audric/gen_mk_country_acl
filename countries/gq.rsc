@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for GQ
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 11
 
 /ip firewall address-list
@@ -16,6 +16,11 @@ add list="GQ country" address=197.149.168.0/22 comment="GQ"
 add list="GQ country" address=197.214.64.0/20 comment="GQ"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="GQ country" log=yes
-# add action=drop chain=forward src-address-list="GQ country" log=yes
+# add action=accept chain=input src-address-list="GQ country" comment="Allow GQ traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="GQ country" comment="Block GQ traffic"

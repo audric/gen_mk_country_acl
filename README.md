@@ -55,6 +55,7 @@ How to transfer them depends on many factor:
 ## Importing to Mikrotik RouterOS
 
 ```
+mk_fw> /import file-name=KK.rsc
 mk_fw> /import file-name=ZZ.rsc
 
 # Then you can use the created address lists in your firewall rules:

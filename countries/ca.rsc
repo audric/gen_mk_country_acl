@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for CA
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 6042
+# Generated at: 2025-06-12 09:46:54 +0200
+# Total CIDR blocks: 6039
 
 /ip firewall address-list
 add list="CA country" address=2.59.22.0/24 comment="CA"
@@ -223,7 +223,6 @@ add list="CA country" address=23.171.208.0/24 comment="CA"
 add list="CA country" address=23.171.240.0/24 comment="CA"
 add list="CA country" address=23.171.248.0/24 comment="CA"
 add list="CA country" address=23.172.8.0/24 comment="CA"
-add list="CA country" address=23.172.48.0/24 comment="CA"
 add list="CA country" address=23.172.144.0/24 comment="CA"
 add list="CA country" address=23.172.208.0/24 comment="CA"
 add list="CA country" address=23.172.224.0/24 comment="CA"
@@ -276,6 +275,7 @@ add list="CA country" address=23.190.128.0/24 comment="CA"
 add list="CA country" address=23.191.80.0/24 comment="CA"
 add list="CA country" address=23.191.128.0/23 comment="CA"
 add list="CA country" address=23.227.32.0/19 comment="CA"
+add list="CA country" address=23.227.128.0/19 comment="CA"
 add list="CA country" address=23.227.208.0/21 comment="CA"
 add list="CA country" address=23.229.0.0/17 comment="CA"
 add list="CA country" address=23.233.0.0/16 comment="CA"
@@ -404,7 +404,6 @@ add list="CA country" address=45.42.184.0/22 comment="CA"
 add list="CA country" address=45.42.192.0/22 comment="CA"
 add list="CA country" address=45.42.206.0/24 comment="CA"
 add list="CA country" address=45.42.220.0/22 comment="CA"
-add list="CA country" address=45.42.224.0/24 comment="CA"
 add list="CA country" address=45.42.240.0/22 comment="CA"
 add list="CA country" address=45.44.0.0/16 comment="CA"
 add list="CA country" address=45.45.0.0/17 comment="CA"
@@ -2266,7 +2265,6 @@ add list="CA country" address=162.252.132.0/22 comment="CA"
 add list="CA country" address=162.252.184.0/22 comment="CA"
 add list="CA country" address=162.252.204.0/22 comment="CA"
 add list="CA country" address=162.252.216.0/21 comment="CA"
-add list="CA country" address=162.252.240.0/22 comment="CA"
 add list="CA country" address=162.252.252.0/22 comment="CA"
 add list="CA country" address=162.253.8.0/22 comment="CA"
 add list="CA country" address=162.253.20.0/23 comment="CA"
@@ -2840,7 +2838,6 @@ add list="CA country" address=192.78.48.0/20 comment="CA"
 add list="CA country" address=192.78.248.0/21 comment="CA"
 add list="CA country" address=192.80.10.0/24 comment="CA"
 add list="CA country" address=192.80.54.0/24 comment="CA"
-add list="CA country" address=192.80.80.0/24 comment="CA"
 add list="CA country" address=192.80.160.0/20 comment="CA"
 add list="CA country" address=192.81.12.0/22 comment="CA"
 add list="CA country" address=192.81.16.0/20 comment="CA"
@@ -3952,7 +3949,6 @@ add list="CA country" address=199.85.201.0/24 comment="CA"
 add list="CA country" address=199.85.220.0/22 comment="CA"
 add list="CA country" address=199.85.224.0/21 comment="CA"
 add list="CA country" address=199.85.232.0/23 comment="CA"
-add list="CA country" address=199.85.245.0/24 comment="CA"
 add list="CA country" address=199.85.247.0/24 comment="CA"
 add list="CA country" address=199.85.248.0/23 comment="CA"
 add list="CA country" address=199.85.251.0/24 comment="CA"
@@ -5715,6 +5711,7 @@ add list="CA country" address=209.204.192.0/19 comment="CA"
 add list="CA country" address=209.204.224.0/20 comment="CA"
 add list="CA country" address=209.205.64.0/19 comment="CA"
 add list="CA country" address=209.205.96.0/20 comment="CA"
+add list="CA country" address=209.205.192.0/19 comment="CA"
 add list="CA country" address=209.205.240.0/20 comment="CA"
 add list="CA country" address=209.206.112.0/21 comment="CA"
 add list="CA country" address=209.206.127.0/24 comment="CA"
@@ -6047,6 +6044,11 @@ add list="CA country" address=217.65.70.0/24 comment="CA"
 add list="CA country" address=223.165.4.0/23 comment="CA"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="CA country" log=yes
-# add action=drop chain=forward src-address-list="CA country" log=yes
+# add action=accept chain=input src-address-list="CA country" comment="Allow CA traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="CA country" comment="Block CA traffic"

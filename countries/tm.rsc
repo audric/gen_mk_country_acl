@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for TM
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 9
 
 /ip firewall address-list
@@ -14,6 +14,11 @@ add list="TM country" address=216.250.8.0/21 comment="TM"
 add list="TM country" address=217.174.224.0/20 comment="TM"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="TM country" log=yes
-# add action=drop chain=forward src-address-list="TM country" log=yes
+# add action=accept chain=input src-address-list="TM country" comment="Allow TM traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="TM country" comment="Block TM traffic"

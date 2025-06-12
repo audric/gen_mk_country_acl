@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for MZ
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 52
 
 /ip firewall address-list
@@ -57,6 +57,11 @@ add list="MZ country" address=197.242.160.0/20 comment="MZ"
 add list="MZ country" address=197.249.0.0/16 comment="MZ"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="MZ country" log=yes
-# add action=drop chain=forward src-address-list="MZ country" log=yes
+# add action=accept chain=input src-address-list="MZ country" comment="Allow MZ traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="MZ country" comment="Block MZ traffic"

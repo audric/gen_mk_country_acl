@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for ZM
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 37
 
 /ip firewall address-list
@@ -42,6 +42,11 @@ add list="ZM country" address=197.231.244.0/22 comment="ZM"
 add list="ZM country" address=213.193.32.0/21 comment="ZM"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="ZM country" log=yes
-# add action=drop chain=forward src-address-list="ZM country" log=yes
+# add action=accept chain=input src-address-list="ZM country" comment="Allow ZM traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="ZM country" comment="Block ZM traffic"

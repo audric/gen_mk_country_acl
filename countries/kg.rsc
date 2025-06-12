@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for KG
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 92
 
 /ip firewall address-list
@@ -97,6 +97,11 @@ add list="KG country" address=213.232.200.0/24 comment="KG"
 add list="KG country" address=217.29.16.0/20 comment="KG"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="KG country" log=yes
-# add action=drop chain=forward src-address-list="KG country" log=yes
+# add action=accept chain=input src-address-list="KG country" comment="Allow KG traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="KG country" comment="Block KG traffic"

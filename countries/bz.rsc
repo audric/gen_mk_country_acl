@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for BZ
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 143
 
 /ip firewall address-list
@@ -148,6 +148,11 @@ add list="BZ country" address=203.30.188.0/22 comment="BZ"
 add list="BZ country" address=209.145.40.0/24 comment="BZ"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="BZ country" log=yes
-# add action=drop chain=forward src-address-list="BZ country" log=yes
+# add action=accept chain=input src-address-list="BZ country" comment="Allow BZ traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="BZ country" comment="Block BZ traffic"

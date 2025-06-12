@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for EC
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 304
+# Generated at: 2025-06-12 09:46:56 +0200
+# Total CIDR blocks: 303
 
 /ip firewall address-list
 add list="EC country" address=27.50.12.0/22 comment="EC"
@@ -274,7 +274,6 @@ add list="EC country" address=200.69.160.0/19 comment="EC"
 add list="EC country" address=200.73.200.0/21 comment="EC"
 add list="EC country" address=200.77.188.0/22 comment="EC"
 add list="EC country" address=200.85.80.0/21 comment="EC"
-add list="EC country" address=200.90.156.0/22 comment="EC"
 add list="EC country" address=200.93.192.0/19 comment="EC"
 add list="EC country" address=200.93.224.0/20 comment="EC"
 add list="EC country" address=200.93.248.0/21 comment="EC"
@@ -309,6 +308,11 @@ add list="EC country" address=201.238.128.0/18 comment="EC"
 add list="EC country" address=210.211.56.0/21 comment="EC"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="EC country" log=yes
-# add action=drop chain=forward src-address-list="EC country" log=yes
+# add action=accept chain=input src-address-list="EC country" comment="Allow EC traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="EC country" comment="Block EC traffic"

@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for HU
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 639
+# Generated at: 2025-06-12 09:46:56 +0200
+# Total CIDR blocks: 640
 
 /ip firewall address-list
 add list="HU country" address=2.58.168.0/22 comment="HU"
@@ -430,6 +430,7 @@ add list="HU country" address=185.198.168.0/22 comment="HU"
 add list="HU country" address=185.199.28.0/22 comment="HU"
 add list="HU country" address=185.202.136.0/22 comment="HU"
 add list="HU country" address=185.203.184.0/22 comment="HU"
+add list="HU country" address=185.204.152.0/24 comment="HU"
 add list="HU country" address=185.205.72.0/22 comment="HU"
 add list="HU country" address=185.205.248.0/22 comment="HU"
 add list="HU country" address=185.208.224.0/22 comment="HU"
@@ -644,6 +645,11 @@ add list="HU country" address=217.173.32.0/20 comment="HU"
 add list="HU country" address=217.197.176.0/20 comment="HU"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="HU country" log=yes
-# add action=drop chain=forward src-address-list="HU country" log=yes
+# add action=accept chain=input src-address-list="HU country" comment="Allow HU traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="HU country" comment="Block HU traffic"

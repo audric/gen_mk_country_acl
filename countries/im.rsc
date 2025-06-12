@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for IM
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 60
 
 /ip firewall address-list
@@ -65,6 +65,11 @@ add list="IM country" address=217.23.160.0/20 comment="IM"
 add list="IM country" address=217.28.0.0/20 comment="IM"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="IM country" log=yes
-# add action=drop chain=forward src-address-list="IM country" log=yes
+# add action=accept chain=input src-address-list="IM country" comment="Allow IM traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="IM country" comment="Block IM traffic"

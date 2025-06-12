@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for NO
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 1215
 
 /ip firewall address-list
@@ -1220,6 +1220,11 @@ add list="NO country" address=217.197.164.0/22 comment="NO"
 add list="NO country" address=217.199.32.0/19 comment="NO"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="NO country" log=yes
-# add action=drop chain=forward src-address-list="NO country" log=yes
+# add action=accept chain=input src-address-list="NO country" comment="Allow NO traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="NO country" comment="Block NO traffic"

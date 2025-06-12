@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for SA
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 554
 
 /ip firewall address-list
@@ -559,6 +559,11 @@ add list="SA country" address=217.170.32.0/19 comment="SA"
 add list="SA country" address=217.173.80.0/20 comment="SA"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="SA country" log=yes
-# add action=drop chain=forward src-address-list="SA country" log=yes
+# add action=accept chain=input src-address-list="SA country" comment="Allow SA traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="SA country" comment="Block SA traffic"

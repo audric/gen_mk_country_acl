@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for EE
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 411
+# Generated at: 2025-06-12 09:46:55 +0200
+# Total CIDR blocks: 412
 
 /ip firewall address-list
 add list="EE country" address=2.57.220.0/22 comment="EE"
@@ -277,6 +277,7 @@ add list="EE country" address=185.191.16.0/22 comment="EE"
 add list="EE country" address=185.193.60.0/22 comment="EE"
 add list="EE country" address=185.195.20.0/22 comment="EE"
 add list="EE country" address=185.200.68.0/22 comment="EE"
+add list="EE country" address=185.204.153.0/24 comment="EE"
 add list="EE country" address=185.209.15.0/24 comment="EE"
 add list="EE country" address=185.209.96.0/22 comment="EE"
 add list="EE country" address=185.209.160.0/22 comment="EE"
@@ -416,6 +417,11 @@ add list="EE country" address=217.146.64.0/20 comment="EE"
 add list="EE country" address=217.159.128.0/17 comment="EE"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="EE country" log=yes
-# add action=drop chain=forward src-address-list="EE country" log=yes
+# add action=accept chain=input src-address-list="EE country" comment="Allow EE traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="EE country" comment="Block EE traffic"

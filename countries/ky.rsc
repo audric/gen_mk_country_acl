@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for KY
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:54 +0200
 # Total CIDR blocks: 32
 
 /ip firewall address-list
@@ -37,6 +37,11 @@ add list="KY country" address=216.25.64.0/22 comment="KY"
 add list="KY country" address=216.144.80.0/20 comment="KY"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="KY country" log=yes
-# add action=drop chain=forward src-address-list="KY country" log=yes
+# add action=accept chain=input src-address-list="KY country" comment="Allow KY traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="KY country" comment="Block KY traffic"

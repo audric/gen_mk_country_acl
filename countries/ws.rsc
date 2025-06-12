@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for WS
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 16
 
 /ip firewall address-list
@@ -21,6 +21,11 @@ add list="WS country" address=203.99.156.0/22 comment="WS"
 add list="WS country" address=203.99.255.0/24 comment="WS"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="WS country" log=yes
-# add action=drop chain=forward src-address-list="WS country" log=yes
+# add action=accept chain=input src-address-list="WS country" comment="Allow WS traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="WS country" comment="Block WS traffic"

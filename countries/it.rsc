@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for IT
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:54 +0200
 # Total CIDR blocks: 3261
 
 /ip firewall address-list
@@ -175,7 +175,6 @@ add list="IT country" address=37.77.112.0/20 comment="IT"
 add list="IT country" address=37.77.136.0/21 comment="IT"
 add list="IT country" address=37.77.160.0/21 comment="IT"
 add list="IT country" address=37.77.208.0/20 comment="IT"
-add list="IT country" address=37.99.208.0/21 comment="IT"
 add list="IT country" address=37.99.224.0/19 comment="IT"
 add list="IT country" address=37.100.0.0/14 comment="IT"
 add list="IT country" address=37.114.8.0/21 comment="IT"
@@ -1367,6 +1366,7 @@ add list="IT country" address=159.253.184.0/21 comment="IT"
 add list="IT country" address=159.255.128.0/20 comment="IT"
 add list="IT country" address=159.255.144.0/24 comment="IT"
 add list="IT country" address=159.255.152.0/21 comment="IT"
+add list="IT country" address=160.20.248.0/23 comment="IT"
 add list="IT country" address=160.66.0.0/16 comment="IT"
 add list="IT country" address=160.78.0.0/16 comment="IT"
 add list="IT country" address=160.80.0.0/16 comment="IT"
@@ -1375,6 +1375,7 @@ add list="IT country" address=160.180.0.0/16 comment="IT"
 add list="IT country" address=160.202.28.0/22 comment="IT"
 add list="IT country" address=160.202.156.0/22 comment="IT"
 add list="IT country" address=160.220.0.0/16 comment="IT"
+add list="IT country" address=160.238.61.0/24 comment="IT"
 add list="IT country" address=160.238.112.0/22 comment="IT"
 add list="IT country" address=161.27.0.0/16 comment="IT"
 add list="IT country" address=161.147.0.0/16 comment="IT"
@@ -2017,7 +2018,6 @@ add list="IT country" address=185.154.88.0/22 comment="IT"
 add list="IT country" address=185.154.236.0/22 comment="IT"
 add list="IT country" address=185.155.120.0/22 comment="IT"
 add list="IT country" address=185.155.164.0/22 comment="IT"
-add list="IT country" address=185.155.196.0/22 comment="IT"
 add list="IT country" address=185.156.132.0/22 comment="IT"
 add list="IT country" address=185.156.150.0/23 comment="IT"
 add list="IT country" address=185.156.192.0/22 comment="IT"
@@ -3266,6 +3266,11 @@ add list="IT country" address=217.200.0.0/14 comment="IT"
 add list="IT country" address=217.220.0.0/14 comment="IT"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="IT country" log=yes
-# add action=drop chain=forward src-address-list="IT country" log=yes
+# add action=accept chain=input src-address-list="IT country" comment="Allow IT traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="IT country" comment="Block IT traffic"

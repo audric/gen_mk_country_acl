@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for SY
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 195
 
 /ip firewall address-list
@@ -200,6 +200,11 @@ add list="SY country" address=213.217.32.0/19 comment="SY"
 add list="SY country" address=217.20.208.0/20 comment="SY"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="SY country" log=yes
-# add action=drop chain=forward src-address-list="SY country" log=yes
+# add action=accept chain=input src-address-list="SY country" comment="Allow SY traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="SY country" comment="Block SY traffic"

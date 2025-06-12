@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for SC
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 835
+# Generated at: 2025-06-12 09:46:55 +0200
+# Total CIDR blocks: 833
 
 /ip firewall address-list
 add list="SC country" address=2.56.10.0/24 comment="SC"
@@ -501,9 +501,7 @@ add list="SC country" address=185.99.96.0/22 comment="SC"
 add list="SC country" address=185.101.20.0/22 comment="SC"
 add list="SC country" address=185.102.136.0/22 comment="SC"
 add list="SC country" address=185.103.108.0/22 comment="SC"
-add list="SC country" address=185.103.252.0/22 comment="SC"
 add list="SC country" address=185.104.248.0/22 comment="SC"
-add list="SC country" address=185.105.88.0/22 comment="SC"
 add list="SC country" address=185.105.116.0/22 comment="SC"
 add list="SC country" address=185.106.92.0/22 comment="SC"
 add list="SC country" address=185.106.106.0/24 comment="SC"
@@ -840,6 +838,11 @@ add list="SC country" address=217.198.180.0/23 comment="SC"
 add list="SC country" address=217.198.182.0/24 comment="SC"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="SC country" log=yes
-# add action=drop chain=forward src-address-list="SC country" log=yes
+# add action=accept chain=input src-address-list="SC country" comment="Allow SC traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="SC country" comment="Block SC traffic"

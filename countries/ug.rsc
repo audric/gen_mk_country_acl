@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for UG
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 90
 
 /ip firewall address-list
@@ -95,6 +95,11 @@ add list="UG country" address=212.88.96.0/19 comment="UG"
 add list="UG country" address=216.104.192.0/20 comment="UG"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="UG country" log=yes
-# add action=drop chain=forward src-address-list="UG country" log=yes
+# add action=accept chain=input src-address-list="UG country" comment="Allow UG traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="UG country" comment="Block UG traffic"

@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for BY
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 97
 
 /ip firewall address-list
@@ -102,6 +102,11 @@ add list="BY country" address=217.21.32.0/19 comment="BY"
 add list="BY country" address=217.23.112.0/20 comment="BY"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="BY country" log=yes
-# add action=drop chain=forward src-address-list="BY country" log=yes
+# add action=accept chain=input src-address-list="BY country" comment="Allow BY traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="BY country" comment="Block BY traffic"

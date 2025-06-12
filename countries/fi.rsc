@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for FI
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 984
+# Generated at: 2025-06-12 09:46:54 +0200
+# Total CIDR blocks: 985
 
 /ip firewall address-list
 add list="FI country" address=2.58.88.0/22 comment="FI"
@@ -328,6 +328,7 @@ add list="FI country" address=109.69.32.0/21 comment="FI"
 add list="FI country" address=109.69.120.0/21 comment="FI"
 add list="FI country" address=109.70.160.0/21 comment="FI"
 add list="FI country" address=109.70.176.0/21 comment="FI"
+add list="FI country" address=109.71.185.0/24 comment="FI"
 add list="FI country" address=109.75.224.0/20 comment="FI"
 add list="FI country" address=109.106.8.0/22 comment="FI"
 add list="FI country" address=109.107.129.0/24 comment="FI"
@@ -989,6 +990,11 @@ add list="FI country" address=217.152.0.0/16 comment="FI"
 add list="FI country" address=217.169.64.0/20 comment="FI"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="FI country" log=yes
-# add action=drop chain=forward src-address-list="FI country" log=yes
+# add action=accept chain=input src-address-list="FI country" comment="Allow FI traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="FI country" comment="Block FI traffic"

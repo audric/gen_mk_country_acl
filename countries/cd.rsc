@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for CD
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 77
 
 /ip firewall address-list
@@ -82,6 +82,11 @@ add list="CD country" address=197.215.220.0/22 comment="CD"
 add list="CD country" address=197.231.252.0/22 comment="CD"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="CD country" log=yes
-# add action=drop chain=forward src-address-list="CD country" log=yes
+# add action=accept chain=input src-address-list="CD country" comment="Allow CD traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="CD country" comment="Block CD traffic"

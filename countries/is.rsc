@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for IS
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 145
 
 /ip firewall address-list
@@ -150,6 +150,11 @@ add list="IS country" address=217.151.160.0/19 comment="IS"
 add list="IS country" address=217.171.208.0/20 comment="IS"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="IS country" log=yes
-# add action=drop chain=forward src-address-list="IS country" log=yes
+# add action=accept chain=input src-address-list="IS country" comment="Allow IS traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="IS country" comment="Block IS traffic"

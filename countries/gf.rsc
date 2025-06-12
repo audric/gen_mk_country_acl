@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for GF
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 6
 
 /ip firewall address-list
@@ -11,6 +11,11 @@ add list="GF country" address=186.2.244.0/22 comment="GF"
 add list="GF country" address=200.13.136.0/21 comment="GF"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="GF country" log=yes
-# add action=drop chain=forward src-address-list="GF country" log=yes
+# add action=accept chain=input src-address-list="GF country" comment="Allow GF traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="GF country" comment="Block GF traffic"

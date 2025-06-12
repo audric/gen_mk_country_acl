@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for QA
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 43
 
 /ip firewall address-list
@@ -48,6 +48,11 @@ add list="QA country" address=213.130.96.0/19 comment="QA"
 add list="QA country" address=213.178.136.0/22 comment="QA"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="QA country" log=yes
-# add action=drop chain=forward src-address-list="QA country" log=yes
+# add action=accept chain=input src-address-list="QA country" comment="Allow QA traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="QA country" comment="Block QA traffic"

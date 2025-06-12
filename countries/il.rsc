@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for IL
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:55 +0200
 # Total CIDR blocks: 720
 
 /ip firewall address-list
@@ -725,6 +725,11 @@ add list="IL country" address=217.194.158.0/23 comment="IL"
 add list="IL country" address=217.194.192.0/20 comment="IL"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="IL country" log=yes
-# add action=drop chain=forward src-address-list="IL country" log=yes
+# add action=accept chain=input src-address-list="IL country" comment="Allow IL traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="IL country" comment="Block IL traffic"

@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for NI
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 50
 
 /ip firewall address-list
@@ -55,6 +55,11 @@ add list="NI country" address=201.131.115.0/24 comment="NI"
 add list="NI country" address=207.248.86.0/24 comment="NI"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="NI country" log=yes
-# add action=drop chain=forward src-address-list="NI country" log=yes
+# add action=accept chain=input src-address-list="NI country" comment="Allow NI traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="NI country" comment="Block NI traffic"

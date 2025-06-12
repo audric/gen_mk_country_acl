@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for ID
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 4423
+# Generated at: 2025-06-12 09:46:55 +0200
+# Total CIDR blocks: 4428
 
 /ip firewall address-list
 add list="ID country" address=14.102.46.0/23 comment="ID"
@@ -3984,6 +3984,11 @@ add list="ID country" address=165.99.152.0/23 comment="ID"
 add list="ID country" address=165.99.154.0/24 comment="ID"
 add list="ID country" address=165.99.160.0/22 comment="ID"
 add list="ID country" address=165.99.186.0/23 comment="ID"
+add list="ID country" address=165.99.192.0/22 comment="ID"
+add list="ID country" address=165.99.202.0/23 comment="ID"
+add list="ID country" address=165.99.204.0/24 comment="ID"
+add list="ID country" address=165.99.225.0/24 comment="ID"
+add list="ID country" address=165.99.238.0/23 comment="ID"
 add list="ID country" address=167.205.0.0/16 comment="ID"
 add list="ID country" address=175.45.184.0/21 comment="ID"
 add list="ID country" address=175.103.32.0/19 comment="ID"
@@ -4428,6 +4433,11 @@ add list="ID country" address=223.164.0.0/16 comment="ID"
 add list="ID country" address=223.255.224.0/21 comment="ID"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="ID country" log=yes
-# add action=drop chain=forward src-address-list="ID country" log=yes
+# add action=accept chain=input src-address-list="ID country" comment="Allow ID traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="ID country" comment="Block ID traffic"

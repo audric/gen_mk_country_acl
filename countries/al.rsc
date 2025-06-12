@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for AL
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 210
+# Generated at: 2025-06-12 09:46:55 +0200
+# Total CIDR blocks: 211
 
 /ip firewall address-list
 add list="AL country" address=5.206.232.0/21 comment="AL"
@@ -167,6 +167,7 @@ add list="AL country" address=185.196.180.0/22 comment="AL"
 add list="AL country" address=185.200.212.0/22 comment="AL"
 add list="AL country" address=185.200.248.0/22 comment="AL"
 add list="AL country" address=185.204.32.0/22 comment="AL"
+add list="AL country" address=185.204.154.0/24 comment="AL"
 add list="AL country" address=185.205.168.0/22 comment="AL"
 add list="AL country" address=185.212.188.0/22 comment="AL"
 add list="AL country" address=185.216.15.0/24 comment="AL"
@@ -215,6 +216,11 @@ add list="AL country" address=217.24.240.0/20 comment="AL"
 add list="AL country" address=217.73.128.0/20 comment="AL"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="AL country" log=yes
-# add action=drop chain=forward src-address-list="AL country" log=yes
+# add action=accept chain=input src-address-list="AL country" comment="Allow AL traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="AL country" comment="Block AL traffic"

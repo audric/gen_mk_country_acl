@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for MK
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 105
+# Generated at: 2025-06-12 09:46:56 +0200
+# Total CIDR blocks: 106
 
 /ip firewall address-list
 add list="MK country" address=5.32.176.0/21 comment="MK"
@@ -94,6 +94,7 @@ add list="MK country" address=185.250.252.0/22 comment="MK"
 add list="MK country" address=185.252.188.0/22 comment="MK"
 add list="MK country" address=188.44.0.0/19 comment="MK"
 add list="MK country" address=193.36.90.0/24 comment="MK"
+add list="MK country" address=194.26.97.0/24 comment="MK"
 add list="MK country" address=194.61.58.0/24 comment="MK"
 add list="MK country" address=194.61.136.0/22 comment="MK"
 add list="MK country" address=194.149.128.0/19 comment="MK"
@@ -110,6 +111,11 @@ add list="MK country" address=217.16.64.0/19 comment="MK"
 add list="MK country" address=217.196.192.0/20 comment="MK"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="MK country" log=yes
-# add action=drop chain=forward src-address-list="MK country" log=yes
+# add action=accept chain=input src-address-list="MK country" comment="Allow MK traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="MK country" comment="Block MK traffic"

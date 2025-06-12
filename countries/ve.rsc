@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for VE
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 214
 
 /ip firewall address-list
@@ -219,6 +219,11 @@ add list="VE country" address=201.242.0.0/15 comment="VE"
 add list="VE country" address=201.248.0.0/15 comment="VE"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="VE country" log=yes
-# add action=drop chain=forward src-address-list="VE country" log=yes
+# add action=accept chain=input src-address-list="VE country" comment="Allow VE traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="VE country" comment="Block VE traffic"

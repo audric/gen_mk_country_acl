@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for DE
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 8491
+# Generated at: 2025-06-12 09:46:54 +0200
+# Total CIDR blocks: 8499
 
 /ip firewall address-list
 add list="DE country" address=2.56.20.0/22 comment="DE"
@@ -862,6 +862,7 @@ add list="DE country" address=45.157.80.0/22 comment="DE"
 add list="DE country" address=45.157.100.0/22 comment="DE"
 add list="DE country" address=45.157.137.0/24 comment="DE"
 add list="DE country" address=45.157.144.0/22 comment="DE"
+add list="DE country" address=45.157.172.0/23 comment="DE"
 add list="DE country" address=45.157.176.0/22 comment="DE"
 add list="DE country" address=45.157.184.0/22 comment="DE"
 add list="DE country" address=45.157.220.0/22 comment="DE"
@@ -3059,7 +3060,6 @@ add list="DE country" address=150.5.0.0/18 comment="DE"
 add list="DE country" address=151.106.0.0/17 comment="DE"
 add list="DE country" address=151.136.0.0/16 comment="DE"
 add list="DE country" address=151.189.0.0/16 comment="DE"
-add list="DE country" address=151.216.16.0/20 comment="DE"
 add list="DE country" address=151.218.0.0/18 comment="DE"
 add list="DE country" address=151.237.248.0/21 comment="DE"
 add list="DE country" address=151.248.24.0/21 comment="DE"
@@ -3435,6 +3435,7 @@ add list="DE country" address=185.2.180.0/22 comment="DE"
 add list="DE country" address=185.2.248.0/22 comment="DE"
 add list="DE country" address=185.3.40.0/22 comment="DE"
 add list="DE country" address=185.3.80.0/22 comment="DE"
+add list="DE country" address=185.3.85.0/24 comment="DE"
 add list="DE country" address=185.3.96.0/22 comment="DE"
 add list="DE country" address=185.3.184.0/22 comment="DE"
 add list="DE country" address=185.3.232.0/22 comment="DE"
@@ -7652,7 +7653,12 @@ add list="DE country" address=195.137.216.0/23 comment="DE"
 add list="DE country" address=195.137.224.0/22 comment="DE"
 add list="DE country" address=195.137.231.0/24 comment="DE"
 add list="DE country" address=195.137.234.0/23 comment="DE"
-add list="DE country" address=195.138.32.0/20 comment="DE"
+add list="DE country" address=195.138.32.0/22 comment="DE"
+add list="DE country" address=195.138.36.0/23 comment="DE"
+add list="DE country" address=195.138.38.0/24 comment="DE"
+add list="DE country" address=195.138.41.0/24 comment="DE"
+add list="DE country" address=195.138.42.0/23 comment="DE"
+add list="DE country" address=195.138.44.0/22 comment="DE"
 add list="DE country" address=195.138.48.0/22 comment="DE"
 add list="DE country" address=195.138.52.0/24 comment="DE"
 add list="DE country" address=195.138.54.0/23 comment="DE"
@@ -7820,6 +7826,7 @@ add list="DE country" address=195.234.34.0/24 comment="DE"
 add list="DE country" address=195.234.50.0/24 comment="DE"
 add list="DE country" address=195.234.99.0/24 comment="DE"
 add list="DE country" address=195.234.104.0/22 comment="DE"
+add list="DE country" address=195.234.126.0/24 comment="DE"
 add list="DE country" address=195.234.128.0/23 comment="DE"
 add list="DE country" address=195.234.133.0/24 comment="DE"
 add list="DE country" address=195.234.139.0/24 comment="DE"
@@ -8327,6 +8334,7 @@ add list="DE country" address=217.64.64.0/19 comment="DE"
 add list="DE country" address=217.64.160.0/20 comment="DE"
 add list="DE country" address=217.64.224.0/20 comment="DE"
 add list="DE country" address=217.65.16.0/20 comment="DE"
+add list="DE country" address=217.65.72.0/24 comment="DE"
 add list="DE country" address=217.65.128.0/23 comment="DE"
 add list="DE country" address=217.65.130.0/24 comment="DE"
 add list="DE country" address=217.65.144.0/20 comment="DE"
@@ -8496,6 +8504,11 @@ add list="DE country" address=217.199.192.0/20 comment="DE"
 add list="DE country" address=217.224.0.0/11 comment="DE"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="DE country" log=yes
-# add action=drop chain=forward src-address-list="DE country" log=yes
+# add action=accept chain=input src-address-list="DE country" comment="Allow DE traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="DE country" comment="Block DE traffic"

@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for LT
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 863
+# Generated at: 2025-06-12 09:46:55 +0200
+# Total CIDR blocks: 865
 
 /ip firewall address-list
 add list="LT country" address=2.56.0.0/22 comment="LT"
@@ -381,6 +381,7 @@ add list="LT country" address=103.108.88.0/23 comment="LT"
 add list="LT country" address=103.111.112.0/22 comment="LT"
 add list="LT country" address=103.137.162.0/23 comment="LT"
 add list="LT country" address=103.144.160.0/23 comment="LT"
+add list="LT country" address=103.149.130.0/23 comment="LT"
 add list="LT country" address=103.172.116.0/23 comment="LT"
 add list="LT country" address=103.190.58.0/23 comment="LT"
 add list="LT country" address=103.196.8.0/22 comment="LT"
@@ -389,6 +390,7 @@ add list="LT country" address=103.216.0.0/22 comment="LT"
 add list="LT country" address=103.228.84.0/22 comment="LT"
 add list="LT country" address=103.243.204.0/22 comment="LT"
 add list="LT country" address=103.253.36.0/23 comment="LT"
+add list="LT country" address=109.109.164.0/22 comment="LT"
 add list="LT country" address=109.122.200.0/21 comment="LT"
 add list="LT country" address=109.172.92.0/23 comment="LT"
 add list="LT country" address=109.205.232.0/21 comment="LT"
@@ -868,6 +870,11 @@ add list="LT country" address=217.147.12.0/22 comment="LT"
 add list="LT country" address=217.147.32.0/20 comment="LT"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="LT country" log=yes
-# add action=drop chain=forward src-address-list="LT country" log=yes
+# add action=accept chain=input src-address-list="LT country" comment="Allow LT traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="LT country" comment="Block LT traffic"

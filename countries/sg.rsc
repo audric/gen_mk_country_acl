@@ -1,6 +1,6 @@
 # MikroTik RouterOS address list for SG
-# Generated at: 2025-06-04 16:35:01 +0200
-# Total CIDR blocks: 1627
+# Generated at: 2025-06-12 09:46:54 +0200
+# Total CIDR blocks: 1628
 
 /ip firewall address-list
 add list="SG country" address=1.21.224.0/19 comment="SG"
@@ -936,6 +936,7 @@ add list="SG country" address=148.145.128.0/17 comment="SG"
 add list="SG country" address=148.222.64.0/20 comment="SG"
 add list="SG country" address=148.222.80.0/21 comment="SG"
 add list="SG country" address=148.222.92.0/23 comment="SG"
+add list="SG country" address=148.222.160.0/20 comment="SG"
 add list="SG country" address=149.129.0.0/16 comment="SG"
 add list="SG country" address=149.232.128.0/19 comment="SG"
 add list="SG country" address=149.234.128.0/19 comment="SG"
@@ -1632,6 +1633,11 @@ add list="SG country" address=223.223.220.0/22 comment="SG"
 add list="SG country" address=223.255.254.0/24 comment="SG"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="SG country" log=yes
-# add action=drop chain=forward src-address-list="SG country" log=yes
+# add action=accept chain=input src-address-list="SG country" comment="Allow SG traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="SG country" comment="Block SG traffic"

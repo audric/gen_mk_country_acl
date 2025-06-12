@@ -1,5 +1,5 @@
 # MikroTik RouterOS address list for OM
-# Generated at: 2025-06-04 16:35:01 +0200
+# Generated at: 2025-06-12 09:46:56 +0200
 # Total CIDR blocks: 75
 
 /ip firewall address-list
@@ -80,6 +80,11 @@ add list="OM country" address=213.202.8.0/21 comment="OM"
 add list="OM country" address=213.202.16.0/20 comment="OM"
 
 # Usage examples:
+#
+# Allow and count:
 # /ip firewall filter
-# add action=drop chain=input src-address-list="OM country" log=yes
-# add action=drop chain=forward src-address-list="OM country" log=yes
+# add action=accept chain=input src-address-list="OM country" comment="Allow OM traffic"
+# 
+# Block and count:
+# /ip firewall filter
+# add action=drop chain=input src-address-list="OM country" comment="Block OM traffic"
