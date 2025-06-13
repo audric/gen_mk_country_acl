@@ -1,0 +1,15 @@
+# MikroTik IPv6 address‑list for TL
+# Generated 2025-06-13 16:57:00 +0200 – 12 prefixes
+/ipv6 firewall address-list
+add list="TL IPv6" address=2001:df0:840::/48 comment="TL"
+add list="TL IPv6" address=2001:df0:7a00::/48 comment="TL"
+add list="TL IPv6" address=2001:df0:f980::/48 comment="TL"
+add list="TL IPv6" address=2001:df7:f980::/48 comment="TL"
+add list="TL IPv6" address=2401:1560::/32 comment="TL"
+add list="TL IPv6" address=2401:4b80::/32 comment="TL"
+add list="TL IPv6" address=2401:b660::/32 comment="TL"
+add list="TL IPv6" address=2401:f720::/32 comment="TL"
+add list="TL IPv6" address=2402:d080::/32 comment="TL"
+add list="TL IPv6" address=2405:1f00::/32 comment="TL"
+add list="TL IPv6" address=2405:d540::/32 comment="TL"
+add list="TL IPv6" address=2407:f2c0::/32 comment="TL"

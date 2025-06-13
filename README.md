@@ -9,6 +9,7 @@
 - Caching system for rapid subsequent runs (24 hour cache)
 - Optimized processing for faster performance
 - Generates Mikrotik RouterOS scripts per country (.rsc files) for easy import
+- separate scripts for ipv4 and ipv6
 
 ## Usage:
 

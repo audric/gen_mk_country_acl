@@ -1,0 +1,20 @@
+# MikroTik IPv6 address‑list for LY
+# Generated 2025-06-13 16:57:00 +0200 – 17 prefixes
+/ipv6 firewall address-list
+add list="LY IPv6" address=2001:43f8:50::/48 comment="LY"
+add list="LY IPv6" address=2001:43f8:16b0::/48 comment="LY"
+add list="LY IPv6" address=2a02:e700::/29 comment="LY"
+add list="LY IPv6" address=2c0f:9c0::/32 comment="LY"
+add list="LY IPv6" address=2c0f:a40::/32 comment="LY"
+add list="LY IPv6" address=2c0f:14c0::/32 comment="LY"
+add list="LY IPv6" address=2c0f:1f40::/32 comment="LY"
+add list="LY IPv6" address=2c0f:3200::/32 comment="LY"
+add list="LY IPv6" address=2c0f:54c0::/32 comment="LY"
+add list="LY IPv6" address=2c0f:6a40::/32 comment="LY"
+add list="LY IPv6" address=2c0f:6d80::/32 comment="LY"
+add list="LY IPv6" address=2c0f:6e40::/32 comment="LY"
+add list="LY IPv6" address=2c0f:7540::/32 comment="LY"
+add list="LY IPv6" address=2c0f:7980::/32 comment="LY"
+add list="LY IPv6" address=2c0f:ed18::/32 comment="LY"
+add list="LY IPv6" address=2c0f:f518::/32 comment="LY"
+add list="LY IPv6" address=2c0f:fb10::/32 comment="LY"

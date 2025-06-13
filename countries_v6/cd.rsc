@@ -1,0 +1,23 @@
+# MikroTik IPv6 address‑list for CD
+# Generated 2025-06-13 16:57:00 +0200 – 20 prefixes
+/ipv6 firewall address-list
+add list="CD IPv6" address=2001:43f8:3c0::/47 comment="CD"
+add list="CD IPv6" address=2001:43f8:1460::/48 comment="CD"
+add list="CD IPv6" address=2001:43ff:6000::/48 comment="CD"
+add list="CD IPv6" address=2c0f:e00::/28 comment="CD"
+add list="CD IPv6" address=2c0f:fc0::/32 comment="CD"
+add list="CD IPv6" address=2c0f:19c0::/32 comment="CD"
+add list="CD IPv6" address=2c0f:4400::/32 comment="CD"
+add list="CD IPv6" address=2c0f:6340::/32 comment="CD"
+add list="CD IPv6" address=2c0f:6580::/32 comment="CD"
+add list="CD IPv6" address=2c0f:7800::/32 comment="CD"
+add list="CD IPv6" address=2c0f:ea70::/32 comment="CD"
+add list="CD IPv6" address=2c0f:eac8::/32 comment="CD"
+add list="CD IPv6" address=2c0f:ebb0::/32 comment="CD"
+add list="CD IPv6" address=2c0f:eca0::/32 comment="CD"
+add list="CD IPv6" address=2c0f:eca8::/32 comment="CD"
+add list="CD IPv6" address=2c0f:ed00::/32 comment="CD"
+add list="CD IPv6" address=2c0f:ee08::/32 comment="CD"
+add list="CD IPv6" address=2c0f:f558::/32 comment="CD"
+add list="CD IPv6" address=2c0f:f978::/32 comment="CD"
+add list="CD IPv6" address=2c0f:ff10::/32 comment="CD"

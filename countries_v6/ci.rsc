@@ -1,0 +1,20 @@
+# MikroTik IPv6 address‑list for CI
+# Generated 2025-06-13 16:57:00 +0200 – 17 prefixes
+/ipv6 firewall address-list
+add list="CI IPv6" address=2001:42d8::/32 comment="CI"
+add list="CI IPv6" address=2001:43f8:940::/48 comment="CI"
+add list="CI IPv6" address=2001:43f8:b20::/48 comment="CI"
+add list="CI IPv6" address=2001:43f8:b70::/48 comment="CI"
+add list="CI IPv6" address=2001:43f8:14a0::/48 comment="CI"
+add list="CI IPv6" address=2001:43f8:1630::/48 comment="CI"
+add list="CI IPv6" address=2001:43ff:a000::/48 comment="CI"
+add list="CI IPv6" address=2c0e:7f80::/27 comment="CI"
+add list="CI IPv6" address=2c0f:4c40::/32 comment="CI"
+add list="CI IPv6" address=2c0f:7c00::/32 comment="CI"
+add list="CI IPv6" address=2c0f:e800::/32 comment="CI"
+add list="CI IPv6" address=2c0f:ec60::/32 comment="CI"
+add list="CI IPv6" address=2c0f:ecf0::/32 comment="CI"
+add list="CI IPv6" address=2c0f:ef80::/32 comment="CI"
+add list="CI IPv6" address=2c0f:f230::/32 comment="CI"
+add list="CI IPv6" address=2c0f:f4d0::/32 comment="CI"
+add list="CI IPv6" address=2c0f:f5d8::/32 comment="CI"

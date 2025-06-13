@@ -1,0 +1,20 @@
+# MikroTik IPv6 address‑list for FJ
+# Generated 2025-06-13 16:57:00 +0200 – 17 prefixes
+/ipv6 firewall address-list
+add list="FJ IPv6" address=2001:dd8::/48 comment="FJ"
+add list="FJ IPv6" address=2001:df0:91::/48 comment="FJ"
+add list="FJ IPv6" address=2001:df2:4b00::/48 comment="FJ"
+add list="FJ IPv6" address=2001:df2:4c80::/47 comment="FJ"
+add list="FJ IPv6" address=2001:df2:a280::/47 comment="FJ"
+add list="FJ IPv6" address=2001:df5:5700::/48 comment="FJ"
+add list="FJ IPv6" address=2001:df5:fa00::/48 comment="FJ"
+add list="FJ IPv6" address=2400:6d00::/32 comment="FJ"
+add list="FJ IPv6" address=2401:5100::/32 comment="FJ"
+add list="FJ IPv6" address=2401:d7c0::/32 comment="FJ"
+add list="FJ IPv6" address=2401:e600::/32 comment="FJ"
+add list="FJ IPv6" address=2402:1840::/32 comment="FJ"
+add list="FJ IPv6" address=2402:2940::/32 comment="FJ"
+add list="FJ IPv6" address=2403:4600::/32 comment="FJ"
+add list="FJ IPv6" address=2406:f800::/32 comment="FJ"
+add list="FJ IPv6" address=2407:800::/32 comment="FJ"
+add list="FJ IPv6" address=2407:a000::/32 comment="FJ"

@@ -1,0 +1,23 @@
+# MikroTik IPv6 address‑list for ME
+# Generated 2025-06-13 16:57:00 +0200 – 20 prefixes
+/ipv6 firewall address-list
+add list="ME IPv6" address=2001:678:408::/48 comment="ME"
+add list="ME IPv6" address=2001:67c:f94::/48 comment="ME"
+add list="ME IPv6" address=2001:7f8:22::/48 comment="ME"
+add list="ME IPv6" address=2a00:1e6c::/30 comment="ME"
+add list="ME IPv6" address=2a00:8700::/29 comment="ME"
+add list="ME IPv6" address=2a00:fe80::/29 comment="ME"
+add list="ME IPv6" address=2a01:5160::/32 comment="ME"
+add list="ME IPv6" address=2a01:5da0::/32 comment="ME"
+add list="ME IPv6" address=2a02:4280::/29 comment="ME"
+add list="ME IPv6" address=2a03:7a0::/29 comment="ME"
+add list="ME IPv6" address=2a03:16a0::/32 comment="ME"
+add list="ME IPv6" address=2a03:2920::/32 comment="ME"
+add list="ME IPv6" address=2a04:7400::/29 comment="ME"
+add list="ME IPv6" address=2a05:7b40::/29 comment="ME"
+add list="ME IPv6" address=2a06:e340::/29 comment="ME"
+add list="ME IPv6" address=2a0c:60c0::/29 comment="ME"
+add list="ME IPv6" address=2a0d:aa40::/29 comment="ME"
+add list="ME IPv6" address=2a0f:3bc0::/29 comment="ME"
+add list="ME IPv6" address=2a10:100::/30 comment="ME"
+add list="ME IPv6" address=2a13:2640::/29 comment="ME"

@@ -1,0 +1,21 @@
+# MikroTik IPv6 address‑list for RW
+# Generated 2025-06-13 16:57:00 +0200 – 18 prefixes
+/ipv6 firewall address-list
+add list="RW IPv6" address=2001:43f8:150::/47 comment="RW"
+add list="RW IPv6" address=2001:43f8:d80::/48 comment="RW"
+add list="RW IPv6" address=2001:43f8:11e0::/48 comment="RW"
+add list="RW IPv6" address=2001:43fc:7000::/48 comment="RW"
+add list="RW IPv6" address=2001:43fc:9000::/48 comment="RW"
+add list="RW IPv6" address=2001:43fd:8000::/48 comment="RW"
+add list="RW IPv6" address=2001:43fe:800::/48 comment="RW"
+add list="RW IPv6" address=2001:43ff:c000::/48 comment="RW"
+add list="RW IPv6" address=2c0e:7c00::/24 comment="RW"
+add list="RW IPv6" address=2c0f:580::/32 comment="RW"
+add list="RW IPv6" address=2c0f:3880::/32 comment="RW"
+add list="RW IPv6" address=2c0f:56c0::/32 comment="RW"
+add list="RW IPv6" address=2c0f:6100::/32 comment="RW"
+add list="RW IPv6" address=2c0f:6700::/32 comment="RW"
+add list="RW IPv6" address=2c0f:eb68::/32 comment="RW"
+add list="RW IPv6" address=2c0f:f628::/32 comment="RW"
+add list="RW IPv6" address=2c0f:f860::/32 comment="RW"
+add list="RW IPv6" address=2c0f:fe60::/32 comment="RW"
